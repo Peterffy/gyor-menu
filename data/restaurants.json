@@ -76,6 +76,45 @@
       "notes": [
         "Website weekly menu currently appears as an image-based snapshot; use review rows if needed."
       ]
+    },
+    {
+      "slug": "komedias-etterem",
+      "name": "Komédiás Étterem",
+      "address": "Győr",
+      "area": null,
+      "sourceType": "manual_review_only",
+      "automationStatus": "pending_automation",
+      "sourceUrl": null,
+      "mapUrl": null,
+      "notes": [
+        "screenshot_inbox"
+      ]
+    },
+    {
+      "slug": "uj-zoldfa",
+      "name": "Új Zöldfa",
+      "address": "Győr",
+      "area": null,
+      "sourceType": "manual_review_only",
+      "automationStatus": "pending_automation",
+      "sourceUrl": null,
+      "mapUrl": null,
+      "notes": [
+        "screenshot_inbox"
+      ]
+    },
+    {
+      "slug": "klasszis-bisztro",
+      "name": "Klasszis Bisztró",
+      "address": "Győr",
+      "area": null,
+      "sourceType": "manual_review_only",
+      "automationStatus": "pending_automation",
+      "sourceUrl": null,
+      "mapUrl": null,
+      "notes": [
+        "screenshot_inbox"
+      ]
     }
   ]
 }

@@ -19,6 +19,33 @@
       "archiveFolderId": "1U7_z_asmLacWkXGw6AGRBR-EjEbflurc",
       "expectedSource": "facebook_weekly_screenshot",
       "namingRule": "YYYY-MM-DD-description.jpg"
+    },
+    {
+      "slug": "komedias-etterem",
+      "restaurantName": "Komédiás Étterem",
+      "inboxFolderId": "1saO0HeKq-zPuUyXvJISodyzKucg_sy_x",
+      "processedFolderId": "151Xg0nMWkWmpuM7uAQU9J_FWwUwHnuEF",
+      "archiveFolderId": "1shDk8lDYSwiYaId9-_rldSRT0FoERSDA",
+      "expectedSource": "facebook_screenshot",
+      "namingRule": "YYYY-MM-DD-description.jpg"
+    },
+    {
+      "slug": "uj-zoldfa",
+      "restaurantName": "Új Zöldfa",
+      "inboxFolderId": "1uhZsay6w1laUx42qUEzE9eEjLEE4XjDa",
+      "processedFolderId": "1mJ21CAuHB7uEwIlh1mbgyd4PnJIeSZO-",
+      "archiveFolderId": "12cD06S7_6TnX44Sbxy0nsq0I6NO105c7",
+      "expectedSource": "facebook_screenshot",
+      "namingRule": "YYYY-MM-DD-description.jpg"
+    },
+    {
+      "slug": "klasszis-bisztro",
+      "restaurantName": "Klasszis Bisztró",
+      "inboxFolderId": "1mb5BBDYZWm-M9yxixemZIGTQkXRuldPX",
+      "processedFolderId": "1hSIWTK_FFm0qnGW0tnG4-66Oh616JIRC",
+      "archiveFolderId": "1zxxqvOizTJNAv86T15zyqiEbD9s3SlHQ",
+      "expectedSource": "facebook_screenshot",
+      "namingRule": "YYYY-MM-DD-description.jpg"
     }
   ]
 }

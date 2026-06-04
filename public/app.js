@@ -30,6 +30,22 @@ function saveFavorites() {
   localStorage.setItem(FAVORITES_KEY, JSON.stringify([...state.favorites]));
 }
 
+function escapeHtml(str) {
+  if (!str && str !== 0) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+function safeUrl(url) {
+  if (!url) return '';
+  if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('./') || url.startsWith('/')) return url;
+  return '';
+}
+
 function formatDateTime(iso) {
   const d = new Date(iso);
   return new Intl.DateTimeFormat('hu-HU', { dateStyle: 'medium', timeStyle: 'short' }).format(d);
@@ -96,8 +112,8 @@ function renderFavoritePicker() {
   const restaurants = [...(state.feed?.restaurants || [])].sort((a, b) => a.name.localeCompare(b.name, 'hu'));
   el.favoriteList.innerHTML = restaurants.map(r => `
     <label class="favorite-pill ${state.favorites.has(r.slug) ? 'active' : ''}">
-      <input type="checkbox" data-fav="${r.slug}" ${state.favorites.has(r.slug) ? 'checked' : ''}>
-      <span>${r.name}</span>
+      <input type="checkbox" data-fav="${escapeHtml(r.slug)}" ${state.favorites.has(r.slug) ? 'checked' : ''}>
+      <span>${escapeHtml(r.name)}</span>
     </label>
   `).join('');
 
@@ -148,8 +164,8 @@ function renderSummary(_visible, _missingFavs) {
 }
 
 function renderMenuItem(item) {
-  const label = item.label ? `<strong>${item.label}</strong>` : '';
-  const text = item.text ? `<div class="text">${item.text}</div>` : '';
+  const label = item.label ? `<strong>${escapeHtml(item.label)}</strong>` : '';
+  const text = item.text ? `<div class="text">${escapeHtml(item.text)}</div>` : '';
   return `<div class="menu-item">${label}${text}</div>`;
 }
 
@@ -176,21 +192,26 @@ function trustClass(menus) {
 function renderRestaurantCard({ restaurant, menus, hasMenu }) {
   const hint = restaurantHint(menus);
   const trust = trustClass(menus);
+  const safeName = escapeHtml(restaurant.name);
+  const safeSlug = escapeHtml(restaurant.slug);
+  const safeSource = safeUrl(restaurant.sourceUrl);
+  const safeDetail = `./restaurant.html?slug=${encodeURIComponent(restaurant.slug)}&day=${state.selectedDayIndex}`;
+  const safeHint = escapeHtml(hint);
   return `
-    <article class="card ${state.favorites.has(restaurant.slug) ? 'favorite-card' : ''}" id="${restaurant.slug}">
+    <article class="card ${state.favorites.has(restaurant.slug) ? 'favorite-card' : ''}" id="${safeSlug}">
       <div class="card-head simple-card-head">
         <div>
-          <h2><a class="title-link" href="${detailUrl(restaurant)}">${restaurant.name}</a></h2>
+          <h2><a class="title-link" href="${safeDetail}">${safeName}</a></h2>
           ${!hasMenu ? `<div class="sub">Nincs napi menü</div>` : ''}
         </div>
         ${hasMenu ? `<div class="trust-corner"><span class="trust-check ${trust}">✓</span></div>` : ''}
       </div>
       <div class="card-links compact-links">
-        ${restaurant.sourceUrl ? `<a href="${restaurant.sourceUrl}" target="_blank" rel="noreferrer">Eredeti forrás</a>` : ''}
-        <a href="${detailUrl(restaurant)}">Részletek</a>
+        ${safeSource ? `<a href="${safeSource}" target="_blank" rel="noreferrer">Eredeti forrás</a>` : ''}
+        <a href="${safeDetail}">Részletek</a>
       </div>
       ${hasMenu ? menus.map(renderMenuBlock).join('') : ''}
-      ${hasMenu && hint ? `<div class="notes">${hint}</div>` : ''}
+      ${hasMenu && safeHint ? `<div class="notes">${safeHint}</div>` : ''}
     </article>
   `;
 }
@@ -240,5 +261,5 @@ el.favoritesReset.addEventListener('click', () => {
 });
 
 loadFeed().catch(err => {
-  el.cards.innerHTML = `<div class="empty">Nem sikerült betölteni az oldalt. ${err}</div>`;
+  el.cards.innerHTML = `<div class="empty">Nem sikerült betölteni az oldalt. ${escapeHtml(err.message || err)}</div>`;
 });

@@ -66,6 +66,27 @@ def now_iso() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
 
+ALLOWED_PDF_DOMAINS = {"www.nadorvendeglo.hu", "nadorvendeglo.hu", "szalaivendeglo.hu", "www.szalaivendeglo.hu"}
+
+def validate_source_url(url: str | None, meta: dict[str, Any]) -> str | None:
+    """Ensure source URLs are allowed and use https:// where possible."""
+    if not url:
+        return None
+    from urllib.parse import urlparse
+    parsed = urlparse(url)
+    hostname = parsed.hostname or ""
+    # Allow any https:// URL, but reject non-http schemes
+    if parsed.scheme not in ("http", "https"):
+        meta.setdefault("notes", []).append(f"Rejected non-HTTP source URL scheme: {parsed.scheme}")
+        return None
+    # For weekly PDF collectors, validate against allowlist
+    if meta.get("sourceType") in ("website_weekly_pdf", "website_weekly_pdf_listing"):
+        if hostname not in ALLOWED_PDF_DOMAINS:
+            meta.setdefault("notes", []).append(f"Source domain {hostname} not in PDF allowlist")
+            return None
+    return url
+
+
 def parse_price_huf(text: str | None) -> int | None:
     if not text:
         return None
@@ -73,6 +94,21 @@ def parse_price_huf(text: str | None) -> int | None:
     if not digits:
         return None
     return int(digits)
+
+
+def looks_like_food_descriptor(text: str | None) -> bool:
+    """Check if a string is more likely a food descriptor than a price."""
+    if not text:
+        return False
+    t = text.strip()
+    # Hungarian food descriptors commonly appearing in column 3 (price column)
+    food_words = {"zöldsalátával", "savanyúsággal", "párolva", "ropogósra sütve"}
+    if t.lower() in food_words:
+        return True
+    # Contains letters and no digits → not a price
+    if re.search(r'[a-zA-ZáéíóöőúüűÁÉÍÓÖŐÚÜŰ]', t) and not re.search(r'[0-9]', t):
+        return True
+    return False
 
 
 def is_closure_text(text: str | None) -> bool:
@@ -105,7 +141,9 @@ def build_base_restaurant(meta: dict[str, Any]) -> dict[str, Any]:
 def collect_wolt_current(meta: dict[str, Any], ctx: CollectContext) -> list[dict[str, Any]]:
     slug = meta["slug"]
     url = WOLT_TEMPLATE.format(city="gyor", slug=slug)
-    html = requests.get(url, headers=HEADERS, timeout=30).text
+    resp = requests.get(url, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+    html = resp.text
     m = re.search(r'<script type="application/json" class="query-state">(.+?)</script>', html, re.S)
     if not m:
         return []
@@ -165,7 +203,9 @@ def collect_wolt_current(meta: dict[str, Any], ctx: CollectContext) -> list[dict
 
 # ---------- Kristály ----------
 def collect_kristaly_week(meta: dict[str, Any], ctx: CollectContext) -> list[dict[str, Any]]:
-    html = requests.get(KRISTALY_URL, headers=HEADERS, timeout=30).text
+    html = requests.get(KRISTALY_URL, headers=HEADERS, timeout=30)
+    html.raise_for_status()
+    html = html.text
     soup = BeautifulSoup(html, "html.parser")
     section = soup.find("section", id="heti-menu")
     if not section:
@@ -220,15 +260,18 @@ def fetch_nador_pdf(ctx: CollectContext) -> bytes | None:
     monday = current_monday(ctx.today).strftime("%Y%m%d")
     url = NADOR_PDF_BASE.format(monday=monday)
     resp = requests.get(url, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
     return resp.content if resp.status_code == 200 else None
 
 
 def fetch_weekly_pdf_from_listing(meta: dict[str, Any], ctx: CollectContext) -> bytes | None:
-    listing_url = meta.get("sourceUrl")
+    listing_url = validate_source_url(meta.get("sourceUrl"), meta)
     if not listing_url:
         return None
-    html = requests.get(listing_url, headers=HEADERS, timeout=30).text
-    soup = BeautifulSoup(html, "html.parser")
+    html = requests.get(listing_url, headers=HEADERS, timeout=30)
+    html.raise_for_status()
+    html_text = html.text
+    soup = BeautifulSoup(html_text, "html.parser")
     monday_token = ctx.monday.strftime("%Y%m%d")
 
     chosen = None
@@ -245,6 +288,7 @@ def fetch_weekly_pdf_from_listing(meta: dict[str, Any], ctx: CollectContext) -> 
     if not chosen:
         return None
     resp = requests.get(chosen, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
     return resp.content if resp.status_code == 200 else None
 
 
@@ -321,6 +365,11 @@ def parse_fourcol_pdf_week(pdf_bytes: bytes, meta: dict[str, Any], ctx: CollectC
             soup = col[0] if len(col) > 0 else None
             main = col[1] if len(col) > 1 else None
             price_text = col[2] if len(col) > 2 else None
+            # Guard: if column 3 looks like food text, it's likely mis-parsed — treat as extra text instead
+            if price_text and looks_like_food_descriptor(price_text):
+                soup_or_description = price_text
+                price_text = None
+                items[-1]["text"] = " — ".join([p for p in [soup, soup_or_description] if p]) or None
             items.append({
                 "label": labels[idx],
                 "text": " — ".join([p for p in [soup, main] if p]) or None,
@@ -411,19 +460,81 @@ def build_feed() -> dict[str, Any]:
         "weekStart": iso(ctx.monday),
         "restaurants": sorted(restaurants_out, key=lambda r: r["name"]),
     }
+    feed = strip_internal_urls(feed)
     return feed
+
+
+def strip_internal_urls(feed: dict[str, Any]) -> dict[str, Any]:
+    """Remove internal Drive URLs from public feed fields."""
+    drive_pattern = re.compile(r'drive\.google\.com/(?:file|open|drive/folders)/')
+    for restaurant in feed.get("restaurants", []):
+        for menu in restaurant.get("menus", []):
+            if menu.get("sourceUrl") and drive_pattern.search(menu["sourceUrl"]):
+                # Replace internal source with the restaurant's canonical source
+                menu["sourceUrl"] = restaurant.get("sourceUrl", None)
+                if menu.get("sourceLabel", "").startswith("Manual override"):
+                    menu["sourceLabel"] = "Screenshot / manual"
+            # Strip Drive URLs from notes too
+            safe_notes = []
+            for note in menu.get("notes", []):
+                if drive_pattern.search(note):
+                    note = re.sub(r'https?://drive\.google\.com/\S+', '(internal source)', note)
+                safe_notes.append(note)
+            menu["notes"] = safe_notes
+    return feed
+
+
+def validate_feed(feed: dict[str, Any]) -> list[str]:
+    """Validate feed and return list of warnings/errors. Fail loudly on critical issues."""
+    errors = []
+    today = feed.get("today", "")
+    restaurants = feed.get("restaurants", [])
+
+    if not restaurants:
+        errors.append("CRITICAL: feed has zero restaurants — refusing to publish")
+
+    today_menus = 0
+    for r in restaurants:
+        for m in r.get("menus", []):
+            if m.get("date") == today:
+                today_menus += 1
+
+    if today_menus == 0:
+        errors.append("WARNING: no restaurant has a menu for today — data may be stale")
+
+    # Check that each collector didn't silently fail
+    for r in restaurants:
+        notes = r.get("notes", [])
+        collector_errors = [n for n in notes if "error" in n.lower() or "collector error" in n.lower()]
+        if collector_errors:
+            errors.append(f"Collector error for {r['slug']}: {'; '.join(collector_errors)}")
+
+    return errors
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", default=str(PUBLIC_DIR / "data" / "feed.json"))
+    parser.add_argument("--validate-only", action="store_true",
+                        help="Only validate existing feed, don't rebuild")
     args = parser.parse_args()
 
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     feed = build_feed()
+
+    errors = validate_feed(feed)
+    for err in errors:
+        print(f"  [VALIDATION] {err}")
+
+    if any(e.startswith("CRITICAL") for e in errors):
+        print("FATAL: validation errors prevent publishing")
+        raise SystemExit(1)
+
     out_path.write_text(json.dumps(feed, ensure_ascii=False, indent=2))
     print(f"Wrote {out_path}")
+    if errors:
+        print("Non-critical validation warnings above — feed written but review recommended")
 
 
 if __name__ == "__main__":

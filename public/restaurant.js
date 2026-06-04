@@ -19,6 +19,26 @@ function params() {
   return new URLSearchParams(window.location.search);
 }
 
+function saveFavorites() {
+  localStorage.setItem(FAVORITES_KEY, JSON.stringify([...state.favorites]));
+}
+
+function escapeHtml(str) {
+  if (!str && str !== 0) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+function safeUrl(url) {
+  if (!url) return '';
+  if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('./') || url.startsWith('/')) return url;
+  return '';
+}
+
 function formatDateTime(iso) {
   const d = new Date(iso);
   return new Intl.DateTimeFormat('hu-HU', { dateStyle: 'medium', timeStyle: 'short' }).format(d);
@@ -75,8 +95,8 @@ function renderTabs() {
 }
 
 function renderMenuItem(item) {
-  const label = item.label ? `<strong>${item.label}</strong>` : '';
-  const text = item.text ? `<div class="text">${item.text}</div>` : '';
+  const label = item.label ? `<strong>${escapeHtml(item.label)}</strong>` : '';
+  const text = item.text ? `<div class="text">${escapeHtml(item.text)}</div>` : '';
   return `<div class="menu-item">${label}${text}</div>`;
 }
 
@@ -98,15 +118,22 @@ function render() {
   const best = menus[0];
 
   const topUpdated = menus.map(m => m.updatedAt).filter(Boolean).sort().reverse()[0] || '';
-  el.name.textContent = restaurant.name;
-  el.subtitle.textContent = restaurant.address || 'Győr';
-  el.area.textContent = restaurant.area || 'Győr';
+  el.name.textContent = escapeHtml(restaurant.name);
+  el.subtitle.textContent = escapeHtml(restaurant.address || 'Győr');
+  el.area.textContent = escapeHtml(restaurant.area || 'Győr');
   el.updated.textContent = topUpdated ? formatDateTime(topUpdated) : 'Nincs adat';
-  el.links.innerHTML = [
-    restaurant.sourceUrl ? `<a href="${restaurant.sourceUrl}" target="_blank" rel="noreferrer">Eredeti forrás</a>` : '',
-    restaurant.mapUrl ? `<a href="${restaurant.mapUrl}" target="_blank" rel="noreferrer">Térkép</a>` : '',
-    `<a href="./index.html?day=${state.selectedDayIndex}">Vissza a listához</a>`
-  ].filter(Boolean).join('');
+
+  const linkParts = [];
+  if (restaurant.sourceUrl) {
+    const safeSourceUrl = safeUrl(restaurant.sourceUrl);
+    if (safeSourceUrl) linkParts.push(`<a href="${safeSourceUrl}" target="_blank" rel="noreferrer">Eredeti forrás</a>`);
+  }
+  if (restaurant.mapUrl) {
+    const safeMapUrl = safeUrl(restaurant.mapUrl);
+    if (safeMapUrl) linkParts.push(`<a href="${safeMapUrl}" target="_blank" rel="noreferrer">Térkép</a>`);
+  }
+  linkParts.push(`<a href="./index.html?day=${state.selectedDayIndex}">Vissza a listához</a>`);
+  el.links.innerHTML = linkParts.join('');
 
   if (!menus.length) {
     el.menus.innerHTML = `<div class="empty">Ehhez a naphoz jelenleg nincs betöltött menü. Ilyenkor érdemes megnyitni az eredeti forrást.</div>`;
@@ -118,14 +145,14 @@ function render() {
     <article class="card">
       <div class="card-head simple-card-head">
         <div>
-          <h2>${menu.dayNameHu}</h2>
+          <h2>${escapeHtml(menu.dayNameHu)}</h2>
         </div>
         <div class="trust-corner"><span class="trust-check ${trustClass(menu)}">✓</span></div>
       </div>
       <div class="menu-list detail-menu-list">
         ${menu.items.map(renderMenuItem).join('')}
       </div>
-      ${menu.notes?.length ? `<div class="notes">${menu.notes.map(n => `• ${n}`).join('<br>')}</div>` : ''}
+      ${menu.notes?.length ? `<div class="notes">${menu.notes.map(n => `• ${escapeHtml(n)}`).join('<br>')}</div>` : ''}
     </article>
   `).join('');
 }
@@ -144,5 +171,5 @@ el.weekdayTabs.forEach(btn => btn.addEventListener('click', () => {
 }));
 
 loadFeed().catch(err => {
-  el.menus.innerHTML = `<div class="empty">Nem sikerült betölteni az oldalt. ${err}</div>`;
+  el.menus.innerHTML = `<div class="empty">Nem sikerült betölteni az oldalt. ${escapeHtml(err.message || err)}</div>`;
 });

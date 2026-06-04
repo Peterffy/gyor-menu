@@ -33,6 +33,7 @@ WEEKDAYS_EN = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday
 KRISTALY_URL = "https://www.kristalyetterem.hu/"
 WOLT_TEMPLATE = "https://wolt.com/hu/hun/{city}/restaurant/{slug}"
 NADOR_PDF_BASE = "https://www.nadorvendeglo.hu/heti_menu/heti_menu_nador_{monday}.pdf"
+ZOLDFA_PDF_URL = "https://ujzoldfa.hu/index.php?c=hmpdf"
 
 HEADERS = {"User-Agent": "Mozilla/5.0"}
 
@@ -66,7 +67,7 @@ def now_iso() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
 
-ALLOWED_PDF_DOMAINS = {"www.nadorvendeglo.hu", "nadorvendeglo.hu", "szalaivendeglo.hu", "www.szalaivendeglo.hu"}
+ALLOWED_PDF_DOMAINS = {"www.nadorvendeglo.hu", "nadorvendeglo.hu", "szalaivendeglo.hu", "www.szalaivendeglo.hu", "ujzoldfa.hu", "www.ujzoldfa.hu"}
 
 def validate_source_url(url: str | None, meta: dict[str, Any]) -> str | None:
     """Ensure source URLs are allowed and use https:// where possible."""
@@ -400,6 +401,119 @@ def parse_fourcol_pdf_week(pdf_bytes: bytes, meta: dict[str, Any], ctx: CollectC
     return menus
 
 
+# ---------- Új Zöldfa (PDF grid: Leves + Menü A-E, 7 days) ----------
+
+def collect_uj_zoldfa_week(meta: dict[str, Any], ctx: CollectContext) -> list[dict[str, Any]]:
+    resp = requests.get(ZOLDFA_PDF_URL, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+    pdf_bytes = resp.content
+
+    with tempfile.TemporaryDirectory() as tmp:
+        pdf_path = Path(tmp) / "menu.pdf"
+        xml_path = Path(tmp) / "menu.xml"
+        pdf_path.write_bytes(pdf_bytes)
+        subprocess.run(
+            ["pdftohtml", "-xml", "-i", "-nodrm", str(pdf_path), str(xml_path)],
+            check=False, capture_output=True, timeout=30,
+        )
+        tree = ElementTree.parse(str(xml_path))
+
+    page = tree.getroot().find("page")
+    if page is None:
+        return []
+
+    # Collect all text elements with (top, left, content)
+    texts: list[tuple[int, int, str]] = []
+    for el in page.findall("text"):
+        top = int(el.get("top", 0))
+        left = int(el.get("left", 0))
+        content = "".join(el.itertext()).strip()
+        if content:
+            texts.append((top, left, content))
+    texts.sort(key=lambda x: (x[0], x[1]))
+
+    # Column labels: Leves ~231, Menü A ~393, Menü B ~555, Menü C ~717, Menü D ~879, Menü E ~1042
+    # We group by column band (midpoints between header positions)
+    # Using fixed boundaries from observed XML positions with generous slack
+    def col_label(left: int) -> str | None:
+        if 200 <= left < 312:   return "Leves"
+        if 312 <= left < 474:   return "A menü"
+        if 474 <= left < 636:   return "B menü"
+        if 636 <= left < 798:   return "C menü"
+        if 798 <= left < 960:   return "D menü"
+        if left >= 960:          return "E menü"
+        return None  # day name column
+
+    # Find day row boundaries by detecting day name text (left < 200, bold)
+    day_rows: list[tuple[str, int]] = []  # (day_en, top)
+    for top, left, content in texts:
+        if left >= 200:
+            continue
+        hu = content.strip()
+        if hu in WEEKDAYS_HU:
+            day_en = WEEKDAYS_EN[WEEKDAYS_HU.index(hu)]
+            day_rows.append((day_en, top))
+
+    if not day_rows:
+        return []
+
+    # Compute vertical bands for each day
+    day_bands: list[tuple[str, int, int]] = []
+    for i, (day_en, top) in enumerate(day_rows):
+        end = day_rows[i + 1][1] if i + 1 < len(day_rows) else 9999
+        day_bands.append((day_en, top, end))
+
+    date_map = {WEEKDAYS_EN[i]: iso(ctx.monday + timedelta(days=i)) for i in range(7)}
+    menus = []
+
+    for day_en, row_top, row_end in day_bands:
+        # Gather text fragments in this row, grouped by column
+        col_texts: dict[str, list[str]] = {}
+        for top, left, content in texts:
+            if top < row_top or top >= row_end:
+                continue
+            label = col_label(left)
+            if label is None:
+                continue
+            col_texts.setdefault(label, []).append(content)
+
+        if not col_texts:
+            continue
+
+        items = []
+        for label in ["Leves", "A menü", "B menü", "C menü", "D menü", "E menü"]:
+            frags = col_texts.get(label)
+            if not frags:
+                continue
+            # Join fragments, strip trailing allergen codes and prices
+            raw = " ".join(frags)
+            # Strip trailing price (e.g. "4990.-")
+            raw = re.sub(r"\s*\d{3,5}\.-\s*$", "", raw).strip()
+            # Normalise whitespace
+            raw = re.sub(r"\s+", " ", raw).strip()
+            if raw:
+                items.append({"label": label, "text": raw})
+
+        if not items:
+            continue
+        # Skip Saturday/Sunday if it only has a soup (weekends have higher-priced a la carte, not lunch)
+        if day_en in {"saturday", "sunday"} and len(items) == 1 and items[0]["label"] == "Leves":
+            continue
+
+        menus.append({
+            "date": date_map[day_en],
+            "dayNameHu": WEEKDAYS_HU[WEEKDAYS_EN.index(day_en)],
+            "certainty": "exact",
+            "sourceLabel": "Heti menü PDF",
+            "sourceUrl": ZOLDFA_PDF_URL,
+            "updatedAt": now_iso(),
+            "items": items,
+            "notes": [],
+        })
+
+    return menus
+
+
 # ---------- Overrides ----------
 def apply_overrides(restaurants: list[dict[str, Any]], overrides: list[dict[str, Any]]) -> None:
     by_slug = {r["slug"]: r for r in restaurants}
@@ -439,8 +553,11 @@ def build_feed() -> dict[str, Any]:
             elif source_type == "website_weekly_html":
                 base["menus"] = collect_kristaly_week(meta, ctx)
             elif source_type == "website_weekly_pdf":
-                pdf = fetch_nador_pdf(ctx)
-                base["menus"] = parse_fourcol_pdf_week(pdf, meta, ctx) if pdf else []
+                if meta.get("slug") == "uj-zoldfa":
+                    base["menus"] = collect_uj_zoldfa_week(meta, ctx)
+                else:
+                    pdf = fetch_nador_pdf(ctx)
+                    base["menus"] = parse_fourcol_pdf_week(pdf, meta, ctx) if pdf else []
             elif source_type == "website_weekly_pdf_listing":
                 pdf = fetch_weekly_pdf_from_listing(meta, ctx)
                 base["menus"] = parse_fourcol_pdf_week(pdf, meta, ctx) if pdf else []

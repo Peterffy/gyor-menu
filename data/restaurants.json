@@ -80,40 +80,40 @@
     {
       "slug": "komedias-etterem",
       "name": "Komédiás Étterem",
-      "address": "Győr",
-      "area": null,
-      "sourceType": "manual_review_only",
+      "address": "Győr, Czuczor G. u. 30.",
+      "area": "Belváros",
+      "sourceType": "website_menu_image_snapshot",
       "automationStatus": "pending_automation",
-      "sourceUrl": null,
+      "sourceUrl": "https://komediasetterem.hu/index.php/heti-menu",
       "mapUrl": null,
       "notes": [
-        "screenshot_inbox"
+        "Heti menü képként a weboldalon: /images/heti_menu/amenu*.jpg, men-kiegszts.jpg"
       ]
     },
     {
       "slug": "uj-zoldfa",
       "name": "Új Zöldfa",
-      "address": "Győr",
-      "area": null,
-      "sourceType": "manual_review_only",
+      "address": "Győr, Hunyadi u. 2.",
+      "area": "Nádorváros",
+      "sourceType": "website_weekly_pdf",
       "automationStatus": "pending_automation",
-      "sourceUrl": null,
-      "mapUrl": null,
+      "sourceUrl": "https://ujzoldfa.hu/",
+      "mapUrl": "https://maps.app.goo.gl/N84LHvjwyyjgFhbi7",
       "notes": [
-        "screenshot_inbox"
+        "Heti menü PDF generátor: index.php?c=hmpdf"
       ]
     },
     {
       "slug": "klasszis-bisztro",
       "name": "Klasszis Bisztró",
       "address": "Győr",
-      "area": null,
+      "area": "Belváros",
       "sourceType": "manual_review_only",
       "automationStatus": "pending_automation",
-      "sourceUrl": null,
+      "sourceUrl": "https://klasszisbisztro.hu/",
       "mapUrl": null,
       "notes": [
-        "screenshot_inbox"
+        "Napi menü Facebookon (screenshot inbox)"
       ]
     }
   ]

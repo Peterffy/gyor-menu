@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T21:52:19+00:00",
+  "generatedAt": "2026-06-04T22:06:42+00:00",
   "city": "Győr",
   "today": "2026-06-04",
   "tomorrow": "2026-06-05",
@@ -26,7 +26,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
           "items": [
             {
               "label": "Leves",
@@ -65,7 +65,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
           "items": [
             {
               "label": "Leves",
@@ -109,7 +109,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
           "items": [
             {
               "label": "Leves",
@@ -154,7 +154,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
           "items": [
             {
               "label": "Leves",
@@ -198,7 +198,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
           "items": [
             {
               "label": "Leves",
@@ -242,13 +242,13 @@
       "slug": "klasszis-bisztro",
       "name": "Klasszis Bisztró",
       "address": "Győr",
-      "area": null,
+      "area": "Belváros",
       "sourceType": "manual_review_only",
       "automationStatus": "pending_automation",
-      "sourceUrl": null,
+      "sourceUrl": "https://klasszisbisztro.hu/",
       "mapUrl": null,
       "notes": [
-        "screenshot_inbox",
+        "Napi menü Facebookon (screenshot inbox)",
         "This source currently relies on manual review, image-based extraction, or fallback input."
       ],
       "menus": []
@@ -256,14 +256,14 @@
     {
       "slug": "komedias-etterem",
       "name": "Komédiás Étterem",
-      "address": "Győr",
-      "area": null,
-      "sourceType": "manual_review_only",
+      "address": "Győr, Czuczor G. u. 30.",
+      "area": "Belváros",
+      "sourceType": "website_menu_image_snapshot",
       "automationStatus": "pending_automation",
-      "sourceUrl": null,
+      "sourceUrl": "https://komediasetterem.hu/index.php/heti-menu",
       "mapUrl": null,
       "notes": [
-        "screenshot_inbox",
+        "Heti menü képként a weboldalon: /images/heti_menu/amenu*.jpg, men-kiegszts.jpg",
         "This source currently relies on manual review, image-based extraction, or fallback input."
       ],
       "menus": []
@@ -285,7 +285,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-04T21:52:18+00:00",
+          "updatedAt": "2026-06-04T22:06:40+00:00",
           "items": [
             {
               "label": "Leves",
@@ -326,7 +326,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-04T21:52:18+00:00",
+          "updatedAt": "2026-06-04T22:06:40+00:00",
           "items": [
             {
               "label": "Leves",
@@ -367,7 +367,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-04T21:52:18+00:00",
+          "updatedAt": "2026-06-04T22:06:40+00:00",
           "items": [
             {
               "label": "Leves",
@@ -408,7 +408,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-04T21:52:18+00:00",
+          "updatedAt": "2026-06-04T22:06:40+00:00",
           "items": [
             {
               "label": "Leves",
@@ -449,7 +449,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-04T21:52:18+00:00",
+          "updatedAt": "2026-06-04T22:06:40+00:00",
           "items": [
             {
               "label": "Leves",
@@ -490,7 +490,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-04T21:52:18+00:00",
+          "updatedAt": "2026-06-04T22:06:40+00:00",
           "items": [
             {
               "label": "Leves",
@@ -525,7 +525,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-04T21:52:18+00:00",
+          "updatedAt": "2026-06-04T22:06:40+00:00",
           "items": [
             {
               "label": "Leves",
@@ -573,7 +573,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-04T21:52:18+00:00",
+          "updatedAt": "2026-06-04T22:06:41+00:00",
           "items": [
             {
               "label": "A menü",
@@ -608,7 +608,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-04T21:52:18+00:00",
+          "updatedAt": "2026-06-04T22:06:41+00:00",
           "items": [
             {
               "label": "A menü",
@@ -643,7 +643,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-04T21:52:18+00:00",
+          "updatedAt": "2026-06-04T22:06:41+00:00",
           "items": [
             {
               "label": "A menü",
@@ -678,7 +678,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-04T21:52:18+00:00",
+          "updatedAt": "2026-06-04T22:06:41+00:00",
           "items": [
             {
               "label": "A menü",
@@ -713,7 +713,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-04T21:52:18+00:00",
+          "updatedAt": "2026-06-04T22:06:41+00:00",
           "items": [
             {
               "label": "A menü",
@@ -748,7 +748,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-04T21:52:18+00:00",
+          "updatedAt": "2026-06-04T22:06:41+00:00",
           "items": [
             {
               "label": "A menü",
@@ -799,7 +799,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
           "items": [
             {
               "label": "Leves",
@@ -843,7 +843,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
           "items": [
             {
               "label": "Leves",
@@ -888,7 +888,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
           "items": [
             {
               "label": "Leves",
@@ -932,7 +932,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
           "items": [
             {
               "label": "Leves",
@@ -991,7 +991,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:41+00:00",
           "items": [
             {
               "label": "A menü",
@@ -1026,7 +1026,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:41+00:00",
           "items": [
             {
               "label": "A menü",
@@ -1061,7 +1061,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:41+00:00",
           "items": [
             {
               "label": "A menü",
@@ -1096,7 +1096,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:41+00:00",
           "items": [
             {
               "label": "A menü",
@@ -1146,7 +1146,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1180,7 +1180,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1214,7 +1214,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1248,7 +1248,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1282,7 +1282,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1317,7 +1317,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-04T21:52:19+00:00",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1351,17 +1351,254 @@
     {
       "slug": "uj-zoldfa",
       "name": "Új Zöldfa",
-      "address": "Győr",
-      "area": null,
-      "sourceType": "manual_review_only",
+      "address": "Győr, Hunyadi u. 2.",
+      "area": "Nádorváros",
+      "sourceType": "website_weekly_pdf",
       "automationStatus": "pending_automation",
-      "sourceUrl": null,
-      "mapUrl": null,
+      "sourceUrl": "https://ujzoldfa.hu/",
+      "mapUrl": "https://maps.app.goo.gl/N84LHvjwyyjgFhbi7",
       "notes": [
-        "screenshot_inbox",
-        "This source currently relies on manual review, image-based extraction, or fallback input."
+        "Heti menü PDF generátor: index.php?c=hmpdf"
       ],
-      "menus": []
+      "menus": [
+        {
+          "date": "2026-06-01",
+          "dayNameHu": "Hétfő",
+          "certainty": "exact",
+          "sourceLabel": "Heti menü PDF",
+          "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "tésztával/G,T,Z/ vagy francia hagymaleves/G,L/"
+            },
+            {
+              "label": "A menü",
+              "text": "galuskával /G,L,T/"
+            },
+            {
+              "label": "B menü",
+              "text": "pörkölt feltéttel/G,L/"
+            },
+            {
+              "label": "C menü",
+              "text": "pörccel/G,T,L/"
+            },
+            {
+              "label": "D menü",
+              "text": "sokmagvas bundában pestós saláta és sült burgonya/G,T, Magok/"
+            },
+            {
+              "label": "E menü",
+              "text": "zöldséges rizzsel"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "date": "2026-06-02",
+          "dayNameHu": "Kedd",
+          "certainty": "exact",
+          "sourceLabel": "Heti menü PDF",
+          "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "Frankfurti leves/SZÓ,L,G/ vagy Ribizlis szilvakrém leves/L/"
+            },
+            {
+              "label": "A menü",
+              "text": "Sonkával és sajttal töltött borda rántva vegyes köret/G,L,T/"
+            },
+            {
+              "label": "B menü",
+              "text": "Carbonara spagetti sajttal szórva/G,L,T/"
+            },
+            {
+              "label": "C menü",
+              "text": "Lencsefőzelék sült virslivel/G,L,M/"
+            },
+            {
+              "label": "D menü",
+              "text": "Cheddar sajtos borjú Burger,/G,L,T/"
+            },
+            {
+              "label": "E menü",
+              "text": "Csirkemell baconban sült paprika mártás rizs"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "date": "2026-06-03",
+          "dayNameHu": "Szerda",
+          "certainty": "exact",
+          "sourceLabel": "Heti menü PDF",
+          "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "Román burgonyaleves /G,T,Z/ vagy Gyümölcs leves/L/"
+            },
+            {
+              "label": "A menü",
+              "text": "Rántott szelt hasábburgonyával, joghurtos kukorica salátával/G,T,L/"
+            },
+            {
+              "label": "B menü",
+              "text": "Töltött csirkecomb petrezselymes burgonyával/G,L,T/"
+            },
+            {
+              "label": "C menü",
+              "text": "Sertés paprikás galuskával/G,T,L/"
+            },
+            {
+              "label": "D menü",
+              "text": "Tökfőzelék fasírttal/G,T,L/"
+            },
+            {
+              "label": "E menü",
+              "text": "Roston csirkemell friss saláta és rizs"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "date": "2026-06-04",
+          "dayNameHu": "Csütörtök",
+          "certainty": "exact",
+          "sourceLabel": "Heti menü PDF",
+          "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "Kapros zöldségleves burgonya gombóccal/G,L,T/ vagy Joghurtos áfonya-meggy leves/L,K/"
+            },
+            {
+              "label": "A menü",
+              "text": "Csirkemell zöldbors mártás petrezselymes burgonya- rizs/G,L/"
+            },
+            {
+              "label": "B menü",
+              "text": "Lyoni máj, burgonya/G,/"
+            },
+            {
+              "label": "C menü",
+              "text": "Zöldséges lazacos tako, lime öntet/T,L,G/"
+            },
+            {
+              "label": "D menü",
+              "text": "Rántott gombafejek rizzsel, tartármártással/G,T,L,M/"
+            },
+            {
+              "label": "E menü",
+              "text": "Zelleres rizottó grill csirkecsíkokkal/Z/"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "date": "2026-06-05",
+          "dayNameHu": "Péntek",
+          "certainty": "exact",
+          "sourceLabel": "Heti menü PDF",
+          "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "Grúz raguleves /G,M,L,T/ vagy Mangó -ananász leves/L/ Húsleves"
+            },
+            {
+              "label": "A menü",
+              "text": "Csülkös velős pacal burgonya/G,/ Vörös boros"
+            },
+            {
+              "label": "B menü",
+              "text": "Hawaii csirkemell rizzsel, friss salátával/L,G/ Roston Csirkemell, friss"
+            },
+            {
+              "label": "C menü",
+              "text": "Rántott hal csemegeuborkás majonézzel hasábburgonya/G,L,T/ Camembert sajtkrémmel"
+            },
+            {
+              "label": "D menü",
+              "text": "Szilvásgombóc fahéjas cukorral. /G,T,L/"
+            },
+            {
+              "label": "E menü",
+              "text": "Csicseriborsó fasírt friss salátán/T/"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "date": "2026-06-06",
+          "dayNameHu": "Szombat",
+          "certainty": "exact",
+          "sourceLabel": "Heti menü PDF",
+          "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "tésztával/G,T,Z/"
+            },
+            {
+              "label": "A menü",
+              "text": "marhapörkölt juhtúrós sztrapacskával/G,L,T/"
+            },
+            {
+              "label": "B menü",
+              "text": "salátával, sültburgonyával/G,/"
+            },
+            {
+              "label": "C menü",
+              "text": "töltött rántott borda rizzsel és friss saláta/G,L,T/"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "date": "2026-06-07",
+          "dayNameHu": "Vasárnap",
+          "certainty": "exact",
+          "sourceLabel": "Heti menü PDF",
+          "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
+          "updatedAt": "2026-06-04T22:06:42+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "Húsleves májgaluskával /G,T,Z/"
+            },
+            {
+              "label": "A menü",
+              "text": "Tüzes bélszíncsíkok grill zöldség, petrezselymes burgonya"
+            },
+            {
+              "label": "B menü",
+              "text": "Sertés szűz tejszínes gombamártással rizzsel/G,L/5590.- Jelmagyarázat: Földimogyoró, D - Dió, Sz - Szója, Sze - Szezámmag, M - Mustár"
+            },
+            {
+              "label": "C menü",
+              "text": "Cordon csirkemell vegyes körettel/G,L,T/ 5990.- G - Glutén, L - Laktóz/Tej, T - Tojás, P - Puhatestű, K - Kukorica, Z - Zeller, H - Halak, F -"
+            },
+            {
+              "label": "D menü",
+              "text": "Mahui mahi grill zöldség és petrezselymes burgonya, mangó csatni"
+            },
+            {
+              "label": "E menü",
+              "text": "1 / 1"
+            }
+          ],
+          "notes": []
+        }
+      ]
     }
   ]
 }

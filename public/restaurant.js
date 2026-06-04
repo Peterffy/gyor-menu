@@ -93,7 +93,8 @@ function renderTabs() {
     btn.classList.toggle('past', idx < current);
     btn.classList.toggle('today', idx === current);
     const dateStr = weekDates[idx] ? weekDates[idx].slice(5) : '';
-    btn.innerHTML = `${WEEKDAYS_HU[idx]} <small>${dateStr}</small>`;
+    const prefix = idx === current ? 'Ma · ' : '';
+    btn.innerHTML = `${prefix}${WEEKDAYS_HU[idx]} <small>${dateStr}</small>`;
   });
 }
 
@@ -135,7 +136,6 @@ function render() {
     const safeMapUrl = safeUrl(restaurant.mapUrl);
     if (safeMapUrl) linkParts.push(`<a href="${safeMapUrl}" target="_blank" rel="noreferrer">Térkép</a>`);
   }
-  linkParts.push(`<a href="./index.html?day=${state.selectedDayIndex}">Vissza a listához</a>`);
   el.links.innerHTML = linkParts.join('');
 
   if (!menus.length) {
@@ -144,13 +144,14 @@ function render() {
   }
 
   const trustClass = (menu) => menu.certainty === 'manual' ? 'trust-manual' : menu.certainty === 'exact' ? 'trust-exact' : 'trust-snapshot';
+  const trustSymbol = (menu) => menu.certainty === 'exact' ? '✓' : menu.certainty === 'manual' ? '⚡' : '◷';
   el.menus.innerHTML = menus.map(menu => `
     <article class="card">
       <div class="card-head simple-card-head">
         <div>
           <h2>${escapeHtml(menu.dayNameHu)}</h2>
         </div>
-        <div class="trust-corner"><span class="trust-check ${trustClass(menu)}">✓</span></div>
+        <div class="trust-corner"><span class="trust-check ${trustClass(menu)}">${trustSymbol(menu)}</span></div>
       </div>
       <div class="menu-list detail-menu-list">
         ${menu.items.map(renderMenuItem).join('')}

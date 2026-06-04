@@ -18,13 +18,12 @@ a { color: var(--brand); text-decoration: none; }
 a:hover { text-decoration: underline; }
 button, input, select { font: inherit; }
 .app-shell { max-width: 960px; margin: 0 auto; padding: 14px 14px 40px; }
-.hero { background: linear-gradient(140deg, #1f4de0, #4a73f0); color: #fff; padding: 18px; border-radius: 22px; box-shadow: var(--shadow); display: grid; gap: 10px; }
-.compact-hero { margin-bottom: 12px; }
-.eyebrow { margin: 0 0 6px; opacity: .86; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
-.hero h1 { margin: 0 0 6px; font-size: 32px; line-height: 1.05; }
-.subtitle { margin: 0; font-size: 15px; line-height: 1.45; opacity: .93; }
-.hero-meta { display: flex; gap: 10px; flex-wrap: wrap; }
-.meta-pill { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 8px 12px; display: flex; gap: 8px; align-items: center; backdrop-filter: blur(10px); font-size: 14px; }
+.hero { background: linear-gradient(140deg, #1f4de0, #4a73f0); color: #fff; padding: 14px 18px; border-radius: 18px; box-shadow: var(--shadow); }
+.compact-hero { margin-bottom: 10px; }
+.hero-row { display: flex; justify-content: space-between; align-items: center; }
+.hero h1 { margin: 0; font-size: 26px; line-height: 1.1; }
+.hero-meta { display: flex; gap: 8px; }
+.meta-pill { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 5px 10px; display: flex; gap: 6px; align-items: center; backdrop-filter: blur(10px); font-size: 13px; }
 .hero-back { color: white; }
 .day-tabs-panel, .favorites-panel, .detail-links-panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; box-shadow: var(--shadow); margin-top: 12px; }
 .weekday-tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
@@ -53,6 +52,7 @@ button, input, select { font: inherit; }
 .simple-card-head { justify-content: space-between; }
 .card h2 { margin: 0 0 4px; font-size: 22px; }
 .card .sub { color: var(--muted); font-size: 14px; }
+.area-chip { display: inline-block; font-size: 12px; color: var(--muted); background: var(--bg); padding: 2px 8px; border-radius: 6px; margin-top: 4px; }
 .title-link { color: inherit; text-decoration: none; }
 .title-link:hover { text-decoration: underline; }
 .trust-corner { display: flex; align-items: center; justify-content: center; min-width: 34px; }

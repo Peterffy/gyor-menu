@@ -107,7 +107,8 @@ function renderTabs() {
     btn.classList.toggle('past', idx < current);
     btn.classList.toggle('today', idx === current);
     const dateStr = weekDates[idx] ? weekDates[idx].slice(5) : '';
-    btn.innerHTML = `${WEEKDAYS_HU[idx]} <small>${dateStr}</small>`;
+    const prefix = idx === current ? 'Ma · ' : '';
+    btn.innerHTML = `${prefix}${WEEKDAYS_HU[idx]} <small>${dateStr}</small>`;
   });
 }
 
@@ -192,22 +193,33 @@ function trustClass(menus) {
   return 'trust-snapshot';
 }
 
+function trustLabel(menus) {
+  if (!menus.length) return '';
+  if (menus.some(m => m.certainty === 'exact')) return 'Ellenőrzött';
+  if (menus.some(m => m.certainty === 'manual')) return 'Kézi';
+  if (menus.some(m => m.certainty === 'current_snapshot')) return 'Élő forrás';
+  return '';
+}
+
 function renderRestaurantCard({ restaurant, menus, hasMenu }) {
   const hint = restaurantHint(menus);
   const trust = trustClass(menus);
+  const tlabel = trustLabel(menus);
   const safeName = escapeHtml(restaurant.name);
   const safeSlug = escapeHtml(restaurant.slug);
   const safeSource = safeUrl(restaurant.sourceUrl);
   const safeDetail = `./restaurant.html?slug=${encodeURIComponent(restaurant.slug)}&day=${state.selectedDayIndex}`;
   const safeHint = escapeHtml(hint);
+  const safeArea = escapeHtml(restaurant.area || '');
   return `
     <article class="card ${state.favorites.has(restaurant.slug) ? 'favorite-card' : ''}" id="${safeSlug}">
       <div class="card-head simple-card-head">
         <div>
           <h2><a class="title-link" href="${safeDetail}">${safeName}</a></h2>
+          ${safeArea ? `<span class="area-chip">${safeArea}</span>` : ''}
           ${!hasMenu ? `<div class="sub">Nincs napi menü</div>` : ''}
         </div>
-        ${hasMenu ? `<div class="trust-corner"><span class="trust-check ${trust}">✓</span></div>` : ''}
+        ${hasMenu && tlabel ? `<div class="trust-corner"><span class="trust-check ${trust}">${tlabel === 'Ellenőrzött' ? '✓' : tlabel === 'Kézi' ? '⚡' : '◷'}</span></div>` : ''}
       </div>
       <div class="card-links compact-links">
         ${safeSource ? `<a href="${safeSource}" target="_blank" rel="noreferrer">Eredeti forrás</a>` : ''}

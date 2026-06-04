@@ -2,7 +2,7 @@
 
 Mobile-first lunch menu aggregator for Győr.
 
-See what's for lunch today at local restaurants — no fluff, no prices, just menus.
+See what's for lunch today at local restaurants — no fluff, just menus.
 
 **Live:** `https://gyor-menu.vercel.app`
 

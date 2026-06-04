@@ -101,10 +101,13 @@ function restaurantWeight(record) {
 
 function renderTabs() {
   const current = getCurrentWeekdayIndex();
+  const weekDates = getWeekDates();
   el.weekdayTabs.forEach((btn, idx) => {
     btn.classList.toggle('active', idx === state.selectedDayIndex);
     btn.classList.toggle('past', idx < current);
     btn.classList.toggle('today', idx === current);
+    const dateStr = weekDates[idx] ? weekDates[idx].slice(5) : '';
+    btn.innerHTML = `${WEEKDAYS_HU[idx]} <small>${dateStr}</small>`;
   });
 }
 

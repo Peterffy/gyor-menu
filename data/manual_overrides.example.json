@@ -1,0 +1,15 @@
+{
+  "overrides": [
+    {
+      "slug": "john-bull-pub",
+      "date": "2026-06-01",
+      "certainty": "manual",
+      "sourceUrl": "https://www.facebook.com/example-post",
+      "notes": ["Manual entry from Facebook image"],
+      "items": [
+        {"label": "Leves", "text": "Paradicsomleves", "priceHuf": null},
+        {"label": "A", "text": "Rántott sajt hasábburgonyával", "priceHuf": 2990}
+      ]
+    }
+  ]
+}

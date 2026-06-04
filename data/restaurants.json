@@ -1,0 +1,81 @@
+{
+  "city": "Győr",
+  "sourceSheetId": "1cT-KT1nKCrWW9z9Y7pzurpkPLEN2YyPL5VJj6vnTGms",
+  "restaurants": [
+    {
+      "slug": "sziget-bisztro",
+      "name": "Sziget Bisztró",
+      "address": "9025 Győr, Híd u. 7.",
+      "area": "Sziget",
+      "sourceType": "wolt_current",
+      "automationStatus": "snapshot",
+      "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
+      "mapUrl": "https://maps.google.com/?q=9025+Gy%C5%91r,+H%C3%ADd+u.+7",
+      "notes": [
+        "Wolt shows a current menu snapshot but usually not an explicit date."
+      ]
+    },
+    {
+      "slug": "kristaly-etterem",
+      "name": "Kristály Étterem",
+      "address": "9023 Győr, Bartók Béla út 9.",
+      "area": "Nádorváros",
+      "sourceType": "website_weekly_html",
+      "automationStatus": "exact",
+      "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
+      "mapUrl": "https://maps.google.com/?q=9023+Gy%C5%91r,+Bart%C3%B3k+B%C3%A9la+%C3%BAt+9",
+      "notes": []
+    },
+    {
+      "slug": "nador-vendeglo",
+      "name": "Nádor Vendéglő",
+      "address": "9023 Győr, Corvin utca 36-38.",
+      "area": "Nádorváros",
+      "sourceType": "website_weekly_pdf",
+      "automationStatus": "exact",
+      "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
+      "mapUrl": "https://maps.google.com/?q=9023+Gy%C5%91r,+Corvin+utca+36-38",
+      "notes": []
+    },
+    {
+      "slug": "john-bull-pub",
+      "name": "John Bull Pub",
+      "address": "9021 Győr, Aradi vértanúk útja 3.",
+      "area": "Belváros",
+      "sourceType": "facebook_unstructured",
+      "automationStatus": "unsupported",
+      "sourceUrl": "https://www.facebook.com/lilienthalbt",
+      "mapUrl": "https://maps.google.com/?q=9021+Gy%C5%91r,+Aradi+v%C3%A9rtan%C3%BAk+%C3%BAtja+3",
+      "notes": [
+        "Likely Facebook-only daily menu source.",
+        "Needs either direct post URLs, OCR on menu images, or manual override."
+      ]
+    },
+    {
+      "slug": "szalai-vendeglo",
+      "name": "Szalai Vendéglő",
+      "address": "9022 Győr, Kisfaludy u. 34.",
+      "area": "Belváros",
+      "sourceType": "website_weekly_pdf_listing",
+      "automationStatus": "exact",
+      "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
+      "mapUrl": "https://maps.google.com/?q=9022+Gy%C5%91r,+Kisfaludy+u.+34",
+      "notes": [
+        "Weekly PDF menu listed on the restaurant website."
+      ]
+    },
+    {
+      "slug": "rado-by-westy",
+      "name": "Radó by Westy",
+      "address": "9025 Győr, Radó sétány 1.",
+      "area": "Belváros",
+      "sourceType": "website_menu_image_snapshot",
+      "automationStatus": "snapshot",
+      "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
+      "mapUrl": "https://maps.google.com/?q=9025+Gy%C5%91r,+Rad%C3%B3+s%C3%A9t%C3%A1ny+1",
+      "notes": [
+        "Website weekly menu currently appears as an image-based snapshot; use review rows if needed."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Győr Menü – Étterem</title>
+  <meta name="description" content="Győri étterem részletes menüoldala.">
+  <link rel="stylesheet" href="./styles.css?v=20260603e">
+</head>
+<body>
+  <div class="app-shell detail-shell">
+    <header class="hero compact-hero">
+      <div>
+        <p class="eyebrow"><a class="hero-back" href="./index.html">← Vissza a listához</a></p>
+        <h1 id="detail-name">Betöltés…</h1>
+        <p class="subtitle" id="detail-subtitle">Részletesebb nézet a kiválasztott étteremhez.</p>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-pill"><span>📍</span><span id="detail-area">Győr</span></div>
+        <div class="meta-pill"><span>⏱️</span><span id="detail-updated">Betöltés…</span></div>
+      </div>
+    </header>
+
+    <section class="day-tabs-panel">
+      <div class="weekday-tabs" id="weekday-tabs" role="tablist" aria-label="Hét napjai">
+        <button class="weekday-tab" data-day-index="0">Hétfő</button>
+        <button class="weekday-tab" data-day-index="1">Kedd</button>
+        <button class="weekday-tab" data-day-index="2">Szerda</button>
+        <button class="weekday-tab" data-day-index="3">Csütörtök</button>
+        <button class="weekday-tab" data-day-index="4">Péntek</button>
+        <button class="weekday-tab" data-day-index="5">Szombat</button>
+        <button class="weekday-tab" data-day-index="6">Vasárnap</button>
+      </div>
+    </section>
+
+    <section class="detail-links-panel">
+      <div class="card-links detail-links" id="detail-links"></div>
+    </section>
+
+    <main>
+      <section class="cards" id="detail-menus"></section>
+      <section class="bottom-legend">
+        <div class="legend-item-inline"><span class="trust-check trust-exact">✓</span><span>Ellenőrzött menü</span></div>
+        <div class="legend-item-inline"><span class="trust-check trust-snapshot">✓</span><span>Élő forrásból jön, indulás előtt érdemes ránézni</span></div>
+        <div class="legend-item-inline"><span class="trust-check trust-manual">✓</span><span>Kézi ellenőrzéssel került be</span></div>
+      </section>
+    </main>
+  </div>
+  <script src="./restaurant.js?v=20260603f" defer></script>
+</body>
+</html>

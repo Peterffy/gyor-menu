@@ -1,0 +1,24 @@
+{
+  "rootFolderId": "1vvEfxJdk-nbIiWmOuE1WGXApdidGMCyT",
+  "rootFolderName": "Menu Screenshots",
+  "restaurants": [
+    {
+      "slug": "john-bull-pub",
+      "restaurantName": "John Bull Pub",
+      "inboxFolderId": "1z4yW70fpxQCGHV8wYWtL-ycS8wWV2Gla",
+      "processedFolderId": "1LmV4FtUPqISje3WFQcXcgQrqOjQcF6gT",
+      "archiveFolderId": "1-a728iUcO-5_uvMrSluiLkWaY2K9peMW",
+      "expectedSource": "facebook_unstructured",
+      "namingRule": "YYYY-MM-DD-description.jpg"
+    },
+    {
+      "slug": "sziget-bisztro",
+      "restaurantName": "Sziget Bisztró",
+      "inboxFolderId": "1no0asEGxWF5i24uA1FXWakVY_WNik0Fl",
+      "processedFolderId": "1O1WO8GFlFmSOzG_4o9-ActOIoLEB5cBm",
+      "archiveFolderId": "1U7_z_asmLacWkXGw6AGRBR-EjEbflurc",
+      "expectedSource": "facebook_weekly_screenshot",
+      "namingRule": "YYYY-MM-DD-description.jpg"
+    }
+  ]
+}

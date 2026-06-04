@@ -1,0 +1,20 @@
+# Dependencies
+__pycache__/
+*.pyc
+.env
+.env.*
+
+# Temp files
+tmp/
+*.log
+.DS_Store
+
+# VSCode / editor
+.vscode/
+.idea/
+
+# Generated runtime artifacts (not source)
+data/restaurants_sheet_values.json
+data/review_sheet_values.json
+data/screenshot_inbox_manifest.json
+data/manual_overrides.json

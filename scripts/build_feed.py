@@ -213,7 +213,11 @@ def collect_kristaly_week(meta: dict[str, Any], ctx: CollectContext) -> list[dic
 
     date_map = map_dates_for_current_week(ctx)
     menus = []
-    for row in section.select(".table .day-row"):
+    # Only take the first table (current week) — the site sometimes shows two weeks
+    first_table = section.select_one(".table")
+    if not first_table:
+        return []
+    for row in first_table.select(".day-row"):
         day_el = row.select_one(".day")
         if not day_el:
             continue

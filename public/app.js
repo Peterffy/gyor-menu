@@ -153,10 +153,10 @@ function detailUrl(restaurant) {
 
 function sortVisible(records) {
   records.sort((a, b) => {
-    const menuDiff = Number(b.hasMenu) - Number(a.hasMenu);
-    if (menuDiff !== 0) return menuDiff;
     const favDiff = Number(state.favorites.has(b.restaurant.slug)) - Number(state.favorites.has(a.restaurant.slug));
     if (favDiff !== 0) return favDiff;
+    const menuDiff = Number(b.hasMenu) - Number(a.hasMenu);
+    if (menuDiff !== 0) return menuDiff;
     const byWeight = restaurantWeight(a) - restaurantWeight(b);
     if (byWeight !== 0) return byWeight;
     return a.restaurant.name.localeCompare(b.restaurant.name, 'hu');

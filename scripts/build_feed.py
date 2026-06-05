@@ -13,6 +13,7 @@ import subprocess
 import tempfile
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
+from io import BytesIO
 from pathlib import Path
 from typing import Any
 from urllib.parse import urljoin
@@ -20,6 +21,7 @@ from xml.etree import ElementTree
 
 import requests
 from bs4 import BeautifulSoup
+from PIL import Image, ImageOps
 
 BASE = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE / "data"
@@ -514,6 +516,192 @@ def collect_uj_zoldfa_week(meta: dict[str, Any], ctx: CollectContext) -> list[di
     return menus
 
 
+# ---------- Komédiás (weekly website image OCR) ----------
+
+def fetch_komedias_menu_image_url(meta: dict[str, Any]) -> str | None:
+    page_url = meta.get("sourceUrl") or "https://komediasetterem.hu/index.php/heti-menu"
+    resp = requests.get(page_url, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+    soup = BeautifulSoup(resp.text, "html.parser")
+    candidates: list[str] = []
+    for img in soup.find_all("img"):
+        src = (img.get("src") or "").strip()
+        if not src:
+            continue
+        lower = src.lower()
+        if "/images/heti_menu/" not in lower:
+            continue
+        if re.search(r"/amenu\d+\.(jpg|jpeg|png)$", lower):
+            candidates.append(urljoin(page_url, src))
+    return candidates[0] if candidates else None
+
+
+def ocr_hun_image_crop(img: Image.Image, box: tuple[int, int, int, int], psm: str = "6") -> str:
+    crop = img.crop(box).convert("L")
+    crop = ImageOps.autocontrast(crop)
+    crop = crop.resize((crop.width * 3, crop.height * 3), Image.Resampling.LANCZOS)
+    with tempfile.TemporaryDirectory() as tmp:
+        in_path = Path(tmp) / "crop.png"
+        out_base = Path(tmp) / "ocr"
+        crop.save(in_path)
+        subprocess.run(
+            ["tesseract", str(in_path), str(out_base), "-l", "hun", "--psm", psm],
+            check=False,
+            capture_output=True,
+            timeout=30,
+        )
+        txt_path = out_base.with_suffix(".txt")
+        if not txt_path.exists():
+            return ""
+        return txt_path.read_text(errors="ignore")
+
+
+def clean_ocr_fragment(text: str) -> str:
+    text = text.replace("|", " ")
+    replacements = {
+        "fÍriss": "friss",
+        "Íriss": "friss",
+        "tooston": "Roston",
+        "toston": "Roston",
+        "ppparadicsommal": "paradicsommal",
+        "pparadicsommal": "paradicsommal",
+        "pparadicsom": "paradicsom",
+        "aradicsom": "paradicsom",
+        "C(öménymag": "Köménymag",
+        "Koöoménymag": "Köménymag",
+        "BBrassói": "Brassói",
+        "rassói": "Brassói",
+        "nhorkával": "uborkával",
+        "jföllel": "tejföllel",
+        "tetejföllel": "tejföllel",
+        "chips el": "chips-el",
+        "rizibizivelés": "rizibizivel és",
+        "rizzselés": "rizzsel és",
+    }
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+    text = re.sub(r"\bp+paradicsommal\b", "paradicsommal", text)
+    text = re.sub(r"\bp+paradicsom\b", "paradicsom", text)
+    text = re.sub(r"\bBBrassói\b", "Brassói", text)
+    text = text.replace("sütvel", "sütve")
+    text = text.replace("(G,,T)", "(G,L,T)")
+    text = text.replace("kukoricapelyhes;", "kukoricapelyhes")
+    # remove common standalone OCR allergen debris outside parentheses
+    text = re.sub(r"(?<!\()\b(?:IGT|GT|G|L|T|IG)\b(?!\))", "", text)
+    text = text.replace("[", " ").replace("]", " ")
+    text = re.sub(r"\bte\s*$", "", text)
+    text = re.sub(r"\b([js])\b", "", text)
+    text = re.sub(r"\s+", " ", text)
+    text = re.sub(r"\s+([,.;:)])", r"\1", text)
+    text = re.sub(r"^[;:,.!\s]+", "", text)
+    return text.strip(" -|\n\t")
+
+
+def parse_komedias_cell(text: str) -> tuple[str | None, str | None]:
+    lines = [clean_ocr_fragment(x) for x in text.splitlines() if clean_ocr_fragment(x)]
+    if not lines:
+        return None, None
+    soup_lines: list[str] = []
+    rest: list[str] = []
+    seen_non_soup = False
+    soup_wrap_markers = ("chips", "kenyérkock", "gombóccal", "taco", "pirított")
+    for line in lines:
+        lower = line.lower()
+        is_probable_junk = len(re.sub(r"[^a-záéíóöőúüűA-ZÁÉÍÓÖŐÚÜŰ]", "", line)) <= 2
+        if is_probable_junk:
+            continue
+        if not seen_non_soup and (
+            "leves" in lower
+            or (soup_lines and any(marker in lower for marker in soup_wrap_markers))
+        ):
+            soup_lines.append(line)
+            continue
+        seen_non_soup = True
+        rest.append(line)
+    soup = clean_ocr_fragment(" ".join(soup_lines)) if soup_lines else None
+    main = clean_ocr_fragment(" ".join(rest)) if rest else None
+    return soup, main
+
+
+def collect_komedias_week(meta: dict[str, Any], ctx: CollectContext) -> list[dict[str, Any]]:
+    img_url = fetch_komedias_menu_image_url(meta)
+    if not img_url:
+        return []
+    resp = requests.get(img_url, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+    img = Image.open(BytesIO(resp.content))
+    width, height = img.size
+
+    def rx(v: int) -> int:
+        return round(v / 1488 * width)
+
+    def ry(v: int) -> int:
+        return round(v / 2104 * height)
+
+    cols = {
+        "A": (rx(170), rx(590)),
+        "B": (rx(590), rx(960)),
+        "V": (rx(960), rx(1360)),
+    }
+    rows = [
+        ("monday", ry(620), ry(790)),
+        ("tuesday", ry(790), ry(965)),
+        ("wednesday", ry(965), ry(1145)),
+        ("thursday", ry(1145), ry(1325)),
+        ("friday", ry(1325), ry(1515)),
+    ]
+
+    menus = []
+    date_map = {WEEKDAYS_EN[i]: iso(ctx.monday + timedelta(days=i)) for i in range(7)}
+    for day_en, y1, y2 in rows:
+        a_text = ocr_hun_image_crop(img, (cols["A"][0], y1, cols["A"][1], y2))
+        b_text = ocr_hun_image_crop(img, (cols["B"][0], y1, cols["B"][1], y2))
+        v_text = ocr_hun_image_crop(img, (cols["V"][0], y1, cols["V"][1], y2))
+
+        soup_a, main_a = parse_komedias_cell(a_text)
+        soup_b, main_b = parse_komedias_cell(b_text)
+        soup_v, main_v = parse_komedias_cell(v_text)
+
+        if soup_v and main_v and main_v.lower().startswith("el (l)"):
+            soup_v = clean_ocr_fragment(f"{soup_v}-el (L)")
+            main_v = clean_ocr_fragment(re.sub(r"^el \(l\)\s*", "", main_v, flags=re.I))
+
+        items: list[dict[str, Any]] = []
+        if soup_a or soup_b:
+            soup_ab = soup_a or soup_b
+            if soup_ab:
+                items.append({"label": "Leves (A+B)", "text": soup_ab})
+        if soup_v and soup_v != (soup_a or soup_b):
+            items.append({"label": "Leves (Vega)", "text": soup_v})
+        if main_a:
+            items.append({"label": "A menü", "text": main_a})
+        if main_b:
+            items.append({"label": "B menü", "text": main_b})
+        if main_v:
+            items.append({"label": "Vega", "text": main_v})
+
+        # Guardrails against OCR junk
+        items = [it for it in items if it.get("text") and len(it["text"].strip()) > 6]
+        if not items:
+            continue
+
+        menus.append({
+            "date": date_map[day_en],
+            "dayNameHu": WEEKDAYS_HU[WEEKDAYS_EN.index(day_en)],
+            "certainty": "current_snapshot",
+            "sourceLabel": "Website menu image OCR",
+            "sourceUrl": img_url,
+            "updatedAt": now_iso(),
+            "items": items,
+            "notes": [
+                "Parsed from Komédiás weekly menu image on the website.",
+                "OCR-based extraction; minor text errors may remain."
+            ],
+        })
+
+    return menus
+
+
 # ---------- Overrides ----------
 def apply_overrides(restaurants: list[dict[str, Any]], overrides: list[dict[str, Any]]) -> None:
     by_slug = {r["slug"]: r for r in restaurants}
@@ -561,7 +749,14 @@ def build_feed() -> dict[str, Any]:
             elif source_type == "website_weekly_pdf_listing":
                 pdf = fetch_weekly_pdf_from_listing(meta, ctx)
                 base["menus"] = parse_fourcol_pdf_week(pdf, meta, ctx) if pdf else []
-            elif source_type in {"facebook_unstructured", "manual_review_only", "website_menu_image_snapshot"}:
+            elif source_type == "website_menu_image_snapshot":
+                if meta.get("slug") == "komedias-etterem":
+                    base["menus"] = collect_komedias_week(meta, ctx)
+                else:
+                    base["notes"] = base.get("notes", []) + [
+                        "This source currently relies on manual review, image-based extraction, or fallback input."
+                    ]
+            elif source_type in {"facebook_unstructured", "manual_review_only"}:
                 base["notes"] = base.get("notes", []) + [
                     "This source currently relies on manual review, image-based extraction, or fallback input."
                 ]

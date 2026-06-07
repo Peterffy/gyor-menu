@@ -1,4 +1,5 @@
 const FAVORITES_KEY = 'gyor-menu-favorites-v2';
+const REPORT_FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSf6AunOQ15BUC4FcisN_DqhRKsKrr3oMdyyCxClZATe3Hasyg/viewform?usp=pp_url';
 const WEEKDAYS_HU = ['Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat', 'Vasárnap'];
 
 const state = {
@@ -151,6 +152,20 @@ function detailUrl(restaurant) {
   return `./restaurant.html?slug=${encodeURIComponent(restaurant.slug)}&day=${state.selectedDayIndex}`;
 }
 
+function reportUrl(restaurant) {
+  const params = new URLSearchParams();
+  params.set('entry.5bd74c55', restaurant.name || '');
+  const date = selectedDate() || '';
+  if (/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    const [year, month, day] = date.split('-');
+    params.set('entry.1da9156f_year', year);
+    params.set('entry.1da9156f_month', String(Number(month)));
+    params.set('entry.1da9156f_day', String(Number(day)));
+  }
+  params.set('entry.48615b8a', restaurant.sourceUrl || window.location.href);
+  return `${REPORT_FORM_BASE}&${params.toString()}`;
+}
+
 function sortVisible(records) {
   records.sort((a, b) => {
     const favDiff = Number(state.favorites.has(b.restaurant.slug)) - Number(state.favorites.has(a.restaurant.slug));
@@ -209,6 +224,7 @@ function renderRestaurantCard({ restaurant, menus, hasMenu }) {
   const safeSlug = escapeHtml(restaurant.slug);
   const safeSource = safeUrl(restaurant.sourceUrl);
   const safeDetail = `./restaurant.html?slug=${encodeURIComponent(restaurant.slug)}&day=${state.selectedDayIndex}`;
+  const safeReport = reportUrl(restaurant);
   const safeHint = escapeHtml(hint);
   const safeArea = escapeHtml(restaurant.area || '');
   return `
@@ -224,6 +240,7 @@ function renderRestaurantCard({ restaurant, menus, hasMenu }) {
       <div class="card-links compact-links">
         ${safeSource ? `<a href="${safeSource}" target="_blank" rel="noreferrer">Eredeti forrás</a>` : ''}
         <a href="${safeDetail}">Részletek</a>
+        <a href="${safeReport}">Hiba jelzése</a>
       </div>
       ${hasMenu ? menus.map(renderMenuBlock).join('') : ''}
       ${hasMenu && safeHint ? `<div class="notes">${safeHint}</div>` : ''}

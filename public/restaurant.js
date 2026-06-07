@@ -1,3 +1,4 @@
+const REPORT_FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSf6AunOQ15BUC4FcisN_DqhRKsKrr3oMdyyCxClZATe3Hasyg/viewform?usp=pp_url';
 const WEEKDAYS_HU = ['Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat', 'Vasárnap'];
 
 const state = {
@@ -85,6 +86,20 @@ function updateUrl() {
   history.replaceState({}, '', `${window.location.pathname}?${p.toString()}`);
 }
 
+function reportUrl(restaurant) {
+  const p = new URLSearchParams();
+  p.set('entry.5bd74c55', restaurant.name || '');
+  const date = selectedDate() || '';
+  if (/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    const [year, month, day] = date.split('-');
+    p.set('entry.1da9156f_year', year);
+    p.set('entry.1da9156f_month', String(Number(month)));
+    p.set('entry.1da9156f_day', String(Number(day)));
+  }
+  p.set('entry.48615b8a', restaurant.sourceUrl || window.location.href);
+  return `${REPORT_FORM_BASE}&${p.toString()}`;
+}
+
 function renderTabs() {
   const current = getCurrentWeekdayIndex();
   const weekDates = getWeekDates();
@@ -136,6 +151,7 @@ function render() {
     const safeMapUrl = safeUrl(restaurant.mapUrl);
     if (safeMapUrl) linkParts.push(`<a href="${safeMapUrl}" target="_blank" rel="noreferrer">Térkép</a>`);
   }
+  linkParts.push(`<a href="${reportUrl(restaurant)}">Hiba jelzése</a>`);
   el.links.innerHTML = linkParts.join('');
 
   if (!menus.length) {

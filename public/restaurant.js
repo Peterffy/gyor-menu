@@ -45,9 +45,19 @@ function formatDateTime(iso) {
   return new Intl.DateTimeFormat('hu-HU', { dateStyle: 'medium', timeStyle: 'short' }).format(d);
 }
 
+function getBudapestTodayIso() {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Europe/Budapest',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).formatToParts(new Date());
+  const byType = Object.fromEntries(parts.filter(p => p.type !== 'literal').map(p => [p.type, p.value]));
+  return `${byType.year}-${byType.month}-${byType.day}`;
+}
+
 function getCurrentWeekdayIndex() {
-  if (!state.feed?.today) return 0;
-  const [y, m, d] = state.feed.today.split('-').map(Number);
+  const [y, m, d] = getBudapestTodayIso().split('-').map(Number);
   const today = new Date(y, m - 1, d);
   const js = today.getDay();
   const mondayBased = js === 0 ? 6 : js - 1;
@@ -55,11 +65,13 @@ function getCurrentWeekdayIndex() {
 }
 
 function getWeekDates() {
-  if (!state.feed?.weekStart) return [];
-  const [y, m, d] = state.feed.weekStart.split('-').map(Number);
+  const [y, m, d] = getBudapestTodayIso().split('-').map(Number);
+  const today = new Date(y, m - 1, d);
+  const mondayOffset = today.getDay() === 0 ? -6 : 1 - today.getDay();
+  const monday = new Date(y, m - 1, d + mondayOffset);
   const dates = [];
   for (let i = 0; i < 7; i++) {
-    const dt = new Date(y, m - 1, d + i);
+    const dt = new Date(monday.getFullYear(), monday.getMonth(), monday.getDate() + i);
     const yy = dt.getFullYear();
     const mm = String(dt.getMonth() + 1).padStart(2, '0');
     const dd = String(dt.getDate()).padStart(2, '0');

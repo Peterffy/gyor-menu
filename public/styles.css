@@ -77,6 +77,10 @@ button, input, select { font: inherit; }
 .site-footer { margin-top: 18px; padding: 8px 2px 0; color: var(--muted); font-size: 13px; text-align: center; }
 .site-footer a { color: var(--muted); }
 .site-footer a:hover { color: var(--brand); }
+.feedback-cta-card { margin-top: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.feedback-cta-card h2 { margin: 0 0 4px; font-size: 18px; }
+.feedback-cta-card p { margin: 0; color: var(--muted); font-size: 14px; }
+.inline-btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; white-space: nowrap; }
 .empty { background: var(--surface); border: 1px dashed var(--line); border-radius: 18px; padding: 16px; color: var(--muted); }
 @media (min-width: 760px) {
   .hero { grid-template-columns: 1.2fr auto; align-items: end; }

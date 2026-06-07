@@ -14,6 +14,7 @@ const el = {
   generatedAt: document.getElementById('generated-at'),
   favoriteList: document.getElementById('favorite-list'),
   favoritesReset: document.getElementById('favorites-reset'),
+  suggestionLink: document.getElementById('restaurant-suggestion-link'),
   weekdayTabs: Array.from(document.querySelectorAll('.weekday-tab')),
 };
 function loadFavorites() {
@@ -166,6 +167,13 @@ function reportUrl(restaurant) {
   return `${REPORT_FORM_BASE}&${params.toString()}`;
 }
 
+function restaurantSuggestionUrl() {
+  const params = new URLSearchParams();
+  params.set('entry.208dde45', 'Étterem javaslása');
+  params.set('entry.48615b8a', window.location.href);
+  return `${REPORT_FORM_BASE}&${params.toString()}`;
+}
+
 function sortVisible(records) {
   records.sort((a, b) => {
     const favDiff = Number(state.favorites.has(b.restaurant.slug)) - Number(state.favorites.has(a.restaurant.slug));
@@ -276,6 +284,7 @@ async function loadFeed() {
   state.feed = await res.json();
   state.selectedDayIndex = getCurrentWeekdayIndex();
   readUrlState();
+  if (el.suggestionLink) el.suggestionLink.href = restaurantSuggestionUrl();
   renderFavoritePicker();
   render();
 }

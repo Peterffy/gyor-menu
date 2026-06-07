@@ -260,7 +260,7 @@ function renderRestaurantCard({ restaurant, menus, hasMenu }) {
       <div class="card-links compact-links">
         ${safeSource ? `<a href="${safeSource}" target="_blank" rel="noreferrer">Eredeti forrás</a>` : ''}
         <a href="${safeDetail}">Részletek</a>
-        <a href="${safeReport}">Hiba jelzése</a>
+        <a href="${safeReport}" target="_blank" rel="noreferrer">Hiba jelzése</a>
       </div>
       ${hasMenu ? menus.map(renderMenuBlock).join('') : ''}
       ${hasMenu && safeHint ? `<div class="notes">${safeHint}</div>` : ''}

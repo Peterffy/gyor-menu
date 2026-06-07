@@ -163,7 +163,7 @@ function render() {
     const safeMapUrl = safeUrl(restaurant.mapUrl);
     if (safeMapUrl) linkParts.push(`<a href="${safeMapUrl}" target="_blank" rel="noreferrer">Térkép</a>`);
   }
-  linkParts.push(`<a href="${reportUrl(restaurant)}">Hiba jelzése</a>`);
+  linkParts.push(`<a href="${reportUrl(restaurant)}" target="_blank" rel="noreferrer">Hiba jelzése</a>`);
   el.links.innerHTML = linkParts.join('');
 
   if (!menus.length) {

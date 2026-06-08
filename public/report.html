@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <title>Győr Menü – Hiba jelzése</title>
+  <meta name="description" content="Pontatlan vagy hiányos menüadat jelzése a Győr Menü oldalon.">
+  <link rel="stylesheet" href="./styles.css?v=20260608brand6">
+</head>
+<body>
+  <div class="app-shell detail-shell">
+    <section class="hero-card detail-hero-card">
+      <div class="hero-skyline" aria-hidden="true"></div>
+      <div class="hero-topline">
+        <a class="brand-lockup" href="./index.html" aria-label="Mi a menü? — főoldal">
+          <img class="brand-logo" src="./assets/brand/logo.png" alt="Mi a menü? — Győr">
+        </a>
+        <a class="hero-back" href="./index.html">← Vissza</a>
+      </div>
+      <div class="hero-text">
+        <h1>Hiba jelzése</h1>
+        <p class="subtitle">Segíts javítani a menüadatokat egy rövid jelzéssel.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="card report-card">
+        <div class="report-context">
+          <div><strong>Étterem:</strong> <span id="report-restaurant">Betöltés…</span></div>
+          <div><strong>Dátum:</strong> <span id="report-date">Betöltés…</span></div>
+        </div>
+
+        <form id="report-form" class="report-form">
+          <label>
+            <span>Mi a probléma?</span>
+            <select id="issue-type" required>
+              <option value="">Válassz hibakategóriát…</option>
+              <option>Nincs frissítve</option>
+              <option>Nem ehhez a naphoz tartozik</option>
+              <option>Hiányos menü</option>
+              <option>Rossz étterem / rossz forrás</option>
+              <option>Bezárt / nincs ma menü</option>
+              <option>Más hiba</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Rövid megjegyzés (opcionális)</span>
+            <textarea id="issue-note" rows="5" placeholder="Pl. a Facebook-poszt alapján ma más a leves / nincs menü / a forrás rossz hetet mutat."></textarea>
+          </label>
+
+          <div class="report-actions">
+            <button type="submit" class="primary-btn">Jelzés megnyitása emailben</button>
+          </div>
+
+          <p class="notes">A gomb az email alkalmazásodat nyitja meg egy előtöltött hibajelzéssel. Küldés előtt még szerkesztheted.</p>
+        </form>
+      </section>
+
+      <section class="site-footer">
+        <a href="./adatkezeles.html">Adatkezelési tájékoztató</a>
+      </section>
+    </main>
+  </div>
+  <script src="./report.js?v=20260608brand6" defer></script>
+</body>
+</html>

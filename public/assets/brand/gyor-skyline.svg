@@ -1,0 +1,20 @@
+<svg width="1200" height="220" viewBox="0 0 1200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20 180H115" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round"/>
+  <path d="M115 180V132H155V180" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M155 180V94H210V180" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M210 180V116H260V180" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M290 180V84H344V180" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M344 84L370 58L396 84" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M396 180V84" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round"/>
+  <path d="M432 180V126H494V180" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M534 180V70H594V180" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M594 180V105H644V180" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M685 180V122H742V180" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M742 180V84H800V180" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M842 180V96H900V180" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M900 96L924 70L948 96" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M948 180V96" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round"/>
+  <path d="M986 180V116H1040V180" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1040 180V134H1094V180" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1094 180H1180" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round"/>
+</svg>

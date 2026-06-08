@@ -1,0 +1,19 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gmGrad" x1="24" y1="20" x2="136" y2="140" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4B7BFF"/>
+      <stop offset="1" stop-color="#1A46D8"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="128" height="128" rx="34" fill="url(#gmGrad)"/>
+  <path d="M80 38C60.1 38 44 53.6 44 72.8C44 98.8 76.4 123.3 78 124.5C79.2 125.4 80.8 125.4 82 124.5C83.6 123.3 116 98.8 116 72.8C116 53.6 99.9 38 80 38Z" fill="white" fill-opacity="0.16"/>
+  <circle cx="80" cy="74" r="24" fill="white"/>
+  <circle cx="80" cy="74" r="17" fill="#EEF3FF"/>
+  <path d="M69 65V87" stroke="#1F4FDE" stroke-width="5.5" stroke-linecap="round"/>
+  <path d="M63 65V75" stroke="#1F4FDE" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M69 65V75" stroke="#1F4FDE" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M75 65V75" stroke="#1F4FDE" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M90 63V87" stroke="#1F4FDE" stroke-width="5.5" stroke-linecap="round"/>
+  <path d="M90 63C95 63 98 66.2 98 70.7C98 75.2 95 78.4 90 78.4" stroke="#1F4FDE" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M52 111C59 104 68 100 80 100C92 100 101 104 108 111" stroke="white" stroke-opacity="0.35" stroke-width="4" stroke-linecap="round"/>
+</svg>

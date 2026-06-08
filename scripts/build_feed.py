@@ -357,7 +357,11 @@ def parse_fourcol_pdf_week(pdf_bytes: bytes, meta: dict[str, Any], ctx: CollectC
     sorted_days = sorted(day_positions.items(), key=lambda x: x[1])
     boundaries = []
     for i, (day_en, top_pos) in enumerate(sorted_days):
-        start = (sorted_days[i - 1][1] + top_pos) // 2 if i > 0 else 0
+        if i > 0:
+            start = (sorted_days[i - 1][1] + top_pos) // 2
+        else:
+            # first day should skip the PDF title/header but still include the soup row above the day label
+            start = max(0, top_pos - 40)
         end = (top_pos + sorted_days[i + 1][1]) // 2 if i + 1 < len(sorted_days) else 9999
         boundaries.append((day_en, start, end, top_pos))
 
@@ -375,9 +379,6 @@ def parse_fourcol_pdf_week(pdf_bytes: bytes, meta: dict[str, Any], ctx: CollectC
         return 3
 
     for day_en, start, end, label_top in boundaries:
-        if day_en == "monday":
-            # Monday in the current PDF format often just means closed.
-            continue
         bucket = [(left, content) for top, left, content in texts if start <= top < end and top != label_top]
         cols: dict[int, list[str]] = {0: [], 1: [], 2: [], 3: []}
         for left, content in bucket:

@@ -31,6 +31,20 @@ OVERRIDES_PATH = DATA_DIR / "manual_overrides.json"
 
 WEEKDAYS_HU = ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"]
 WEEKDAYS_EN = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+MONTHS_HU = {
+    "január": 1,
+    "február": 2,
+    "március": 3,
+    "április": 4,
+    "május": 5,
+    "június": 6,
+    "július": 7,
+    "augusztus": 8,
+    "szeptember": 9,
+    "október": 10,
+    "november": 11,
+    "december": 12,
+}
 
 KRISTALY_URL = "https://www.kristalyetterem.hu/"
 WOLT_TEMPLATE = "https://wolt.com/hu/hun/{city}/restaurant/{slug}"
@@ -67,6 +81,11 @@ def hu_day(d: date) -> str:
 
 def now_iso() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+
+
+def parse_hu_month_date(year: int, month_name: str, day: int) -> date:
+    month = MONTHS_HU[month_name.strip().lower()]
+    return date(year, month, day)
 
 
 ALLOWED_PDF_DOMAINS = {"www.nadorvendeglo.hu", "nadorvendeglo.hu", "szalaivendeglo.hu", "www.szalaivendeglo.hu", "ujzoldfa.hu", "www.ujzoldfa.hu"}
@@ -516,6 +535,175 @@ def collect_uj_zoldfa_week(meta: dict[str, Any], ctx: CollectContext) -> list[di
     return menus
 
 
+# ---------- Carmen (weekly HTML menu) ----------
+
+def collect_carmen_week(meta: dict[str, Any], ctx: CollectContext) -> list[dict[str, Any]]:
+    url = meta.get("sourceUrl") or "https://www.carmenetterem.hu/hu/business-menu"
+    resp = requests.get(url, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+    soup = BeautifulSoup(resp.text, "html.parser")
+    article = soup.find("section", class_="article") or soup.find("article") or soup
+    lines = [re.sub(r"\s+", " ", x).strip() for x in article.get_text("\n", strip=True).splitlines()]
+    lines = [x for x in lines if x]
+
+    m = re.search(r"(\d{4})\.\s*([A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+)\s*(\d{1,2})-(\d{1,2})\.", " ".join(lines))
+    if not m:
+        return []
+    year = int(m.group(1))
+    month_name = m.group(2)
+    start_day = int(m.group(3))
+    monday = parse_hu_month_date(year, month_name, start_day)
+    date_map = {WEEKDAYS_HU[i]: iso(monday + timedelta(days=i)) for i in range(5)}
+
+    menus = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if line not in WEEKDAYS_HU[:5]:
+            i += 1
+            continue
+        day_name = line
+        i += 1
+        day_lines = []
+        while i < len(lines) and lines[i] not in WEEKDAYS_HU[:5]:
+            day_lines.append(lines[i])
+            i += 1
+
+        items = []
+        soups = []
+        j = 0
+        while j < len(day_lines) and day_lines[j] != "A:":
+            cur = day_lines[j]
+            if cur in {"Leves", "DÉLI MENÜ", "Napi ajándék desszert"} or cur.startswith("(") or "Ft" in cur:
+                j += 1
+                continue
+            soups.append(cur)
+            j += 1
+        if soups:
+            items.append({"label": "Leves", "text": " / ".join(soups)})
+
+        while j < len(day_lines):
+            label = day_lines[j]
+            if label not in {"A:", "B:", "C:", "X:"}:
+                j += 1
+                continue
+            pretty = {"A:": "A menü", "B:": "B menü", "C:": "C menü", "X:": "X menü"}[label]
+            j += 1
+            chunks = []
+            while j < len(day_lines) and day_lines[j] not in {"A:", "B:", "C:", "X:"}:
+                cur = day_lines[j]
+                if cur.startswith("(") or "Ft" in cur or cur == "Napi ajándék desszert":
+                    j += 1
+                    continue
+                chunks.append(cur)
+                j += 1
+            if chunks:
+                items.append({"label": pretty, "text": " ".join(chunks)})
+
+        if items:
+            menus.append({
+                "date": date_map[day_name],
+                "dayNameHu": day_name,
+                "certainty": "exact",
+                "sourceLabel": "Weekly website menu",
+                "sourceUrl": url,
+                "updatedAt": now_iso(),
+                "items": items,
+                "notes": [],
+            })
+    return menus
+
+
+# ---------- Marcal (weekly HTML text menu) ----------
+
+def collect_marcal_week(meta: dict[str, Any], ctx: CollectContext) -> list[dict[str, Any]]:
+    url = meta.get("sourceUrl") or "https://marcal-etterem.hu/heti-menu/"
+    resp = requests.get(url, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+    soup = BeautifulSoup(resp.text, "html.parser")
+    text = soup.get_text("\n", strip=True)
+    # split by explicit dated day blocks on the page
+    matches = list(re.finditer(r"(\d{4})\.(\d{2})\.(\d{2})\.\s*-?\s*([A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+)", text))
+    menus = []
+    for idx, m in enumerate(matches):
+        day_block_start = m.start()
+        day_block_end = matches[idx + 1].start() if idx + 1 < len(matches) else len(text)
+        block = text[day_block_start:day_block_end]
+        # Ignore metadata/header matches; real menu blocks contain Levesek very near the top
+        if "Levesek" not in block[:500]:
+            continue
+        d = date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
+        day_name = WEEKDAYS_HU[d.weekday()]
+        if day_name not in WEEKDAYS_HU[1:6]:  # Marcal is Tue-Sat
+            continue
+        lines = [re.sub(r"\s+", " ", x).strip() for x in block.splitlines()]
+        lines = [x for x in lines if x]
+
+        items = []
+        soups = []
+        menu_heading_idx = None
+        for idx2, line2 in enumerate(lines):
+            if line2 in {"Napi menüajánlatunk", "Menüajánlatunk"}:
+                menu_heading_idx = idx2
+                break
+        j = 0
+        while j < len(lines) and (menu_heading_idx is None or j < menu_heading_idx):
+            cur = lines[j]
+            if cur in {m.group(0), day_name, "Levesek", f"- {day_name}", f"{day_name}"} or cur.startswith("2026.") or cur.startswith("("):
+                j += 1
+                continue
+            if cur in {"P", "éntek"}:
+                j += 1
+                continue
+            if "Desszertek" in cur or "Szuper menü" in cur or "Allergének" in cur:
+                break
+            if "Ft" not in cur and len(cur) > 2:
+                soups.append(cur)
+            j += 1
+        if soups:
+            items.append({"label": "Levesek", "text": " / ".join(soups[:4])})
+
+        # variable daily menu options until Desszertek / Szuper menü
+        if menu_heading_idx is not None:
+            start = menu_heading_idx + 1
+            mains = []
+            for cur in lines[start:]:
+                if cur.startswith("Desszertek") or cur.startswith("Szuper menü") or cur.startswith("Allergének"):
+                    break
+                if cur in {"P", "éntek"}:
+                    continue
+                if "Ft" in cur or cur.startswith("Elvitelre") or cur.startswith("Minden napi menü") or cur.startswith("Halászlé+"):
+                    continue
+                mains.append(cur)
+            for n, meal in enumerate(mains[:6], 1):
+                items.append({"label": f"Napi menü {n}", "text": meal})
+
+        if "Szuper menü" in lines:
+            start = lines.index("Szuper menü") + 1
+            supers = []
+            for cur in lines[start:]:
+                if cur.startswith("Allergének") or cur.startswith("Minden napi menü"):
+                    break
+                if "Ft" in cur or cur.startswith("El") or cur.startswith("helyben") or cur.startswith("vitelre") or cur.startswith("Minden napi menü") or cur.startswith("Halászlé+"):
+                    continue
+                supers.append(cur)
+            for n, meal in enumerate(supers[:3], 1):
+                items.append({"label": f"Szuper menü {n}", "text": meal})
+
+        if items:
+            menus.append({
+                "date": iso(d),
+                "dayNameHu": day_name,
+                "certainty": "exact",
+                "sourceLabel": "Weekly website menu",
+                "sourceUrl": url,
+                "updatedAt": now_iso(),
+                "items": items,
+                "notes": [],
+            })
+    return menus
+
+
 # ---------- Komédiás (weekly website image OCR) ----------
 
 def fetch_komedias_menu_image_url(meta: dict[str, Any]) -> str | None:
@@ -739,7 +927,14 @@ def build_feed() -> dict[str, Any]:
             if source_type == "wolt_current":
                 base["menus"] = collect_wolt_current(meta, ctx)
             elif source_type == "website_weekly_html":
-                base["menus"] = collect_kristaly_week(meta, ctx)
+                if meta.get("slug") == "kristaly-etterem":
+                    base["menus"] = collect_kristaly_week(meta, ctx)
+                elif meta.get("slug") == "carmen-etterem":
+                    base["menus"] = collect_carmen_week(meta, ctx)
+                elif meta.get("slug") == "marcal-etterem":
+                    base["menus"] = collect_marcal_week(meta, ctx)
+                else:
+                    base["notes"] = base.get("notes", []) + ["Unsupported weekly HTML collector"]
             elif source_type == "website_weekly_pdf":
                 if meta.get("slug") == "uj-zoldfa":
                     base["menus"] = collect_uj_zoldfa_week(meta, ctx)

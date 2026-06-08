@@ -1,10 +1,176 @@
 {
-  "generatedAt": "2026-06-05T01:11:08+00:00",
+  "generatedAt": "2026-06-08T07:00:26+00:00",
   "city": "Győr",
-  "today": "2026-06-05",
-  "tomorrow": "2026-06-06",
-  "weekStart": "2026-06-01",
+  "today": "2026-06-08",
+  "tomorrow": "2026-06-09",
+  "weekStart": "2026-06-08",
   "restaurants": [
+    {
+      "slug": "carmen-etterem",
+      "name": "Carmen Étterem",
+      "address": "9024 Győr, Kálvária u. 22/D.",
+      "area": "Nádorváros",
+      "sourceType": "website_weekly_html",
+      "automationStatus": "exact",
+      "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
+      "mapUrl": null,
+      "notes": [
+        "Structured business menu page on website."
+      ],
+      "menus": [
+        {
+          "date": "2026-06-08",
+          "dayNameHu": "Hétfő",
+          "certainty": "exact",
+          "sourceLabel": "Weekly website menu",
+          "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "Frankfurti leves"
+            },
+            {
+              "label": "A menü",
+              "text": "Bakonyi ragu, főtt tészta"
+            },
+            {
+              "label": "B menü",
+              "text": "Muszaka csirkehússal"
+            },
+            {
+              "label": "C menü",
+              "text": "Szezámmagos halfilé, jázmin rizs, majonézes kukoricasaláta"
+            },
+            {
+              "label": "X menü",
+              "text": "Sült zöldségek, gremolata, jázmin rizs"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "date": "2026-06-09",
+          "dayNameHu": "Kedd",
+          "certainty": "exact",
+          "sourceLabel": "Weekly website menu",
+          "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "Spárgakrémleves, levesgyöngy"
+            },
+            {
+              "label": "A menü",
+              "text": "Rántott csirkemáj, petrezselymes burgonya, savanyúság"
+            },
+            {
+              "label": "B menü",
+              "text": "Cigánypecsenye, steak burgonya, savanyúság"
+            },
+            {
+              "label": "C menü",
+              "text": "Hawaii csirkemell, jázmin rizs"
+            },
+            {
+              "label": "X menü",
+              "text": "Stir-fry zöldbab, szezámmag, jázmin rizs"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "date": "2026-06-10",
+          "dayNameHu": "Szerda",
+          "certainty": "exact",
+          "sourceLabel": "Weekly website menu",
+          "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "Gombakrémleves, sajtos kruton"
+            },
+            {
+              "label": "A menü",
+              "text": "Kemencés sült, törtburgonya, párolt káposzta, pecsenyelé"
+            },
+            {
+              "label": "B menü",
+              "text": "Cheddarral és baconnel töltött karaj, hasábburgonya, savanyúság"
+            },
+            {
+              "label": "C menü",
+              "text": "Roston csirke, görög saláta, pácolt feta, olíva"
+            },
+            {
+              "label": "X menü",
+              "text": "Grillezett tofu, görög saláta, olíva"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "date": "2026-06-11",
+          "dayNameHu": "Csütörtök",
+          "certainty": "exact",
+          "sourceLabel": "Weekly website menu",
+          "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "Húsleves gazdagon"
+            },
+            {
+              "label": "A menü",
+              "text": "Töltött paprika"
+            },
+            {
+              "label": "B menü",
+              "text": "Szűzérmék, erdeigomba-ragu, pirított gnocchi"
+            },
+            {
+              "label": "C menü",
+              "text": "Panko morzsás csirkemell, hasábburgonya, savanyúság"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "date": "2026-06-12",
+          "dayNameHu": "Péntek",
+          "certainty": "exact",
+          "sourceLabel": "Weekly website menu",
+          "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "Szárnyas-raguleves"
+            },
+            {
+              "label": "A menü",
+              "text": "Mac and cheese tépett hússal"
+            },
+            {
+              "label": "B menü",
+              "text": "Rántott camembert, jázmin rizs, áfonyamártás"
+            },
+            {
+              "label": "C menü",
+              "text": "Roston csirkemell, tzatziki, házi steakburgonya"
+            },
+            {
+              "label": "X menü",
+              "text": "Vegán gombapaprikás, főtt tészta A menük gyümölcslevessel is választhatóak. A menüváltoztatás jogát fenntartjuk. Az ételek allergén tartalmát a következő számokkal jelöljük: 1=glutén, 2=rák, 3=tojás, 4=hal, 5=mogyoró, 6=szója, 7=laktóz, 8=dió, 9=zeller, 10=mustár, 11=szezámmag, 12=kén-dioxid és SO2-ben szulfitok 10mg/kg, illetve 10mg/liter koncentrációt meghaladó mennyiség, 13=csillagfürt (farkasbabliszt, lupinliszt), 14=puhatestű"
+            }
+          ],
+          "notes": []
+        }
+      ]
+    },
     {
       "slug": "john-bull-pub",
       "name": "John Bull Pub",
@@ -26,7 +192,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -65,7 +231,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -109,7 +275,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -154,7 +320,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -198,7 +364,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -258,7 +424,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -299,7 +465,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -340,7 +506,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -381,7 +547,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -422,7 +588,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -478,7 +644,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -513,7 +679,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -548,7 +714,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -583,7 +749,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -618,7 +784,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves (A+B+Vega)",
@@ -646,6 +812,176 @@
             }
           ],
           "notes": []
+        },
+        {
+          "date": "2026-06-08",
+          "dayNameHu": "Hétfő",
+          "certainty": "current_snapshot",
+          "sourceLabel": "Website menu image OCR",
+          "sourceUrl": "https://komediasetterem.hu/images/heti_menu/amenu24.jpg",
+          "updatedAt": "2026-06-08T07:00:22+00:00",
+          "items": [
+            {
+              "label": "Leves (A+B)",
+              "text": "Tojás leves"
+            },
+            {
+              "label": "Leves (Vega)",
+              "text": "levesgyönggyel (G,L)"
+            },
+            {
+              "label": "A menü",
+              "text": "Roston csirkemell csőben sült karfiollal, hasábburgonyávalésI.LÍ n marinált friss salátával"
+            },
+            {
+              "label": "B menü",
+              "text": "Rántott csirkemáj GL najonézes-almás kukorica i salátával"
+            },
+            {
+              "label": "Vega",
+              "text": "Sajttal töltött gombafejek rántva rizibizivel és tartármártácsal (GTT)"
+            }
+          ],
+          "notes": [
+            "Parsed from Komédiás weekly menu image on the website.",
+            "OCR-based extraction; minor text errors may remain."
+          ]
+        },
+        {
+          "date": "2026-06-09",
+          "dayNameHu": "Kedd",
+          "certainty": "current_snapshot",
+          "sourceLabel": "Website menu image OCR",
+          "sourceUrl": "https://komediasetterem.hu/images/heti_menu/amenu24.jpg",
+          "updatedAt": "2026-06-08T07:00:22+00:00",
+          "items": [
+            {
+              "label": "Leves (A+B)",
+              "text": "Vajgaluska leves"
+            },
+            {
+              "label": "Leves (Vega)",
+              "text": "levesgyönggyel (G,L)"
+            },
+            {
+              "label": "A menü",
+              "text": "Töltött paprika főtt ép burgonyával"
+            },
+            {
+              "label": "B menü",
+              "text": "Cordon bleu sertéshúsból GL rizzsel és ropogós salátával dj joghurtos dresszinggel"
+            },
+            {
+              "label": "Vega",
+              "text": "Sajttal töltött gombafejek rántva rizibizivel és tartármártással (GT.L)"
+            }
+          ],
+          "notes": [
+            "Parsed from Komédiás weekly menu image on the website.",
+            "OCR-based extraction; minor text errors may remain."
+          ]
+        },
+        {
+          "date": "2026-06-10",
+          "dayNameHu": "Szerda",
+          "certainty": "current_snapshot",
+          "sourceLabel": "Website menu image OCR",
+          "sourceUrl": "https://komediasetterem.hu/images/heti_menu/amenu24.jpg",
+          "updatedAt": "2026-06-08T07:00:23+00:00",
+          "items": [
+            {
+              "label": "Leves (A+B)",
+              "text": "Ppparadicsom leves"
+            },
+            {
+              "label": "Leves (Vega)",
+              "text": "Zellerkrém leves"
+            },
+            {
+              "label": "A menü",
+              "text": "Csirkemell csíkok édes savanyú mártásban snidlinges bulgurral! és friss salátával"
+            },
+            {
+              "label": "B menü",
+              "text": "Milánói borda (rántott sertésszelet milánói spagettivel ?"
+            },
+            {
+              "label": "Vega",
+              "text": "Sajttal töltött gombafejek rántva rizibizivel és tartármártással (GT,"
+            }
+          ],
+          "notes": [
+            "Parsed from Komédiás weekly menu image on the website.",
+            "OCR-based extraction; minor text errors may remain."
+          ]
+        },
+        {
+          "date": "2026-06-11",
+          "dayNameHu": "Csütörtök",
+          "certainty": "current_snapshot",
+          "sourceLabel": "Website menu image OCR",
+          "sourceUrl": "https://komediasetterem.hu/images/heti_menu/amenu24.jpg",
+          "updatedAt": "2026-06-08T07:00:24+00:00",
+          "items": [
+            {
+              "label": "Leves (A+B)",
+              "text": "Burgonya leves"
+            },
+            {
+              "label": "Leves (Vega)",
+              "text": "Zellerkrém leves levesgyönggyel (G,L)"
+            },
+            {
+              "label": "A menü",
+              "text": "Tarjával, lila hagymával és sajttal töltött sertésszelet rántva GE; b petrezselymes burgonyával és házi ( vegyes salátával"
+            },
+            {
+              "label": "B menü",
+              "text": "Roston csirkemell azsalikomos sajtmártássalés Í gombás rizzsel"
+            },
+            {
+              "label": "Vega",
+              "text": "Sajttal töltött gyombafejek rántva rizibizivel és tartármártással (G,,"
+            }
+          ],
+          "notes": [
+            "Parsed from Komédiás weekly menu image on the website.",
+            "OCR-based extraction; minor text errors may remain."
+          ]
+        },
+        {
+          "date": "2026-06-12",
+          "dayNameHu": "Péntek",
+          "certainty": "current_snapshot",
+          "sourceLabel": "Website menu image OCR",
+          "sourceUrl": "https://komediasetterem.hu/images/heti_menu/amenu24.jpg",
+          "updatedAt": "2026-06-08T07:00:24+00:00",
+          "items": [
+            {
+              "label": "Leves (A+B)",
+              "text": "Zellerkrem leves GL levesgyönggyel \""
+            },
+            {
+              "label": "Leves (Vega)",
+              "text": "Zellerkrém leves levesgyönggyel (G,L)"
+            },
+            {
+              "label": "A menü",
+              "text": "Halfilé kukoricapelyhes bundában dollár burgonyával és remoulád di mártással"
+            },
+            {
+              "label": "B menü",
+              "text": "Sörben sütött sertéstarja pecsenyelével póréhagymás törtburgonyával és csemege uborkával"
+            },
+            {
+              "label": "Vega",
+              "text": "Sajttal töltött gombafejek rántva rizibizivel és tartármártással (G,,"
+            }
+          ],
+          "notes": [
+            "Parsed from Komédiás weekly menu image on the website.",
+            "OCR-based extraction; minor text errors may remain."
+          ]
         }
       ]
     },
@@ -661,40 +997,40 @@
       "notes": [],
       "menus": [
         {
-          "date": "2026-06-01",
+          "date": "2026-06-08",
           "dayNameHu": "Hétfő",
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-05T01:11:02+00:00",
+          "updatedAt": "2026-06-08T07:00:18+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Lebbencs leves / Spárgakrémleves",
+              "text": "Karalábéleves kiskocka tésztával / Póréhagyma-krémleves",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"A\"",
-              "text": "Temesvári sertésszelet tésztával",
+              "text": "Füstölt sajttal sonkával töltött pulykamell párolt rizzsel",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"B\"",
-              "text": "Natúr jércemell eperraguval, párolt rizzsel",
+              "text": "Brassói aprópecsenye hasábburgonyával",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"C\"",
-              "text": "Rántott sertésborda hasábburgonyával",
+              "text": "Zöldborsófőzelék sertéssülttel",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"D\"",
-              "text": "Mákos guba vaníliasodóval",
+              "text": "Lekváros bukta",
               "priceHuf": null,
               "priceText": null
             }
@@ -702,40 +1038,40 @@
           "notes": []
         },
         {
-          "date": "2026-06-02",
+          "date": "2026-06-09",
           "dayNameHu": "Kedd",
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-05T01:11:02+00:00",
+          "updatedAt": "2026-06-08T07:00:18+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Húsleves lúdgége tésztával / Fahéjas almakrémleves",
+              "text": "Húsleves lúdgége tésztával / Eperkrémleves",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"A\"",
-              "text": "Vörösboros vadragu burgonyával",
+              "text": "Borjúpaprikás galuskával",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"B\"",
-              "text": "Fóliás tarja vele sült burgonyával",
+              "text": "Párizsi sertésborda petrezselymes burgonyával",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"C\"",
-              "text": "Parajos fetával töltött borda rántva hasábburgonyával",
+              "text": "Húsgombóc paradicsommártással",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"D\"",
-              "text": "Gombapaprikás galuskával",
+              "text": "Rakott karfiol",
               "priceHuf": null,
               "priceText": null
             }
@@ -743,40 +1079,40 @@
           "notes": []
         },
         {
-          "date": "2026-06-03",
+          "date": "2026-06-10",
           "dayNameHu": "Szerda",
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-05T01:11:02+00:00",
+          "updatedAt": "2026-06-08T07:00:18+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Magyaros karfiolleves / Gombakrémleves",
+              "text": "Füstös lencseleves / Brokkolikrémleves",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"A\"",
-              "text": "Sertéssült burgonyával párolt káposztával, főtt burgonyával",
+              "text": "Lilahagymás baconnel töltött borda rántva hasábburgonyával",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"B\"",
-              "text": "Polpetti spagettivel",
+              "text": "Rántott csirkemáj petrezselymes burgonyával",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"C\"",
-              "text": "Provancei sügérfilé petrezselymes burgonyával",
+              "text": "Pulykasült négysajtmártással, krokettel",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"D\"",
-              "text": "Vágottborsó-főzelék sertéspörkölttel",
+              "text": "Kelkáposzta-főzelék sertéspörkölttel",
               "priceHuf": null,
               "priceText": null
             }
@@ -784,40 +1120,40 @@
           "notes": []
         },
         {
-          "date": "2026-06-04",
+          "date": "2026-06-11",
           "dayNameHu": "Csütörtök",
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-05T01:11:02+00:00",
+          "updatedAt": "2026-06-08T07:00:18+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Sertésraguleves galuskával / Ribizlikrémleves",
+              "text": "Szárnyasaprólék-leves / Meggykrémleves",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"A\"",
-              "text": "Gödöllői csirkecomb zöldséges rizzsel",
+              "text": "Stroganoff marha galuskával",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"B\"",
-              "text": "Eszterházy rostélyos tésztával",
+              "text": "Holstein borda hasábburgonyával",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"C\"",
-              "text": "Rakott káposzta",
+              "text": "Roston sült jércemell cézár salátával",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"D\"",
-              "text": "Burgonyafőzelék fasírttal",
+              "text": "Fejtettbab-főzelék fasírttal",
               "priceHuf": null,
               "priceText": null
             }
@@ -825,40 +1161,40 @@
           "notes": []
         },
         {
-          "date": "2026-06-05",
+          "date": "2026-06-12",
           "dayNameHu": "Péntek",
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-05T01:11:02+00:00",
+          "updatedAt": "2026-06-08T07:00:18+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Csülkös bableves / Zellerkrémleves",
+              "text": "Burgonyagulyás / Karfiolkrémleves",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"A\"",
-              "text": "Túrós, diós, mákos tészták",
+              "text": "Túrós, diós, mákos, káposztás tészták",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"B\"",
-              "text": "Csirkemájraguval töltött jércemell rántva hasábburgonyával",
+              "text": "Zúzapörkölt tarhonyával",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"C\"",
-              "text": "Roston sült csirkemell mac and cheese",
+              "text": "Lecsós oldalas tekercs petrezselymes burgonyával",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"D\"",
-              "text": "Szalontüdő zsemlegombóccal",
+              "text": "Mandulás csirkemell hasábburgonyával",
               "priceHuf": null,
               "priceText": null
             }
@@ -866,34 +1202,34 @@
           "notes": []
         },
         {
-          "date": "2026-06-06",
+          "date": "2026-06-13",
           "dayNameHu": "Szombat",
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-05T01:11:02+00:00",
+          "updatedAt": "2026-06-08T07:00:18+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Húsleves eperlevél tésztával",
+              "text": "Húsleves cérnametélt tésztával",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"A\"",
-              "text": "Parmezános bundában sült borda csónakburgonyával",
+              "text": "Kacsamájraguval töltött jércemell hasábburgonyával",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"B\"",
-              "text": "Mediterrán csirketekercs jázmin rizzsel",
+              "text": "Cukkini bundás jércemell párolt rizzsel",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"C\"",
-              "text": "Paprikás krumpli",
+              "text": "Mexikói tokány párolt rizzsel",
               "priceHuf": null,
               "priceText": null
             }
@@ -901,34 +1237,34 @@
           "notes": []
         },
         {
-          "date": "2026-06-07",
+          "date": "2026-06-14",
           "dayNameHu": "Vasárnap",
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-05T01:11:02+00:00",
+          "updatedAt": "2026-06-08T07:00:18+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Májgaluskaleves",
+              "text": "Tárkonyos csirkeraguleves",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"A\"",
-              "text": "Csirkepaprikás, galuskával, tejfölhabbal / 3900Ft",
+              "text": "Sertésszűz baconben zöldborsmártással, hercegnő burgonyával / 3900Ft",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"B\"",
-              "text": "Rántott harcsafilé petrezselymes burgonyával, friss kevert salátával / 4700Ft",
+              "text": "Kacsamell burgonyapürével, grillezett spárgával / 4700Ft",
               "priceHuf": null,
               "priceText": null
             },
             {
               "label": "\"C\"",
-              "text": "Epertorta / 1200Ft",
+              "text": "Desszert: Meggyes rétes / 1200Ft",
               "priceHuf": null,
               "priceText": null
             }
@@ -936,6 +1272,21 @@
           "notes": []
         }
       ]
+    },
+    {
+      "slug": "marcal-etterem",
+      "name": "Marcal Étterem",
+      "address": "9024 Győr, Déry T. u. 11/a.",
+      "area": "Marcalváros",
+      "sourceType": "website_weekly_html",
+      "automationStatus": "exact",
+      "sourceUrl": "https://marcal-etterem.hu/heti-menu/",
+      "mapUrl": null,
+      "notes": [
+        "Structured weekly menu text on website; closed Monday and Sunday.",
+        "Collector error: 403 Client Error: Forbidden for url: https://marcal-etterem.hu/heti-menu/"
+      ],
+      "menus": []
     },
     {
       "slug": "nador-vendeglo",
@@ -949,69 +1300,69 @@
       "notes": [],
       "menus": [
         {
-          "date": "2026-06-02",
+          "date": "2026-06-09",
           "dayNameHu": "Kedd",
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-05T01:11:02+00:00",
+          "updatedAt": "2026-06-08T07:00:19+00:00",
           "items": [
             {
               "label": "A menü",
-              "text": "Húsleves — Fokhagymás tarjasteak",
+              "text": "Húsleves — Rántott sertéskaraj",
               "priceHuf": 2950,
               "priceText": "2950,-"
             },
             {
               "label": "B menü",
-              "text": "Húsleves — Rántott csirkemell görög salátával",
-              "priceHuf": 3100,
-              "priceText": "3100,-"
+              "text": "Húsleves — Csirkemell meggyszósszal",
+              "priceHuf": 3050,
+              "priceText": "3050,-"
             },
             {
               "label": "C menü",
-              "text": "Húsleves — Szarvaspörkölt",
-              "priceHuf": 3150,
-              "priceText": "3150,-"
+              "text": "Húsleves — Vadlazac, csőben sült brokkoli",
+              "priceHuf": 3250,
+              "priceText": "3250,-"
             },
             {
               "label": "D menü",
-              "text": "Húsleves — Tökfőzelék, sertéspörkölt",
-              "priceHuf": 2950,
-              "priceText": "2950,-"
+              "text": "Húsleves — Rántott cukkini, tzatziki",
+              "priceHuf": 3050,
+              "priceText": "3050,-"
             }
           ],
           "notes": []
         },
         {
-          "date": "2026-06-03",
+          "date": "2026-06-10",
           "dayNameHu": "Szerda",
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-05T01:11:02+00:00",
+          "updatedAt": "2026-06-08T07:00:19+00:00",
           "items": [
             {
               "label": "A menü",
-              "text": "Gulyásleves — salátával",
+              "text": "Csülküs bableves — Máglyarakás",
               "priceHuf": 2950,
               "priceText": "2950,-"
             },
             {
               "label": "B menü",
-              "text": "Gulyásleves — Rántott sertéskaraj koktélparadicsomos",
-              "priceHuf": null,
-              "priceText": null
+              "text": "Csülküs bableves — Magos csirkemell, almás krokett",
+              "priceHuf": 3250,
+              "priceText": "3250,-"
             },
             {
               "label": "C menü",
-              "text": "Gulyásleves — Fetás-parajos csirkerolád",
-              "priceHuf": 3100,
-              "priceText": "3100,-"
+              "text": "Csülküs bableves — Tarjasteak, röszti",
+              "priceHuf": 3050,
+              "priceText": "3050,-"
             },
             {
               "label": "D menü",
-              "text": "Gulyásleves — Grill camambert",
+              "text": "Csülküs bableves — Gránátos halfilé, füstölt sajt mártás",
               "priceHuf": 3150,
               "priceText": "3150,-"
             }
@@ -1019,34 +1370,34 @@
           "notes": []
         },
         {
-          "date": "2026-06-04",
+          "date": "2026-06-11",
           "dayNameHu": "Csütörtök",
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-05T01:11:02+00:00",
+          "updatedAt": "2026-06-08T07:00:19+00:00",
           "items": [
             {
               "label": "A menü",
-              "text": "Karalábé leves — Paradicsomos káposzta, sült oldalas",
+              "text": "Burgonya leves — Grillcsirke",
               "priceHuf": 2950,
               "priceText": "2950,-"
             },
             {
               "label": "B menü",
-              "text": "Karalábé leves — Csirkemell magos bundában",
-              "priceHuf": 3100,
-              "priceText": "3100,-"
+              "text": "Burgonya leves — Rántott sertéskaraj, burgonya saláta",
+              "priceHuf": 3250,
+              "priceText": "3250,-"
             },
             {
               "label": "C menü",
-              "text": "Karalábé leves — 1/2 grillkacsa",
-              "priceHuf": 3450,
-              "priceText": "3450,-"
+              "text": "Burgonya leves — Pacalpörkölt",
+              "priceHuf": 3050,
+              "priceText": "3050,-"
             },
             {
               "label": "D menü",
-              "text": "Karalábé leves — Rántott garnéla karika, saláta ágyon",
+              "text": "Burgonya leves — Csirkemell falatok /sweet&chili/",
               "priceHuf": 3150,
               "priceText": "3150,-"
             }
@@ -1054,104 +1405,104 @@
           "notes": []
         },
         {
-          "date": "2026-06-05",
+          "date": "2026-06-12",
           "dayNameHu": "Péntek",
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-05T01:11:02+00:00",
+          "updatedAt": "2026-06-08T07:00:19+00:00",
           "items": [
             {
               "label": "A menü",
-              "text": "Frankfurti leves — Rakott galuska",
+              "text": "Karfiol leves — csirkemell filé",
               "priceHuf": 2950,
               "priceText": "2950,-"
             },
             {
               "label": "B menü",
-              "text": "Frankfurti leves — Rántott sertésborda, rizi-bizi",
-              "priceHuf": 3100,
-              "priceText": "3100,-"
+              "text": "Karfiol leves — Joghurtos páccal készült rántott",
+              "priceHuf": null,
+              "priceText": null
             },
             {
               "label": "C menü",
-              "text": "Frankfurti leves — rétes",
-              "priceHuf": 3150,
-              "priceText": "3150,-"
+              "text": "Karfiol leves — Szűzpecsenye lecsós kacsamájjal",
+              "priceHuf": 3250,
+              "priceText": "3250,-"
             },
             {
               "label": "D menü",
-              "text": "Frankfurti leves — Pisztráng filé vajmártással, zöldséges",
-              "priceHuf": null,
-              "priceText": null
+              "text": "Karfiol leves — Fogasfilé spárgával",
+              "priceHuf": 3450,
+              "priceText": "3450,-"
             }
           ],
           "notes": []
         },
         {
-          "date": "2026-06-06",
+          "date": "2026-06-13",
           "dayNameHu": "Szombat",
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-05T01:11:02+00:00",
+          "updatedAt": "2026-06-08T07:00:19+00:00",
           "items": [
             {
               "label": "A menü",
-              "text": "Raguleves — Spagetti szénégető módra",
+              "text": "Raguleves — zöldsaláta",
               "priceHuf": 3450,
               "priceText": "3450,-"
             },
             {
               "label": "B menü",
-              "text": "Raguleves — Csirkemell füstölt sajttal töltve, rántva",
-              "priceHuf": 3750,
-              "priceText": "3750,-"
+              "text": "Raguleves — Sertéskaraj panko morzsában,",
+              "priceHuf": null,
+              "priceText": null
             },
             {
               "label": "C menü",
-              "text": "Raguleves — Libacomb, párolt káposzta",
-              "priceHuf": 4450,
-              "priceText": "4450,-"
+              "text": "Raguleves — Kacsatál",
+              "priceHuf": 4250,
+              "priceText": "4250,-"
             },
             {
               "label": "D menü",
-              "text": "Raguleves — Rántott harcsafilé",
-              "priceHuf": 4250,
-              "priceText": "4250,-"
+              "text": "Raguleves — Fokhagymás-mézes lazac",
+              "priceHuf": 4550,
+              "priceText": "4550,-"
             }
           ],
           "notes": []
         },
         {
-          "date": "2026-06-07",
+          "date": "2026-06-14",
           "dayNameHu": "Vasárnap",
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-05T01:11:02+00:00",
+          "updatedAt": "2026-06-08T07:00:19+00:00",
           "items": [
             {
               "label": "A menü",
-              "text": "Húsleves csigatésztával — Csirkemell aszalt gyümölcsökkel",
+              "text": "Falusi húsleves — Kacsa zúza pörkölt",
               "priceHuf": 3450,
               "priceText": "3450,-"
             },
             {
               "label": "B menü",
-              "text": "Húsleves csigatésztával — Rántott sertéskaraj, steak burgonya",
-              "priceHuf": 3750,
-              "priceText": "3750,-"
+              "text": "Falusi húsleves — Rántott csirkemell, zöldséges rizs",
+              "priceHuf": 3950,
+              "priceText": "3950,-"
             },
             {
               "label": "C menü",
-              "text": "Húsleves csigatésztával — Vargányás bélszín, burgonya gombóc",
+              "text": "Falusi húsleves — Hátszín vadasan",
               "priceHuf": 4750,
               "priceText": "4750,-"
             },
             {
               "label": "D menü",
-              "text": "Húsleves csigatésztával — Fogas roston, tepsis zöldségekkel",
+              "text": "Falusi húsleves — Tigrisrák farok",
               "priceHuf": 4950,
               "priceText": "4950,-"
             }
@@ -1180,7 +1531,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1224,7 +1575,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1269,7 +1620,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1313,7 +1664,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1367,34 +1718,34 @@
       ],
       "menus": [
         {
-          "date": "2026-06-02",
+          "date": "2026-06-09",
           "dayNameHu": "Kedd",
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-05T01:11:03+00:00",
+          "updatedAt": "2026-06-08T07:00:20+00:00",
           "items": [
             {
               "label": "A menü",
-              "text": "Zöldbabos raguleves — Rakott káposzta",
+              "text": "Karalábés húsleves — Töltött csirkecomb",
               "priceHuf": 2950,
               "priceText": "2950,-"
             },
             {
               "label": "B menü",
-              "text": "Zöldbabos raguleves — Kijevi csirkemell",
+              "text": "Karalábés húsleves — Rántott sertésborda",
               "priceHuf": 3100,
               "priceText": "3100,-"
             },
             {
               "label": "C menü",
-              "text": "Zöldbabos raguleves — Pikáns csirkeszárnyak",
+              "text": "Karalábés húsleves — Roston sült csirkemell, cézár saláta",
               "priceHuf": 3150,
               "priceText": "3150,-"
             },
             {
               "label": "D menü",
-              "text": "Zöldbabos raguleves — Rántott mozzarella, tzatziki",
+              "text": "Karalábés húsleves — Rántott camembert",
               "priceHuf": 3100,
               "priceText": "3100,-"
             }
@@ -1402,104 +1753,104 @@
           "notes": []
         },
         {
-          "date": "2026-06-03",
+          "date": "2026-06-10",
           "dayNameHu": "Szerda",
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-05T01:11:03+00:00",
+          "updatedAt": "2026-06-08T07:00:20+00:00",
           "items": [
             {
               "label": "A menü",
-              "text": "Gulyásleves — Rákóczi túróslepény",
+              "text": "Sertés babgulyás — káposzta saláta",
               "priceHuf": 2950,
               "priceText": "2950,-"
             },
             {
               "label": "B menü",
-              "text": "Gulyásleves — Rántott sertéskaraj",
-              "priceHuf": 3100,
-              "priceText": "3100,-"
+              "text": "Sertés babgulyás — Rántott csirkemell, majonézes",
+              "priceHuf": null,
+              "priceText": null
             },
             {
               "label": "C menü",
-              "text": "Gulyásleves — Brokkolival töltött csirkemell",
+              "text": "Sertés babgulyás — Fokhagymás sertéskaraj",
               "priceHuf": 3150,
               "priceText": "3150,-"
             },
             {
               "label": "D menü",
-              "text": "Gulyásleves — Fogasfilé citrus mártással",
-              "priceHuf": 3250,
-              "priceText": "3250,-"
+              "text": "Sertés babgulyás — Szénégető spagetti",
+              "priceHuf": 3050,
+              "priceText": "3050,-"
             }
           ],
           "notes": []
         },
         {
-          "date": "2026-06-04",
+          "date": "2026-06-11",
           "dayNameHu": "Csütörtök",
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-05T01:11:03+00:00",
+          "updatedAt": "2026-06-08T07:00:20+00:00",
           "items": [
             {
               "label": "A menü",
-              "text": "Brokkoli leves — Paradicsomos káposzta, oldalas",
+              "text": "Burgonya leves — rántva",
               "priceHuf": 2950,
               "priceText": "2950,-"
             },
             {
               "label": "B menü",
-              "text": "Brokkoli leves — Rántott csirkemell, burgonyasaláta",
-              "priceHuf": 3100,
-              "priceText": "3100,-"
+              "text": "Burgonya leves — Csülökkel és tormával töltött karaj",
+              "priceHuf": null,
+              "priceText": null
             },
             {
               "label": "C menü",
-              "text": "Brokkoli leves — zöldsalátával",
-              "priceHuf": 3150,
-              "priceText": "3150,-"
+              "text": "Burgonya leves — Mexikói kacsaragu cipóban",
+              "priceHuf": 3200,
+              "priceText": "3200,-"
             },
             {
               "label": "D menü",
-              "text": "Brokkoli leves — Füstölt lazac diós gnocchis",
-              "priceHuf": null,
-              "priceText": null
+              "text": "Burgonya leves — Káposztás tészta",
+              "priceHuf": 2550,
+              "priceText": "2550,-"
             }
           ],
           "notes": []
         },
         {
-          "date": "2026-06-05",
+          "date": "2026-06-12",
           "dayNameHu": "Péntek",
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-05T01:11:03+00:00",
+          "updatedAt": "2026-06-08T07:00:20+00:00",
           "items": [
             {
               "label": "A menü",
-              "text": "Frankfurti leves — Csirkemell édes-savanyú mártással",
+              "text": "Zöldség leves — Burgonya főzelék, sült kolbász",
               "priceHuf": 2950,
               "priceText": "2950,-"
             },
             {
               "label": "B menü",
-              "text": "Frankfurti leves — Rántott borda",
+              "text": "Zöldség leves — Parmezános rántott csirkemell",
               "priceHuf": 3100,
               "priceText": "3100,-"
             },
             {
               "label": "C menü",
-              "text": "Frankfurti leves — Mexikói marharagu",
-              "priceHuf": 3300,
-              "priceText": "3300,-"
+              "text": "Zöldség leves — Rostélyos lyoni hagymával",
+              "priceHuf": 3350,
+              "priceText": "3350,-"
             },
             {
               "label": "D menü",
-              "text": "Frankfurti leves — Rántott tőkehalfilé",
+              "text": "Zöldség leves — Gránátos halfilé rántva",
               "priceHuf": 3250,
               "priceText": "3250,-"
             }
@@ -1527,7 +1878,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1561,7 +1912,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1595,7 +1946,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1629,7 +1980,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1663,7 +2014,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1698,7 +2049,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:26+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1726,6 +2077,44 @@
             "some words uncertain",
             "a \"tojáskocsonya\" olvasata bizonytalan"
           ]
+        },
+        {
+          "date": "2026-06-08",
+          "dayNameHu": "Hétfő",
+          "certainty": "current_snapshot",
+          "sourceLabel": "Wolt current snapshot",
+          "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
+          "updatedAt": "2026-06-08T07:00:18+00:00",
+          "items": [
+            {
+              "label": "Napi menü",
+              "text": "Csont keves, Bakonyi csirkemell,galuska",
+              "priceHuf": 3500,
+              "priceText": "3 500 Ft"
+            },
+            {
+              "label": "Heti Extra memü",
+              "text": "Napi leves, Roston csirkemell,sajtmártás,krokett",
+              "priceHuf": 3800,
+              "priceText": "3 800 Ft"
+            },
+            {
+              "label": "Napi Vega nenü",
+              "text": "Olasz zöldség leves, Zöldségnyárs grillezve,vajas karalábén",
+              "priceHuf": 3800,
+              "priceText": "3 800 Ft"
+            },
+            {
+              "label": "Rántott csirkemell,krokett",
+              "text": null,
+              "priceHuf": 3800,
+              "priceText": "3 800 Ft"
+            }
+          ],
+          "notes": [
+            "This source usually shows a live current menu without an explicit date.",
+            "Safe for current-day browsing; not reliable as an exact future-day menu."
+          ]
         }
       ]
     },
@@ -1743,187 +2132,183 @@
       ],
       "menus": [
         {
-          "date": "2026-06-01",
+          "date": "2026-06-08",
           "dayNameHu": "Hétfő",
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:25+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "tésztával/G,T,Z/ vagy francia hagymaleves/G,L/"
+              "text": "tésztával/G,T,Z/ vagy Fokhagyma krémleves/G,L/"
             },
             {
               "label": "A menü",
-              "text": "galuskával /G,L,T/"
+              "text": "hasábburgonya/G,T/"
             },
             {
               "label": "B menü",
-              "text": "pörkölt feltéttel/G,L/"
+              "text": "joghurtos kevert salátán/G,L/"
             },
             {
               "label": "C menü",
-              "text": "pörccel/G,T,L/"
-            },
-            {
-              "label": "D menü",
-              "text": "sokmagvas bundában pestós saláta és sült burgonya/G,T, Magok/"
+              "text": "pörkölttel/G,L/"
             },
             {
               "label": "E menü",
-              "text": "zöldséges rizzsel"
+              "text": "rizzsel"
             }
           ],
           "notes": []
         },
         {
-          "date": "2026-06-02",
+          "date": "2026-06-09",
           "dayNameHu": "Kedd",
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:25+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Frankfurti leves/SZÓ,L,G/ vagy Ribizlis szilvakrém leves/L/"
+              "text": "Caldo verde/Portugál kelkáposzta leves kolbásszal/G/ vagy Szamóca krémleves"
             },
             {
               "label": "A menü",
-              "text": "Sonkával és sajttal töltött borda rántva vegyes köret/G,L,T/"
+              "text": "Roston sült BBQ csirkecomb steakburgonyával és friss salátával/G,/"
             },
             {
               "label": "B menü",
-              "text": "Carbonara spagetti sajttal szórva/G,L,T/"
+              "text": "Rántott tarja petrezselymes burgonya/G,T,/"
             },
             {
               "label": "C menü",
-              "text": "Lencsefőzelék sült virslivel/G,L,M/"
+              "text": "Túrótöltelékes gombóc édes citromos tejföllel/G,L,T/"
             },
             {
               "label": "D menü",
-              "text": "Cheddar sajtos borjú Burger,/G,L,T/"
+              "text": "Pulled pork szendvics/G,T,L/"
             },
             {
               "label": "E menü",
-              "text": "Csirkemell baconban sült paprika mártás rizs"
+              "text": "Grillezett fokhagymás csirkemell burgonyával és zöldborsópürével"
             }
           ],
           "notes": []
         },
         {
-          "date": "2026-06-03",
+          "date": "2026-06-10",
           "dayNameHu": "Szerda",
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:25+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Román burgonyaleves /G,T,Z/ vagy Gyümölcs leves/L/"
+              "text": "Olasz zöldségleves /G,T,L/ vagy Mangókrém leves"
             },
             {
               "label": "A menü",
-              "text": "Rántott szelt hasábburgonyával, joghurtos kukorica salátával/G,T,L/"
+              "text": "Cordon bleu vegyes körettel/G,T,L/"
             },
             {
               "label": "B menü",
-              "text": "Töltött csirkecomb petrezselymes burgonyával/G,L,T/"
+              "text": "Grill csirkemell sajt mártással rizzsel- burgonya krokettal/G,L,T/"
             },
             {
               "label": "C menü",
-              "text": "Sertés paprikás galuskával/G,T,L/"
+              "text": "Kelkáposzta főzelék vagdalttal/G,T/"
             },
             {
               "label": "D menü",
-              "text": "Tökfőzelék fasírttal/G,T,L/"
+              "text": "Lasagne/G,L,T/"
             },
             {
               "label": "E menü",
-              "text": "Roston csirkemell friss saláta és rizs"
+              "text": "Vegetáriánus töltött paprika/T/"
             }
           ],
           "notes": []
         },
         {
-          "date": "2026-06-04",
+          "date": "2026-06-11",
           "dayNameHu": "Csütörtök",
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:25+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Kapros zöldségleves burgonya gombóccal/G,L,T/ vagy Joghurtos áfonya-meggy leves/L,K/"
+              "text": "Karfiol leves/G,L,T/ vagy Joghurtos mentás cseresznye leves /L/"
             },
             {
               "label": "A menü",
-              "text": "Csirkemell zöldbors mártás petrezselymes burgonya- rizs/G,L/"
+              "text": "Milánói sertésborda sajttal szórva/G,L,T/"
             },
             {
               "label": "B menü",
-              "text": "Lyoni máj, burgonya/G,/"
+              "text": "Böllérmáj hagymás tört burgonya, /G/"
             },
             {
               "label": "C menü",
-              "text": "Zöldséges lazacos tako, lime öntet/T,L,G/"
+              "text": "Grillezett sajt rizzsel, friss salátával, rizzsel/L,/"
             },
             {
               "label": "D menü",
-              "text": "Rántott gombafejek rizzsel, tartármártással/G,T,L,M/"
+              "text": "Chili con carne/G/"
             },
             {
               "label": "E menü",
-              "text": "Zelleres rizottó grill csirkecsíkokkal/Z/"
+              "text": "Wokos-gombás cukkíni/Szója/"
             }
           ],
           "notes": []
         },
         {
-          "date": "2026-06-05",
+          "date": "2026-06-12",
           "dayNameHu": "Péntek",
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:25+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Grúz raguleves /G,M,L,T/ vagy Mangó -ananász leves/L/ Húsleves"
+              "text": "Legényfogó leves/G,L,T/ vagy Körte krémleves Húsleves"
             },
             {
               "label": "A menü",
-              "text": "Csülkös velős pacal burgonya/G,/ Vörös boros"
+              "text": "Harcsapaprikás túrós tésztával/G,L,T/ Sült csülök burgonyával,"
             },
             {
               "label": "B menü",
-              "text": "Hawaii csirkemell rizzsel, friss salátával/L,G/ Roston Csirkemell, friss"
+              "text": "Magyaros sült oldalas kemencés burgonya, uborkasaláta/G,/ Rántott csirkemell"
             },
             {
               "label": "C menü",
-              "text": "Rántott hal csemegeuborkás majonézzel hasábburgonya/G,L,T/ Camembert sajtkrémmel"
+              "text": "Rántott csirkemell filé friss saláta és rizs/G,L,T/ Rántott füstölt sajt"
             },
             {
               "label": "D menü",
-              "text": "Szilvásgombóc fahéjas cukorral. /G,T,L/"
+              "text": "Káposztás tészta/G,T/"
             },
             {
               "label": "E menü",
-              "text": "Csicseriborsó fasírt friss salátán/T/"
+              "text": "Paradicsomos húsgolyó/T/ gluténmentes tésztával"
             }
           ],
           "notes": []
         },
         {
-          "date": "2026-06-06",
+          "date": "2026-06-13",
           "dayNameHu": "Szombat",
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:25+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1931,46 +2316,46 @@
             },
             {
               "label": "A menü",
-              "text": "marhapörkölt juhtúrós sztrapacskával/G,L,T/"
+              "text": "párolt káposztával /G,T/"
             },
             {
               "label": "B menü",
-              "text": "salátával, sültburgonyával/G,/"
+              "text": "petrezselymesburgonya, uborkasaláta/G,T/"
             },
             {
               "label": "C menü",
-              "text": "töltött rántott borda rizzsel és friss saláta/G,L,T/"
+              "text": "rizzsel, áfonyával/G,L,T,M/"
             }
           ],
           "notes": []
         },
         {
-          "date": "2026-06-07",
+          "date": "2026-06-14",
           "dayNameHu": "Vasárnap",
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-05T01:11:08+00:00",
+          "updatedAt": "2026-06-08T07:00:25+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Húsleves májgaluskával /G,T,Z/"
+              "text": "Húsleves májgombóccal/G,T,Z/"
             },
             {
               "label": "A menü",
-              "text": "Tüzes bélszíncsíkok grill zöldség, petrezselymes burgonya"
+              "text": "Grill lazac vaj mártással, grill zöldségekkel/L/"
             },
             {
               "label": "B menü",
-              "text": "Sertés szűz tejszínes gombamártással rizzsel/G,L/5590.- Jelmagyarázat: Földimogyoró, D - Dió, Sz - Szója, Sze - Szezámmag, M - Mustár"
+              "text": "Borjúpaprikás cigány galuskával/G,L,T/6590.- Jelmagyarázat: Földimogyoró, D - Dió, Sz - Szója, Sze - Szezámmag, M - Mustár"
             },
             {
               "label": "C menü",
-              "text": "Cordon csirkemell vegyes körettel/G,L,T/ 5990.- G - Glutén, L - Laktóz/Tej, T - Tojás, P - Puhatestű, K - Kukorica, Z - Zeller, H - Halak, F -"
+              "text": "Cordon bleu vegyes körettel/G,L,T/5990.- G - Glutén, L - Laktóz/Tej, T - Tojás, P - Puhatestű, K - Kukorica, Z - Zeller, H - Halak, F -"
             },
             {
               "label": "D menü",
-              "text": "Mahui mahi grill zöldség és petrezselymes burgonya, mangó csatni"
+              "text": "Roston csirkemell friss kevert salátával és hasábbal/G,L/"
             },
             {
               "label": "E menü",

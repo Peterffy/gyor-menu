@@ -115,6 +115,32 @@
       "notes": [
         "Napi menü Facebookon (screenshot inbox)"
       ]
+    },
+    {
+      "slug": "marcal-etterem",
+      "name": "Marcal Étterem",
+      "address": "9024 Győr, Déry T. u. 11/a.",
+      "area": "Marcalváros",
+      "sourceType": "website_weekly_html",
+      "automationStatus": "exact",
+      "sourceUrl": "https://marcal-etterem.hu/heti-menu/",
+      "mapUrl": null,
+      "notes": [
+        "Structured weekly menu text on website; closed Monday and Sunday."
+      ]
+    },
+    {
+      "slug": "carmen-etterem",
+      "name": "Carmen Étterem",
+      "address": "9024 Győr, Kálvária u. 22/D.",
+      "area": "Nádorváros",
+      "sourceType": "website_weekly_html",
+      "automationStatus": "exact",
+      "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
+      "mapUrl": null,
+      "notes": [
+        "Structured business menu page on website."
+      ]
     }
   ]
 }

@@ -9,7 +9,7 @@ const state = {
 
 const el = {
   name: document.getElementById('detail-name'),
-  subtitle: document.getElementById('detail-subtitle'),
+  subtitle: document.getElementById('detail-address') || document.getElementById('detail-subtitle'),
   area: document.getElementById('detail-area'),
   updated: document.getElementById('detail-updated'),
   links: document.getElementById('detail-links'),
@@ -150,9 +150,9 @@ function render() {
 
   const topUpdated = menus.map(m => m.updatedAt).filter(Boolean).sort().reverse()[0] || '';
   el.name.textContent = escapeHtml(restaurant.name);
-  el.subtitle.textContent = escapeHtml(restaurant.address || 'Győr');
-  el.area.textContent = escapeHtml(restaurant.area || 'Győr');
-  el.updated.textContent = topUpdated ? formatDateTime(topUpdated) : 'Nincs adat';
+  if (el.subtitle) el.subtitle.textContent = escapeHtml(restaurant.address || 'Győr');
+  if (el.area) el.area.textContent = escapeHtml(restaurant.area || 'Győr');
+  if (el.updated) el.updated.textContent = topUpdated ? formatDateTime(topUpdated) : 'Nincs adat';
 
   const linkParts = [];
   if (restaurant.sourceUrl) {

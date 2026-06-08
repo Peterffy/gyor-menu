@@ -11,7 +11,7 @@ const state = {
 const el = {
   cards: document.getElementById('cards'),
   unsupported: document.getElementById('unsupported'),
-  generatedAt: document.getElementById('generated-at'),
+  generatedAt: document.getElementById('updated-at') || document.getElementById('generated-at'),
   favoriteList: document.getElementById('favorite-list'),
   favoritesReset: document.getElementById('favorites-reset'),
   suggestionLink: document.getElementById('restaurant-suggestion-link'),
@@ -272,7 +272,7 @@ function render() {
   if (!state.feed) return;
   updateUrlState();
   renderTabs();
-  el.generatedAt.textContent = formatDateTime(state.feed.generatedAt);
+  if (el.generatedAt) el.generatedAt.textContent = formatDateTime(state.feed.generatedAt);
 
   const wantedDate = selectedDate();
   const visible = [];
@@ -310,12 +310,14 @@ el.weekdayTabs.forEach(btn => btn.addEventListener('click', () => {
   render();
 }));
 
-el.favoritesReset.addEventListener('click', () => {
-  state.favorites = new Set();
-  saveFavorites();
-  renderFavoritePicker();
-  render();
-});
+if (el.favoritesReset) {
+  el.favoritesReset.addEventListener('click', () => {
+    state.favorites = new Set();
+    saveFavorites();
+    renderFavoritePicker();
+    render();
+  });
+}
 
 loadFeed().catch(err => {
   el.cards.innerHTML = `<div class="empty">Nem sikerült betölteni az oldalt. ${escapeHtml(err.message || err)}</div>`;

@@ -617,25 +617,18 @@ def collect_carmen_week(meta: dict[str, Any], ctx: CollectContext) -> list[dict[
 
 # ---------- Marcal (weekly HTML text menu) ----------
 
-def collect_marcal_week(meta: dict[str, Any], ctx: CollectContext) -> list[dict[str, Any]]:
-    url = meta.get("sourceUrl") or "https://marcal-etterem.hu/heti-menu/"
-    resp = requests.get(url, headers=HEADERS, timeout=30)
-    resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
-    text = soup.get_text("\n", strip=True)
-    # split by explicit dated day blocks on the page
+def parse_marcal_week_from_text(text: str, url: str) -> list[dict[str, Any]]:
     matches = list(re.finditer(r"(\d{4})\.(\d{2})\.(\d{2})\.\s*-?\s*([A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+)", text))
     menus = []
     for idx, m in enumerate(matches):
         day_block_start = m.start()
         day_block_end = matches[idx + 1].start() if idx + 1 < len(matches) else len(text)
         block = text[day_block_start:day_block_end]
-        # Ignore metadata/header matches; real menu blocks contain Levesek very near the top
         if "Levesek" not in block[:500]:
             continue
         d = date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
         day_name = WEEKDAYS_HU[d.weekday()]
-        if day_name not in WEEKDAYS_HU[1:6]:  # Marcal is Tue-Sat
+        if day_name not in WEEKDAYS_HU[1:6]:
             continue
         lines = [re.sub(r"\s+", " ", x).strip() for x in block.splitlines()]
         lines = [x for x in lines if x]
@@ -664,7 +657,6 @@ def collect_marcal_week(meta: dict[str, Any], ctx: CollectContext) -> list[dict[
         if soups:
             items.append({"label": "Levesek", "text": " / ".join(soups[:4])})
 
-        # variable daily menu options until Desszertek / Szuper menü
         if menu_heading_idx is not None:
             start = menu_heading_idx + 1
             mains = []
@@ -703,6 +695,40 @@ def collect_marcal_week(meta: dict[str, Any], ctx: CollectContext) -> list[dict[
                 "notes": [],
             })
     return menus
+
+
+def collect_marcal_week(meta: dict[str, Any], ctx: CollectContext) -> list[dict[str, Any]]:
+    url = meta.get("sourceUrl") or "https://marcal-etterem.hu/heti-menu/"
+    script = Path(__file__).resolve().parent / 'fetch_marcal_browser_text.py'
+    python_bin = Path(__file__).resolve().parent.parent / '.venv' / 'bin' / 'python'
+    if script.exists() and python_bin.exists():
+        try:
+            raw = subprocess.check_output(
+                [str(python_bin), str(script), '--url', url],
+                text=True,
+                timeout=180,
+            )
+            data = json.loads(raw)
+            per_day_text = data.get('per_day_text') or {}
+            menus: list[dict[str, Any]] = []
+            seen_dates: set[str] = set()
+            for _day, text in per_day_text.items():
+                if not text or str(text).startswith('__ERROR__'):
+                    continue
+                for menu in parse_marcal_week_from_text(text, url):
+                    if menu['date'] in seen_dates:
+                        continue
+                    seen_dates.add(menu['date'])
+                    menus.append(menu)
+            if menus:
+                return sorted(menus, key=lambda x: x['date'])
+        except Exception:
+            pass
+    resp = requests.get(url, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+    soup = BeautifulSoup(resp.text, 'html.parser')
+    text = soup.get_text('\n', strip=True)
+    return parse_marcal_week_from_text(text, url)
 
 
 # ---------- Komédiás (weekly website image OCR) ----------

@@ -25,7 +25,12 @@ All Győr Menü jobs use timezone:
   1. scans screenshot inboxes
   2. runs build pipeline from the Review Workspace sheet
   3. rebuilds `public/data/feed.json`
-  4. sends a short Telegram summary
+  4. runs automated feed quality review
+  5. sends a short Telegram summary with counts for:
+     - updated / acceptable menus
+     - suspicious menus
+     - unavailable menus
+     - screenshot-needed restaurants with source links where possible
 - **Does it publish live automatically?** No — rebuild/report only
 
 ### B. Weekly menu build — Monday 11:00
@@ -34,6 +39,7 @@ All Győr Menü jobs use timezone:
 - **Schedule:** `0 11 * * 1`
 - **Status:** active
 - **Purpose:** second Monday pass for restaurants that publish later
+- **Includes:** the same automated quality review and summary format as the 09:00 run
 - **Does it publish live automatically?** No
 
 ### C. Radó refresh — Tuesday 09:00
@@ -42,6 +48,7 @@ All Győr Menü jobs use timezone:
 - **Schedule:** `0 9 * * 2`
 - **Status:** active
 - **Purpose:** catch Radó by Westy’s Tuesday publication pattern
+- **Includes:** feed quality review after rebuild
 - **Does it publish live automatically?** No
 
 ### D. Radó refresh — Tuesday 11:00
@@ -50,6 +57,7 @@ All Győr Menü jobs use timezone:
 - **Schedule:** `0 11 * * 2`
 - **Status:** active
 - **Purpose:** second Tuesday retry pass
+- **Includes:** feed quality review after rebuild
 - **Does it publish live automatically?** No
 
 ---

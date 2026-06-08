@@ -390,13 +390,18 @@ def parse_fourcol_pdf_week(pdf_bytes: bytes, meta: dict[str, Any], ctx: CollectC
             if not col:
                 continue
             soup = col[0] if len(col) > 0 else None
-            main = col[1] if len(col) > 1 else None
-            price_text = col[2] if len(col) > 2 else None
-            # Guard: if column 3 looks like food text, it's likely mis-parsed — treat as extra text instead
+            price_idx = None
+            for i in range(len(col) - 1, -1, -1):
+                if parse_price_huf(col[i]) is not None:
+                    price_idx = i
+                    break
+            price_text = col[price_idx] if price_idx is not None else None
+            main_parts = col[1:price_idx] if price_idx is not None else col[1:]
+            # if the would-be price is actually food text, keep it inside the main text instead
             if price_text and looks_like_food_descriptor(price_text):
-                soup_or_description = price_text
+                main_parts = col[1:]
                 price_text = None
-                items[-1]["text"] = " — ".join([p for p in [soup, soup_or_description] if p]) or None
+            main = " ".join([part for part in main_parts if part]).strip() or None
             items.append({
                 "label": labels[idx],
                 "text": " — ".join([p for p in [soup, main] if p]) or None,

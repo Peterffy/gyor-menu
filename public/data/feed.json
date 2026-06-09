@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-09T07:46:31+00:00",
+  "generatedAt": "2026-06-09T19:53:23+00:00",
   "city": "Győr",
   "today": "2026-06-09",
   "tomorrow": "2026-06-10",
@@ -25,19 +25,19 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://apatursorhaz.hu/heti-menu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
-              "label": "1",
+              "label": "Leves",
               "text": "Fűszeres sajtkrém, hajdinás bagett",
               "priceHuf": null,
               "priceText": null
             },
             {
-              "label": "2",
+              "label": "Főétel",
               "text": "Cornflakeses csirkemell rögök, jázmin rizs",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             }
           ],
           "notes": [
@@ -50,19 +50,19 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://apatursorhaz.hu/heti-menu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
-              "label": "1",
+              "label": "Leves",
               "text": "Brokkolikrémleves",
               "priceHuf": null,
               "priceText": null
             },
             {
-              "label": "2",
+              "label": "Főétel",
               "text": "Grillezett camembert, sült zöldségek",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             }
           ],
           "notes": [
@@ -75,19 +75,19 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://apatursorhaz.hu/heti-menu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
-              "label": "1",
+              "label": "Leves",
               "text": "Húsleves",
               "priceHuf": null,
               "priceText": null
             },
             {
-              "label": "2",
+              "label": "Főétel",
               "text": "Marha stefánia vadas, burgonyaknédli",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             }
           ],
           "notes": [
@@ -100,19 +100,19 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://apatursorhaz.hu/heti-menu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
-              "label": "1",
+              "label": "Leves",
               "text": "Rakott káposzta",
               "priceHuf": null,
               "priceText": null
             },
             {
-              "label": "2",
+              "label": "Főétel",
               "text": "Szilváspite",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             }
           ],
           "notes": [
@@ -125,19 +125,19 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://apatursorhaz.hu/heti-menu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
-              "label": "1",
+              "label": "Leves",
               "text": "Halas lasagne",
               "priceHuf": null,
               "priceText": null
             },
             {
-              "label": "2",
+              "label": "Főétel",
               "text": "Pannacotta",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             }
           ],
           "notes": [
@@ -166,7 +166,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://belgagyor.hu/napi-menu-heti-menu-ebed-menu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Napi menü leves",
@@ -177,8 +177,8 @@
             {
               "label": "Napi menü főétel",
               "text": "Tarhonyás hús csemege uborkával",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 2750,
+              "priceText": "2 750 Ft"
             },
             {
               "label": "Vegetáriánus leves",
@@ -189,8 +189,8 @@
             {
               "label": "Vegetáriánus főétel",
               "text": "Friss saláta grill zöldségekkel",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 2750,
+              "priceText": "2 750 Ft"
             }
           ],
           "notes": [
@@ -203,7 +203,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://belgagyor.hu/napi-menu-heti-menu-ebed-menu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Napi menü leves",
@@ -214,8 +214,8 @@
             {
               "label": "Napi menü főétel",
               "text": "Debreceni karaj burgonyapürével",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 2750,
+              "priceText": "2 750 Ft"
             },
             {
               "label": "Vegetáriánus leves",
@@ -226,8 +226,8 @@
             {
               "label": "Vegetáriánus főétel",
               "text": "Vegetáriánus lasagne",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 2750,
+              "priceText": "2 750 Ft"
             }
           ],
           "notes": [
@@ -240,7 +240,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://belgagyor.hu/napi-menu-heti-menu-ebed-menu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Napi menü leves",
@@ -251,8 +251,8 @@
             {
               "label": "Napi menü főétel",
               "text": "Roston csirkemell friss salátával",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 2750,
+              "priceText": "2 750 Ft"
             },
             {
               "label": "Vegetáriánus leves",
@@ -263,8 +263,8 @@
             {
               "label": "Vegetáriánus főétel",
               "text": "Burgonyaberé sós tejföllel",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 2750,
+              "priceText": "2 750 Ft"
             }
           ],
           "notes": [
@@ -277,7 +277,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://belgagyor.hu/napi-menu-heti-menu-ebed-menu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Napi menü leves",
@@ -288,8 +288,8 @@
             {
               "label": "Napi menü főétel",
               "text": "Kelkáposztafőzelék sült oldalassal",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 2750,
+              "priceText": "2 750 Ft"
             },
             {
               "label": "Vegetáriánus leves",
@@ -300,8 +300,8 @@
             {
               "label": "Vegetáriánus főétel",
               "text": "Ratatouille",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 2750,
+              "priceText": "2 750 Ft"
             }
           ],
           "notes": [
@@ -314,7 +314,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://belgagyor.hu/napi-menu-heti-menu-ebed-menu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Napi menü leves",
@@ -325,8 +325,8 @@
             {
               "label": "Napi menü főétel",
               "text": "Rántott hal párolt rizzsel",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 2750,
+              "priceText": "2 750 Ft"
             },
             {
               "label": "Vegetáriánus leves",
@@ -337,8 +337,8 @@
             {
               "label": "Vegetáriánus főétel",
               "text": "Thai sült tészta",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 2750,
+              "priceText": "2 750 Ft"
             }
           ],
           "notes": [
@@ -363,153 +363,211 @@
         {
           "date": "2026-06-08",
           "dayNameHu": "Hétfő",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Frankfurti leves"
+              "text": "Frankfurti leves",
+              "priceHuf": null,
+              "priceText": null
             },
             {
               "label": "A menü",
-              "text": "Bakonyi ragu, főtt tészta"
+              "text": "Bakonyi ragu, főtt tészta",
+              "priceHuf": 2950,
+              "priceText": "2 950 Ft"
             },
             {
               "label": "B menü",
-              "text": "Muszaka csirkehússal"
+              "text": "Muszaka csirkehússal",
+              "priceHuf": 2950,
+              "priceText": "2 950 Ft"
             },
             {
               "label": "C menü",
-              "text": "Szezámmagos halfilé, jázmin rizs, majonézes kukoricasaláta"
+              "text": "Szezámmagos halfilé, jázmin rizs, majonézes kukoricasaláta",
+              "priceHuf": 2950,
+              "priceText": "2 950 Ft"
             },
             {
               "label": "X menü",
-              "text": "Sült zöldségek, gremolata, jázmin rizs"
+              "text": "Sült zöldségek, gremolata, jázmin rizs",
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         },
         {
           "date": "2026-06-09",
           "dayNameHu": "Kedd",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Spárgakrémleves, levesgyöngy"
+              "text": "Spárgakrémleves, levesgyöngy",
+              "priceHuf": null,
+              "priceText": null
             },
             {
               "label": "A menü",
-              "text": "Rántott csirkemáj, petrezselymes burgonya, savanyúság"
+              "text": "Rántott csirkemáj, petrezselymes burgonya, savanyúság",
+              "priceHuf": 2950,
+              "priceText": "2 950 Ft"
             },
             {
               "label": "B menü",
-              "text": "Cigánypecsenye, steak burgonya, savanyúság"
+              "text": "Cigánypecsenye, steak burgonya, savanyúság",
+              "priceHuf": 2950,
+              "priceText": "2 950 Ft"
             },
             {
               "label": "C menü",
-              "text": "Hawaii csirkemell, jázmin rizs"
+              "text": "Hawaii csirkemell, jázmin rizs",
+              "priceHuf": 2950,
+              "priceText": "2 950 Ft"
             },
             {
               "label": "X menü",
-              "text": "Stir-fry zöldbab, szezámmag, jázmin rizs"
+              "text": "Stir-fry zöldbab, szezámmag, jázmin rizs",
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         },
         {
           "date": "2026-06-10",
           "dayNameHu": "Szerda",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Gombakrémleves, sajtos kruton"
+              "text": "Gombakrémleves, sajtos kruton",
+              "priceHuf": null,
+              "priceText": null
             },
             {
               "label": "A menü",
-              "text": "Kemencés sült, törtburgonya, párolt káposzta, pecsenyelé"
+              "text": "Kemencés sült, törtburgonya, párolt káposzta, pecsenyelé",
+              "priceHuf": 2950,
+              "priceText": "2 950 Ft"
             },
             {
               "label": "B menü",
-              "text": "Cheddarral és baconnel töltött karaj, hasábburgonya, savanyúság"
+              "text": "Cheddarral és baconnel töltött karaj, hasábburgonya, savanyúság",
+              "priceHuf": 2950,
+              "priceText": "2 950 Ft"
             },
             {
               "label": "C menü",
-              "text": "Roston csirke, görög saláta, pácolt feta, olíva"
+              "text": "Roston csirke, görög saláta, pácolt feta, olíva",
+              "priceHuf": 2950,
+              "priceText": "2 950 Ft"
             },
             {
               "label": "X menü",
-              "text": "Grillezett tofu, görög saláta, olíva"
+              "text": "Grillezett tofu, görög saláta, olíva",
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         },
         {
           "date": "2026-06-11",
           "dayNameHu": "Csütörtök",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Húsleves gazdagon"
+              "text": "Húsleves gazdagon",
+              "priceHuf": null,
+              "priceText": null
             },
             {
               "label": "A menü",
-              "text": "Töltött paprika"
+              "text": "Töltött paprika",
+              "priceHuf": 2950,
+              "priceText": "2 950 Ft"
             },
             {
               "label": "B menü",
-              "text": "Szűzérmék, erdeigomba-ragu, pirított gnocchi"
+              "text": "Szűzérmék, erdeigomba-ragu, pirított gnocchi",
+              "priceHuf": 2950,
+              "priceText": "2 950 Ft"
             },
             {
               "label": "C menü",
-              "text": "Panko morzsás csirkemell, hasábburgonya, savanyúság"
+              "text": "Panko morzsás csirkemell, hasábburgonya, savanyúság",
+              "priceHuf": 2950,
+              "priceText": "2 950 Ft"
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         },
         {
           "date": "2026-06-12",
           "dayNameHu": "Péntek",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Szárnyas-raguleves"
+              "text": "Szárnyas-raguleves",
+              "priceHuf": null,
+              "priceText": null
             },
             {
               "label": "A menü",
-              "text": "Mac and cheese tépett hússal"
+              "text": "Mac and cheese tépett hússal",
+              "priceHuf": 2950,
+              "priceText": "2 950 Ft"
             },
             {
               "label": "B menü",
-              "text": "Rántott camembert, jázmin rizs, áfonyamártás"
+              "text": "Rántott camembert, jázmin rizs, áfonyamártás",
+              "priceHuf": 2950,
+              "priceText": "2 950 Ft"
             },
             {
               "label": "C menü",
-              "text": "Roston csirkemell, tzatziki, házi steakburgonya"
+              "text": "Roston csirkemell, tzatziki, házi steakburgonya",
+              "priceHuf": 2950,
+              "priceText": "2 950 Ft"
             },
             {
               "label": "X menü",
-              "text": "Vegán gombapaprikás, főtt tészta A menük gyümölcslevessel is választhatóak. A menüváltoztatás jogát fenntartjuk. Az ételek allergén tartalmát a következő számokkal jelöljük: 1=glutén, 2=rák, 3=tojás, 4=hal, 5=mogyoró, 6=szója, 7=laktóz, 8=dió, 9=zeller, 10=mustár, 11=szezámmag, 12=kén-dioxid és SO2-ben szulfitok 10mg/kg, illetve 10mg/liter koncentrációt meghaladó mennyiség, 13=csillagfürt (farkasbabliszt, lupinliszt), 14=puhatestű"
+              "text": "Vegán gombapaprikás, főtt tészta A menük gyümölcslevessel is választhatóak. A menüváltoztatás jogát fenntartjuk. Az ételek allergén tartalmát a következő számokkal jelöljük: 1=glutén, 2=rák, 3=tojás, 4=hal, 5=mogyoró, 6=szója, 7=laktóz, 8=dió, 9=zeller, 10=mustár, 11=szezámmag, 12=kén-dioxid és SO2-ben szulfitok 10mg/kg, illetve 10mg/liter koncentrációt meghaladó mennyiség, 13=csillagfürt (farkasbabliszt, lupinliszt), 14=puhatestű",
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         }
       ]
     },
@@ -534,7 +592,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -573,7 +631,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -617,7 +675,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -662,7 +720,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -706,7 +764,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -750,7 +808,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -787,7 +845,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -830,7 +888,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -873,7 +931,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -916,7 +974,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -975,7 +1033,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.parketterem.hu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1006,7 +1064,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.parketterem.hu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1037,7 +1095,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.parketterem.hu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1068,7 +1126,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.parketterem.hu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1099,7 +1157,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.parketterem.hu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1140,7 +1198,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1181,7 +1239,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1222,7 +1280,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1263,7 +1321,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1304,7 +1362,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1345,7 +1403,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/share/18HZup3Qtm/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1388,7 +1446,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/share/18HZup3Qtm/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1431,7 +1489,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/share/18HZup3Qtm/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Állapot",
@@ -1450,7 +1508,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/share/18HZup3Qtm/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1493,7 +1551,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/share/18HZup3Qtm/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1552,7 +1610,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://klubkelemen.hu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1589,7 +1647,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://klubkelemen.hu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1626,7 +1684,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://klubkelemen.hu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1663,7 +1721,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://klubkelemen.hu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1700,7 +1758,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://klubkelemen.hu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1737,7 +1795,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://klubkelemen.hu/",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1789,7 +1847,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -1824,7 +1882,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -1859,7 +1917,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -1894,7 +1952,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -1929,7 +1987,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves (A+B+Vega)",
@@ -1964,7 +2022,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://komediasetterem.hu/index.php/heti-menu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -2007,7 +2065,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Website menu image OCR",
           "sourceUrl": "https://komediasetterem.hu/images/heti_menu/amenu24.jpg",
-          "updatedAt": "2026-06-09T07:46:18+00:00",
+          "updatedAt": "2026-06-09T19:53:09+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -2041,7 +2099,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Website menu image OCR",
           "sourceUrl": "https://komediasetterem.hu/images/heti_menu/amenu24.jpg",
-          "updatedAt": "2026-06-09T07:46:18+00:00",
+          "updatedAt": "2026-06-09T19:53:10+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -2075,7 +2133,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Website menu image OCR",
           "sourceUrl": "https://komediasetterem.hu/images/heti_menu/amenu24.jpg",
-          "updatedAt": "2026-06-09T07:46:19+00:00",
+          "updatedAt": "2026-06-09T19:53:11+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -2109,7 +2167,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Website menu image OCR",
           "sourceUrl": "https://komediasetterem.hu/images/heti_menu/amenu24.jpg",
-          "updatedAt": "2026-06-09T07:46:20+00:00",
+          "updatedAt": "2026-06-09T19:53:12+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -2153,10 +2211,10 @@
         {
           "date": "2026-06-08",
           "dayNameHu": "Hétfő",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:14+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2167,20 +2225,20 @@
             {
               "label": "\"A\"",
               "text": "Füstölt sajttal sonkával töltött pulykamell párolt rizzsel",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"B\"",
               "text": "Brassói aprópecsenye hasábburgonyával",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"C\"",
               "text": "Zöldborsófőzelék sertéssülttel",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"D\"",
@@ -2189,15 +2247,17 @@
               "priceText": null
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         },
         {
           "date": "2026-06-09",
           "dayNameHu": "Kedd",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:14+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2208,20 +2268,20 @@
             {
               "label": "\"A\"",
               "text": "Borjúpaprikás galuskával",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"B\"",
               "text": "Párizsi sertésborda petrezselymes burgonyával",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"C\"",
               "text": "Húsgombóc paradicsommártással",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"D\"",
@@ -2230,15 +2290,17 @@
               "priceText": null
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         },
         {
           "date": "2026-06-10",
           "dayNameHu": "Szerda",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:14+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2249,20 +2311,20 @@
             {
               "label": "\"A\"",
               "text": "Lilahagymás baconnel töltött borda rántva hasábburgonyával",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"B\"",
               "text": "Rántott csirkemáj petrezselymes burgonyával",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"C\"",
               "text": "Pulykasült négysajtmártással, krokettel",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"D\"",
@@ -2271,15 +2333,17 @@
               "priceText": null
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         },
         {
           "date": "2026-06-11",
           "dayNameHu": "Csütörtök",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:14+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2290,20 +2354,20 @@
             {
               "label": "\"A\"",
               "text": "Stroganoff marha galuskával",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"B\"",
               "text": "Holstein borda hasábburgonyával",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"C\"",
               "text": "Roston sült jércemell cézár salátával",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"D\"",
@@ -2312,15 +2376,17 @@
               "priceText": null
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         },
         {
           "date": "2026-06-12",
           "dayNameHu": "Péntek",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:14+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2331,20 +2397,20 @@
             {
               "label": "\"A\"",
               "text": "Túrós, diós, mákos, káposztás tészták",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"B\"",
               "text": "Zúzapörkölt tarhonyával",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"C\"",
               "text": "Lecsós oldalas tekercs petrezselymes burgonyával",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"D\"",
@@ -2353,15 +2419,17 @@
               "priceText": null
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         },
         {
           "date": "2026-06-13",
           "dayNameHu": "Szombat",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:14+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2372,31 +2440,33 @@
             {
               "label": "\"A\"",
               "text": "Kacsamájraguval töltött jércemell hasábburgonyával",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"B\"",
               "text": "Cukkini bundás jércemell párolt rizzsel",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"C\"",
               "text": "Mexikói tokány párolt rizzsel",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         },
         {
           "date": "2026-06-14",
           "dayNameHu": "Vasárnap",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:14+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2407,23 +2477,25 @@
             {
               "label": "\"A\"",
               "text": "Sertésszűz baconben zöldborsmártással, hercegnő burgonyával / 3900Ft",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"B\"",
               "text": "Kacsamell burgonyapürével, grillezett spárgával / 4700Ft",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             },
             {
               "label": "\"C\"",
               "text": "Desszert: Meggyes rétes / 1200Ft",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3150,
+              "priceText": "3 150 Ft"
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         }
       ]
     },
@@ -2443,173 +2515,241 @@
         {
           "date": "2026-06-09",
           "dayNameHu": "Kedd",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://marcal-etterem.hu/heti-menu/",
-          "updatedAt": "2026-06-09T07:46:30+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Levesek",
-              "text": "Tejszínes, zöldfűszeres raguleves (G,L,T) / Gyümölcsleves, (L) / Csontleves tésztával (G,T)"
+              "text": "Tejszínes, zöldfűszeres raguleves (G,L,T) / Gyümölcsleves, (L) / Csontleves tésztával (G,T)",
+              "priceHuf": null,
+              "priceText": null
             },
             {
               "label": "Napi menü 1",
-              "text": "Fokhagymás sertéssült , főtt burgonya, párolt káposzta"
+              "text": "Fokhagymás sertéssült , főtt burgonya, párolt káposzta",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Napi menü 2",
-              "text": "Pincepörkölt, tarhonya, saláta (G,T)"
+              "text": "Pincepörkölt, tarhonya, saláta (G,T)",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Napi menü 3",
-              "text": "Rántott brokkoli, párolt rizs, tartár mártás (G,L,T)"
+              "text": "Rántott brokkoli, párolt rizs, tartár mártás (G,L,T)",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Napi menü 4",
-              "text": "Zelleres burgonyafőzelék, sertéspörkölt (L)"
+              "text": "Zelleres burgonyafőzelék, sertéspörkölt (L)",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Szuper menü 1",
-              "text": "Pankó morzsás rántott csirkemell, rizibizi, saláta (G,T)"
+              "text": "Pankó morzsás rántott csirkemell, rizibizi, saláta (G,T)",
+              "priceHuf": 2600,
+              "priceText": "2 600 Ft"
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         },
         {
           "date": "2026-06-10",
           "dayNameHu": "Szerda",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://marcal-etterem.hu/heti-menu/",
-          "updatedAt": "2026-06-09T07:46:30+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Levesek",
-              "text": "Magyaros zöldborsóleves (G,T) / Húsleves főtt hússal (G,T) / Gyümölcsleves (L)"
+              "text": "Magyaros zöldborsóleves (G,T) / Húsleves főtt hússal (G,T) / Gyümölcsleves (L)",
+              "priceHuf": null,
+              "priceText": null
             },
             {
               "label": "Napi menü 1",
-              "text": "Pirított csirkecsíkok brokkolis sajtmártásban, párolt rizs (L)"
+              "text": "Pirított csirkecsíkok brokkolis sajtmártásban, párolt rizs (L)",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Napi menü 2",
-              "text": "Sertéssült Cumberland mártás, párolt rizs"
+              "text": "Sertéssült Cumberland mártás, párolt rizs",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Napi menü 3",
-              "text": "Tepsiben sült csirkemáj, lecsós szalonnás raguval, tarhonya, saláta"
+              "text": "Tepsiben sült csirkemáj, lecsós szalonnás raguval, tarhonya, saláta",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         },
         {
           "date": "2026-06-11",
           "dayNameHu": "Csütörtök",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://marcal-etterem.hu/heti-menu/",
-          "updatedAt": "2026-06-09T07:46:30+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Levesek",
-              "text": "Brokkoli krémleves(L) / Sertésraguleves (G,T) / Gyümölcsleves (L)"
+              "text": "Brokkoli krémleves(L) / Sertésraguleves (G,T) / Gyümölcsleves (L)",
+              "priceHuf": null,
+              "priceText": null
             },
             {
               "label": "Napi menü 1",
-              "text": "Mézes mustáros sült csirkemell, párolt rizs"
+              "text": "Mézes mustáros sült csirkemell, párolt rizs",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Napi menü 2",
-              "text": "Mákos guba vanília sodó (G,L,T)"
+              "text": "Mákos guba vanília sodó (G,L,T)",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Napi menü 3",
-              "text": "Tarhonyás hús, saláta (G,T)"
+              "text": "Tarhonyás hús, saláta (G,T)",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Napi menü 4",
-              "text": "Sóskamártás, főtt burgonya, főtt tojás (L,T)"
+              "text": "Sóskamártás, főtt burgonya, főtt tojás (L,T)",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Szuper menü 1",
-              "text": "Gyros csirke, steak burgonya, saláta(L)"
+              "text": "Gyros csirke, steak burgonya, saláta(L)",
+              "priceHuf": 2600,
+              "priceText": "2 600 Ft"
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         },
         {
           "date": "2026-06-12",
           "dayNameHu": "Péntek",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://marcal-etterem.hu/heti-menu/",
-          "updatedAt": "2026-06-09T07:46:30+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Levesek",
-              "text": "Mészáros leves (G,T) / Csontleves tésztával (G,T) / Gyümölcsleves (L)"
+              "text": "Mészáros leves (G,T) / Csontleves tésztával (G,T) / Gyümölcsleves (L)",
+              "priceHuf": null,
+              "priceText": null
             },
             {
               "label": "Napi menü 1",
-              "text": "Szalontüdő, zsemlegombóc (G,L,T)"
+              "text": "Szalontüdő, zsemlegombóc (G,L,T)",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Napi menü 2",
-              "text": "Sertés paprikás tésztaköret"
+              "text": "Sertés paprikás tésztaköret",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Napi menü 3",
-              "text": "Túrós tészta tepertővel (G,L,T)"
+              "text": "Túrós tészta tepertővel (G,L,T)",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Szuper menü 1",
-              "text": "Rántott halfilé párolt rizs tartár mártás (G,H,L,T)"
+              "text": "Rántott halfilé párolt rizs tartár mártás (G,H,L,T)",
+              "priceHuf": 2600,
+              "priceText": "2 600 Ft"
             },
             {
               "label": "Szuper menü 2",
-              "text": "Óvári sertésszelet, vegyes köret, saláta (L)"
+              "text": "Óvári sertésszelet, vegyes köret, saláta (L)",
+              "priceHuf": 2600,
+              "priceText": "2 600 Ft"
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         },
         {
           "date": "2026-06-13",
           "dayNameHu": "Szombat",
-          "certainty": "exact",
-          "sourceLabel": "Weekly website menu",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
           "sourceUrl": "https://marcal-etterem.hu/heti-menu/",
-          "updatedAt": "2026-06-09T07:46:30+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Levesek",
-              "text": "Húsleves főtt marhahússal (G,T) / Magyaros bableves (G,T) / Gyümölcsleves (L)"
+              "text": "Húsleves főtt marhahússal (G,T) / Magyaros bableves (G,T) / Gyümölcsleves (L)",
+              "priceHuf": null,
+              "priceText": null
             },
             {
               "label": "Napi menü 1",
-              "text": "Bolognai spagetti (G,L,T)"
+              "text": "Bolognai spagetti (G,L,T)",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Napi menü 2",
-              "text": "Lecsós zöldborsós pirított sertésapró, tarhonya, saláta (G,T)"
+              "text": "Lecsós zöldborsós pirított sertésapró, tarhonya, saláta (G,T)",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Napi menü 3",
-              "text": "Sült csirkemell, tejszínes gyümölcs mártás, párolt rizs"
+              "text": "Sült csirkemell, tejszínes gyümölcs mártás, párolt rizs",
+              "priceHuf": 2400,
+              "priceText": "2 400 Ft"
             },
             {
               "label": "Szuper menü 1",
-              "text": "Fokhagymás sült kacsacomb főtt burgonya, párolt káposzta"
+              "text": "Fokhagymás sült kacsacomb főtt burgonya, párolt káposzta",
+              "priceHuf": 2600,
+              "priceText": "2 600 Ft"
             },
             {
               "label": "Szuper menü 2",
-              "text": "Rántott csirkemell, rizibizi, saláta (G,T)"
+              "text": "Rántott csirkemell, rizibizi, saláta (G,T)",
+              "priceHuf": 2600,
+              "priceText": "2 600 Ft"
             },
             {
               "label": "Szuper menü 3",
-              "text": "Desszertek:"
+              "text": "Desszertek:",
+              "priceHuf": 2600,
+              "priceText": "2 600 Ft"
             }
           ],
-          "notes": []
+          "notes": [
+            "Phase 1 local price backfill for preview"
+          ]
         }
       ]
     },
@@ -2630,7 +2770,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-09T07:46:14+00:00",
+          "updatedAt": "2026-06-09T19:53:06+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2665,7 +2805,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-09T07:46:14+00:00",
+          "updatedAt": "2026-06-09T19:53:06+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2700,7 +2840,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-09T07:46:14+00:00",
+          "updatedAt": "2026-06-09T19:53:06+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2735,7 +2875,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-09T07:46:14+00:00",
+          "updatedAt": "2026-06-09T19:53:06+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2770,7 +2910,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-09T07:46:14+00:00",
+          "updatedAt": "2026-06-09T19:53:06+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2805,7 +2945,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-09T07:46:14+00:00",
+          "updatedAt": "2026-06-09T19:53:06+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2840,7 +2980,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-09T07:46:14+00:00",
+          "updatedAt": "2026-06-09T19:53:06+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2891,7 +3031,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2935,7 +3075,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2980,7 +3120,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3024,7 +3164,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3068,7 +3208,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3111,7 +3251,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3154,7 +3294,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3197,7 +3337,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3240,7 +3380,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3298,7 +3438,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-09T07:46:15+00:00",
+          "updatedAt": "2026-06-09T19:53:07+00:00",
           "items": [
             {
               "label": "A menü",
@@ -3333,7 +3473,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-09T07:46:15+00:00",
+          "updatedAt": "2026-06-09T19:53:07+00:00",
           "items": [
             {
               "label": "A menü",
@@ -3368,7 +3508,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-09T07:46:15+00:00",
+          "updatedAt": "2026-06-09T19:53:07+00:00",
           "items": [
             {
               "label": "A menü",
@@ -3403,7 +3543,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-09T07:46:15+00:00",
+          "updatedAt": "2026-06-09T19:53:07+00:00",
           "items": [
             {
               "label": "A menü",
@@ -3438,7 +3578,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-09T07:46:15+00:00",
+          "updatedAt": "2026-06-09T19:53:07+00:00",
           "items": [
             {
               "label": "A menü",
@@ -3488,7 +3628,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3522,7 +3662,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3556,7 +3696,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3590,7 +3730,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3624,7 +3764,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3659,7 +3799,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3694,7 +3834,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Napi menü",
@@ -3725,7 +3865,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Wolt current snapshot",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T07:46:13+00:00",
+          "updatedAt": "2026-06-09T19:53:05+00:00",
           "items": [
             {
               "label": "Napi menü",
@@ -3779,43 +3919,43 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://vitalcafebistro.hu/hetimenu.html",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves 1",
               "text": "Batáta krémleves, kenyérkocka",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1990,
+              "priceText": "1 990 Ft"
             },
             {
               "label": "Főétel 1",
               "text": "Lencsegulyás",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Főétel 2",
               "text": "Spenótfőzelék bundás GM zsemlével",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Főétel 3",
               "text": "Diós-lencsés rakott karfiol, zöldsaláta",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 1",
               "text": "Napi pohárdesszert (édesítőszer / nádcukor) - 1690 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1690,
+              "priceText": "1 690 Ft"
             },
             {
               "label": "Extra 2",
               "text": "Zöld turmix (napi kínálat alapján) 1790 Ft/3 dl",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1790,
+              "priceText": "1 790 Ft"
             },
             {
               "label": "Extra 3",
@@ -3826,32 +3966,32 @@
             {
               "label": "Extra 4",
               "text": "Sült batátás vegyes saláta - 3190 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 5",
               "text": "Tahinis zöldsaláta - 3190 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 6",
               "text": "Zöldfűszeres rizs-saláta 3190 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 7",
               "text": "Napi szendvics - 1790 Ft",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1790,
+              "priceText": "1 790 Ft"
             },
             {
               "label": "Extra 8",
               "text": "Gluténmentes zsemle ~ 590 Ft/db",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 590,
+              "priceText": "590 Ft"
             }
           ],
           "notes": [
@@ -3864,31 +4004,31 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://vitalcafebistro.hu/hetimenu.html",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves 1",
               "text": "Tonkababos gyümölcsleves",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1990,
+              "priceText": "1 990 Ft"
             },
             {
               "label": "Leves 2",
               "text": "Mustáros adzuki babos zöldségleves",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1990,
+              "priceText": "1 990 Ft"
             },
             {
               "label": "Főétel 1",
               "text": "Batáta-burgonya-répa főzelék, szezámos zöldségfasírt",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Főétel 2",
               "text": "Gombapaprikás, kukoricatészta, csemege uborka",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 1",
@@ -3899,44 +4039,44 @@
             {
               "label": "Extra 2",
               "text": "Napi pohárdesszert (édesítőszer / nádcukor) - 1690 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1690,
+              "priceText": "1 690 Ft"
             },
             {
               "label": "Extra 3",
               "text": "Zöld turmix (napi kínálat alapján) 1790 Ft/3 dl",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1790,
+              "priceText": "1 790 Ft"
             },
             {
               "label": "Extra 4",
               "text": "Sült batátás vegyes saláta - 3190 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 5",
               "text": "Tahinis zöldsaláta - 3190 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 6",
               "text": "Zöldfűszeres rizs-saláta 3190 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 7",
               "text": "Napi szendvics - 1790 Ft",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1790,
+              "priceText": "1 790 Ft"
             },
             {
               "label": "Extra 8",
               "text": "Gluténmentes zsemle ~ 590 Ft/db",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 590,
+              "priceText": "590 Ft"
             }
           ],
           "notes": [
@@ -3949,31 +4089,31 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://vitalcafebistro.hu/hetimenu.html",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves 1",
               "text": "Gombakrémleves, kenyérkocka",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1990,
+              "priceText": "1 990 Ft"
             },
             {
               "label": "Leves 2",
               "text": "Aszalt paradicsomos vegyes zöldségleves",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1990,
+              "priceText": "1 990 Ft"
             },
             {
               "label": "Főétel 1",
               "text": "\"Tejberizs\", gyümölcsmártás",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Főétel 2",
               "text": "Rakott zöldbab, magvas zöldsaláta",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 1",
@@ -3984,44 +4124,44 @@
             {
               "label": "Extra 2",
               "text": "Napi pohárdesszert (édesítőszer / nádcukor) - 1690 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1690,
+              "priceText": "1 690 Ft"
             },
             {
               "label": "Extra 3",
               "text": "Zöld turmix (napi kínálat alapján) 1790 Ft/3 dl",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1790,
+              "priceText": "1 790 Ft"
             },
             {
               "label": "Extra 4",
               "text": "Sült batátás vegyes saláta - 3190 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 5",
               "text": "Tahinis zöldsaláta - 3190 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 6",
               "text": "Zöldfűszeres rizs-saláta 3190 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 7",
               "text": "Napi szendvics - 1790 Ft",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1790,
+              "priceText": "1 790 Ft"
             },
             {
               "label": "Extra 8",
               "text": "Gluténmentes zsemle ~ 590 Ft/db",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 590,
+              "priceText": "590 Ft"
             }
           ],
           "notes": [
@@ -4034,31 +4174,31 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://vitalcafebistro.hu/hetimenu.html",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves 1",
               "text": "Trópusi gyümölcsleves",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1990,
+              "priceText": "1 990 Ft"
             },
             {
               "label": "Leves 2",
               "text": "Hajdinás zöldségleves",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1990,
+              "priceText": "1 990 Ft"
             },
             {
               "label": "Főétel 1",
               "text": "Kelkáposztafőzelék, zöldségfasírt",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Főétel 2",
               "text": "Lencsevagdalt, kölesmajonézes francia saláta, köles",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 1",
@@ -4069,44 +4209,44 @@
             {
               "label": "Extra 2",
               "text": "Napi pohárdesszert (édesítőszer / nádcukor) - 1690 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1690,
+              "priceText": "1 690 Ft"
             },
             {
               "label": "Extra 3",
               "text": "Zöld turmix (napi kínálat alapján) 1790 Ft/3 dl",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1790,
+              "priceText": "1 790 Ft"
             },
             {
               "label": "Extra 4",
               "text": "Sült batátás vegyes saláta - 3190 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 5",
               "text": "Tahinis zöldsaláta - 3190 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 6",
               "text": "Zöldfűszeres rizs-saláta 3190 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 7",
               "text": "Napi szendvics - 1790 Ft",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1790,
+              "priceText": "1 790 Ft"
             },
             {
               "label": "Extra 8",
               "text": "Gluténmentes zsemle ~ 590 Ft/db",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 590,
+              "priceText": "590 Ft"
             }
           ],
           "notes": [
@@ -4119,31 +4259,31 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://vitalcafebistro.hu/hetimenu.html",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves 1",
               "text": "Brokkolikrémleves, kenyérkocka",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1990,
+              "priceText": "1 990 Ft"
             },
             {
               "label": "Leves 2",
               "text": "Vegán erőleves zöldséghasábbal",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1990,
+              "priceText": "1 990 Ft"
             },
             {
               "label": "Főétel 1",
               "text": "Cukkinis csicseriborsófőzelék, zöldségfasírt",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Főétel 2",
               "text": "Káposztás tészta (sós-borsos)",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 1",
@@ -4154,44 +4294,44 @@
             {
               "label": "Extra 2",
               "text": "Napi pohárdesszert (édesítőszer / nádcukor) - 1690 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1690,
+              "priceText": "1 690 Ft"
             },
             {
               "label": "Extra 3",
               "text": "Zöld turmix (napi kínálat alapján) 1790 Ft/3 dl",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1790,
+              "priceText": "1 790 Ft"
             },
             {
               "label": "Extra 4",
               "text": "Sült batátás vegyes saláta - 3190 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 5",
               "text": "Tahinis zöldsaláta - 3190 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 6",
               "text": "Zöldfűszeres rizs-saláta 3190 Ft/adag",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 3190,
+              "priceText": "3 190 Ft"
             },
             {
               "label": "Extra 7",
               "text": "Napi szendvics - 1790 Ft",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 1790,
+              "priceText": "1 790 Ft"
             },
             {
               "label": "Extra 8",
               "text": "Gluténmentes zsemle ~ 590 Ft/db",
-              "priceHuf": null,
-              "priceText": null
+              "priceHuf": 590,
+              "priceText": "590 Ft"
             }
           ],
           "notes": [
@@ -4220,7 +4360,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.gyorzoldelefant.hu/hetimenu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4245,7 +4385,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.gyorzoldelefant.hu/hetimenu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4270,7 +4410,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.gyorzoldelefant.hu/hetimenu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4295,7 +4435,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.gyorzoldelefant.hu/hetimenu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4320,7 +4460,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.gyorzoldelefant.hu/hetimenu",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4360,7 +4500,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-09T07:46:31+00:00",
+          "updatedAt": "2026-06-09T19:53:23+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4409,7 +4549,7 @@
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-09T07:46:20+00:00",
+          "updatedAt": "2026-06-09T19:53:12+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4444,7 +4584,7 @@
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-09T07:46:20+00:00",
+          "updatedAt": "2026-06-09T19:53:12+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4479,7 +4619,7 @@
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-09T07:46:20+00:00",
+          "updatedAt": "2026-06-09T19:53:12+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4514,7 +4654,7 @@
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-09T07:46:20+00:00",
+          "updatedAt": "2026-06-09T19:53:12+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4549,7 +4689,7 @@
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-09T07:46:20+00:00",
+          "updatedAt": "2026-06-09T19:53:12+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4576,7 +4716,7 @@
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-09T07:46:20+00:00",
+          "updatedAt": "2026-06-09T19:53:12+00:00",
           "items": [
             {
               "label": "Leves",

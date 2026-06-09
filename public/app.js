@@ -232,21 +232,39 @@ function renderSummary(_visible, _missingFavs) {
   // Removed per product feedback: no status bubbles above the list.
 }
 
+function formatDisplayPrice(item) {
+  if (Number.isFinite(item.priceHuf) && item.priceHuf > 0) {
+    return `${new Intl.NumberFormat('hu-HU').format(item.priceHuf)} Ft`;
+  }
+  if (item.priceText) return escapeHtml(item.priceText);
+  return '';
+}
+
 function renderMenuItem(item) {
   const label = item.label ? `<strong>${escapeHtml(item.label)}</strong>` : '';
+  const price = formatDisplayPrice(item);
+  const header = (label || price)
+    ? `<div class="menu-item-head">${label}${price ? `<span class="menu-price">${price}</span>` : ''}</div>`
+    : '';
   const text = item.text ? `<div class="text">${escapeHtml(item.text)}</div>` : '';
-  return `<div class="menu-item">${label}${text}</div>`;
+  return `<div class="menu-item">${header}${text}</div>`;
 }
 
 function renderMenuBlock(menu) {
+  const visibleItems = menu.items.slice(0, 5);
+  const pricedCount = visibleItems.filter(item => item.priceHuf || item.priceText).length;
+  const priceNote = pricedCount > 0 && pricedCount < visibleItems.length
+    ? `<div class="menu-price-note">Az árak csak ott jelennek meg, ahol a forrás külön feltünteti.</div>`
+    : '';
   return `
     <section class="menu-block">
       <div class="menu-title-wrap">
         <div class="menu-title">${menu.dayNameHu}</div>
       </div>
       <div class="menu-list">
-        ${menu.items.slice(0, 5).map(renderMenuItem).join('')}
+        ${visibleItems.map(renderMenuItem).join('')}
       </div>
+      ${priceNote}
     </section>
   `;
 }

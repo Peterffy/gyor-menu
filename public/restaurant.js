@@ -145,10 +145,22 @@ function renderTabs() {
   });
 }
 
+function formatDisplayPrice(item) {
+  if (Number.isFinite(item.priceHuf) && item.priceHuf > 0) {
+    return `${new Intl.NumberFormat('hu-HU').format(item.priceHuf)} Ft`;
+  }
+  if (item.priceText) return escapeHtml(item.priceText);
+  return '';
+}
+
 function renderMenuItem(item) {
   const label = item.label ? `<strong>${escapeHtml(item.label)}</strong>` : '';
+  const price = formatDisplayPrice(item);
+  const header = (label || price)
+    ? `<div class="menu-item-head">${label}${price ? `<span class="menu-price">${price}</span>` : ''}</div>`
+    : '';
   const text = item.text ? `<div class="text">${escapeHtml(item.text)}</div>` : '';
-  return `<div class="menu-item">${label}${text}</div>`;
+  return `<div class="menu-item">${header}${text}</div>`;
 }
 
 function render() {
@@ -194,7 +206,12 @@ function render() {
 
   const trustClass = (menu) => menu.certainty === 'manual' ? 'trust-manual' : menu.certainty === 'exact' ? 'trust-exact' : 'trust-snapshot';
   const trustSymbol = (menu) => menu.certainty === 'exact' ? '✓' : menu.certainty === 'manual' ? '⚡' : '◷';
-  el.menus.innerHTML = menus.map(menu => `
+  el.menus.innerHTML = menus.map(menu => {
+    const pricedCount = menu.items.filter(item => item.priceHuf || item.priceText).length;
+    const priceNote = pricedCount > 0 && pricedCount < menu.items.length
+      ? `<div class="menu-price-note">Az árak csak ott jelennek meg, ahol a forrás külön feltünteti.</div>`
+      : '';
+    return `
     <article class="card">
       <div class="card-head simple-card-head">
         <div>
@@ -205,9 +222,10 @@ function render() {
       <div class="menu-list detail-menu-list">
         ${menu.items.map(renderMenuItem).join('')}
       </div>
+      ${priceNote}
       ${menu.notes?.length ? `<div class="notes">${menu.notes.map(n => `• ${escapeHtml(n)}`).join('<br>')}</div>` : ''}
     </article>
-  `).join('');
+  `}).join('');
 }
 
 async function loadFeed() {

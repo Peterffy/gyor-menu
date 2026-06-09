@@ -208,7 +208,7 @@ function render() {
   const trustSymbol = (menu) => menu.certainty === 'exact' ? '✓' : menu.certainty === 'manual' ? '⚡' : '◷';
   el.menus.innerHTML = menus.map(menu => {
     const pricedCount = menu.items.filter(item => item.priceHuf || item.priceText).length;
-    const priceNote = pricedCount > 0 && pricedCount < menu.items.length
+    const priceNote = menu.items.length > 0 && pricedCount < menu.items.length
       ? `<div class="menu-price-note">Az árak csak ott jelennek meg, ahol a forrás külön feltünteti.</div>`
       : '';
     return `

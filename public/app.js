@@ -253,7 +253,7 @@ function renderMenuItem(item) {
 function renderMenuBlock(menu) {
   const visibleItems = menu.items.slice(0, 5);
   const pricedCount = visibleItems.filter(item => item.priceHuf || item.priceText).length;
-  const priceNote = pricedCount > 0 && pricedCount < visibleItems.length
+  const priceNote = visibleItems.length > 0 && pricedCount < visibleItems.length
     ? `<div class="menu-price-note">Az árak csak ott jelennek meg, ahol a forrás külön feltünteti.</div>`
     : '';
   return `

@@ -112,6 +112,26 @@ function reportUrl(restaurant) {
   return `${REPORT_FORM_BASE}&${p.toString()}`;
 }
 
+function setMetaById(id, content) {
+  const meta = document.getElementById(id);
+  if (meta) meta.setAttribute('content', content);
+}
+
+function setDetailSeo(restaurant) {
+  const canonicalUrl = `https://gyor-menu.vercel.app/restaurant.html?slug=${encodeURIComponent(restaurant.slug)}`;
+  const title = `${restaurant.name} napi menü Győr | Mi a menü?`;
+  const description = `${restaurant.name} napi és heti menüje Győrben${restaurant.address ? ` – ${restaurant.address}` : ''}. Eredeti forrás, térkép és részletes menük a Mi a menü? oldalon.`;
+  document.title = title;
+  setMetaById('meta-description', description);
+  setMetaById('meta-twitter-title', title);
+  setMetaById('meta-twitter-description', description);
+  setMetaById('meta-og-title', title);
+  setMetaById('meta-og-description', description);
+  setMetaById('meta-og-url', canonicalUrl);
+  const canonical = document.getElementById('canonical-link');
+  if (canonical) canonical.setAttribute('href', canonicalUrl);
+}
+
 function renderTabs() {
   const current = getCurrentWeekdayIndex();
   const weekDates = getWeekDates();
@@ -149,6 +169,7 @@ function render() {
   const best = menus[0];
 
   const topUpdated = menus.map(m => m.updatedAt).filter(Boolean).sort().reverse()[0] || '';
+  setDetailSeo(restaurant);
   el.name.textContent = escapeHtml(restaurant.name);
   if (el.subtitle) el.subtitle.textContent = escapeHtml(restaurant.address || 'Győr');
   if (el.area) el.area.textContent = escapeHtml(restaurant.area || 'Győr');

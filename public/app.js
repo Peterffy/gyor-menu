@@ -186,6 +186,36 @@ function restaurantSuggestionUrl() {
   return `${REPORT_FORM_BASE}&${params.toString()}`;
 }
 
+function setMeta(name, content) {
+  const el = document.querySelector(`meta[name="${name}"]`);
+  if (el) el.setAttribute('content', content);
+}
+
+function setOg(property, content) {
+  const el = document.querySelector(`meta[property="${property}"]`);
+  if (el) el.setAttribute('content', content);
+}
+
+function setIndexSeo(records) {
+  if (!state.feed) return;
+  const visibleWithMenu = records.filter(r => r.hasMenu).length;
+  const totalRestaurants = state.feed.restaurants?.length || 0;
+  const dayLabel = WEEKDAYS_HU[state.selectedDayIndex];
+  const isToday = state.selectedDayIndex === getCurrentWeekdayIndex();
+  const title = isToday
+    ? `Mai napi menü Győr – ${visibleWithMenu} étterem | Mi a menü?`
+    : `${dayLabel} napi menü Győr – ${visibleWithMenu} étterem | Mi a menü?`;
+  const description = isToday
+    ? `Mai napi menü Győr városában: ${visibleWithMenu} elérhető ebédmenü ${totalRestaurants} győri étteremtől, forráslinkekkel és gyors mobilos áttekintéssel.`
+    : `${dayLabel} napi menü Győr városában: ${visibleWithMenu} elérhető ebédmenü ${totalRestaurants} győri étteremtől, forráslinkekkel és gyors mobilos áttekintéssel.`;
+  document.title = title;
+  setMeta('description', description);
+  setMeta('twitter:title', title);
+  setMeta('twitter:description', description);
+  setOg('og:title', title);
+  setOg('og:description', description);
+}
+
 function sortVisible(records) {
   records.sort((a, b) => {
     const favDiff = Number(state.favorites.has(b.restaurant.slug)) - Number(state.favorites.has(a.restaurant.slug));
@@ -287,6 +317,7 @@ function render() {
     : visible;
 
   sortVisible(filteredVisible);
+  setIndexSeo(filteredVisible);
   renderSummary(filteredVisible, 0);
   el.cards.innerHTML = filteredVisible.length
     ? filteredVisible.map(renderRestaurantCard).join('')

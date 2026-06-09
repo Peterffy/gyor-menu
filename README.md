@@ -37,6 +37,7 @@ scripts/               — build, sync, screenshot tools
 
 - [Google Sheet review workflow](docs/how-to-use-review-workspace-nontechnical.md)
 - [Screenshot inbox workflow](docs/how-to-use-screenshot-inbox-nontechnical.md)
+- [Restaurant addition process](docs/restaurant-addition-process.md)
 
 ## For developers
 

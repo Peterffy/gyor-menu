@@ -141,6 +141,84 @@
       "notes": [
         "Structured business menu page on website."
       ]
+    },
+    {
+      "slug": "apatur-sorhaz",
+      "name": "Apátúr Sörház",
+      "address": "9000 Győr, Széchenyi tér 7.",
+      "area": "Belváros",
+      "sourceType": "website_weekly_html",
+      "automationStatus": "pending_automation",
+      "sourceUrl": "https://apatursorhaz.hu/heti-menu/",
+      "mapUrl": "https://maps.google.com/?q=9000+Gy%C5%91r,+Sz%C3%A9chenyi+t%C3%A9r+7",
+      "notes": [
+        "Official weekly HTML menu page; onboarded via manual review rows pending dedicated collector."
+      ]
+    },
+    {
+      "slug": "belga-etterem-es-sorozo",
+      "name": "Belga Étterem és Söröző",
+      "address": "9000 Győr, Árpád u. 34.",
+      "area": "Belváros",
+      "sourceType": "website_weekly_html",
+      "automationStatus": "pending_automation",
+      "sourceUrl": "https://belgagyor.hu/napi-menu-heti-menu-ebed-menu/",
+      "mapUrl": "https://maps.google.com/?q=9000+Gy%C5%91r,+%C3%81rp%C3%A1d+u.+34",
+      "notes": [
+        "Official weekly HTML menu page; main + vegetarian daily menus; onboarded via manual review rows pending collector."
+      ]
+    },
+    {
+      "slug": "kando-konyha",
+      "name": "Kandó Konyha",
+      "address": "9000 Győr, Kandó Kálmán u. 14.",
+      "area": "Ipari Park / Keleti városrész",
+      "sourceType": "manual_review_only",
+      "automationStatus": "unsupported",
+      "sourceUrl": "https://www.mitegyek.hu/ettermek/kando-konyha-382-gyor",
+      "mapUrl": "https://maps.google.com/?q=9000+Gy%C5%91r,+Kand%C3%B3+K%C3%A1lm%C3%A1n+u.+14",
+      "notes": [
+        "Official source appears protected by bot verification; onboarded from visible multi-day fallback page pending first-party source path."
+      ]
+    },
+    {
+      "slug": "klub-kelemen",
+      "name": "Klub Kelemen",
+      "address": "9023 Győr, Mészáros L. utca 13/B",
+      "area": "Nádorváros",
+      "sourceType": "website_weekly_html",
+      "automationStatus": "pending_automation",
+      "sourceUrl": "http://klubkelemen.hu/",
+      "mapUrl": "https://maps.google.com/?q=9023+Gy%C5%91r,+M%C3%A9sz%C3%A1ros+L.+utca+13%2FB",
+      "notes": [
+        "Official weekly HTML menu page; onboarded via manual review rows pending dedicated collector."
+      ]
+    },
+    {
+      "slug": "vital-cafe-bistro",
+      "name": "Vital cafe & bistro",
+      "address": "9000 Győr, Kisfaludy u. 39.",
+      "area": "Belváros",
+      "sourceType": "website_weekly_html",
+      "automationStatus": "pending_automation",
+      "sourceUrl": "http://vitalcafebistro.hu/hetimenu.html",
+      "mapUrl": "https://maps.google.com/?q=9000+Gy%C5%91r,+Kisfaludy+u.+39",
+      "notes": [
+        "Official weekly HTML menu page; wellness/vegetarian daily format; onboarded via manual review rows pending collector."
+      ]
+    },
+    {
+      "slug": "zold-elefant-kft",
+      "name": "Zöld Elefánt Kft.",
+      "address": "9024 Győr, Lajta utca 15.",
+      "area": "Marcalváros",
+      "sourceType": "website_weekly_html",
+      "automationStatus": "pending_automation",
+      "sourceUrl": "https://www.gyorzoldelefant.hu/hetimenu",
+      "mapUrl": "https://maps.google.com/?q=9024+Gy%C5%91r,+Lajta+utca+15",
+      "notes": [
+        "Official weekly HTML menu page; onboarded via manual review rows pending dedicated collector."
+      ]
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-09T01:27:25+00:00",
+  "generatedAt": "2026-06-09T07:34:50+00:00",
   "city": "Győr",
   "today": "2026-06-09",
   "tomorrow": "2026-06-10",
@@ -25,7 +25,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://apatursorhaz.hu/heti-menu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "1",
@@ -50,7 +50,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://apatursorhaz.hu/heti-menu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "1",
@@ -75,7 +75,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://apatursorhaz.hu/heti-menu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "1",
@@ -100,7 +100,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://apatursorhaz.hu/heti-menu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "1",
@@ -125,7 +125,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://apatursorhaz.hu/heti-menu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "1",
@@ -166,7 +166,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://belgagyor.hu/napi-menu-heti-menu-ebed-menu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Napi menü leves",
@@ -203,7 +203,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://belgagyor.hu/napi-menu-heti-menu-ebed-menu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Napi menü leves",
@@ -240,7 +240,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://belgagyor.hu/napi-menu-heti-menu-ebed-menu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Napi menü leves",
@@ -277,7 +277,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://belgagyor.hu/napi-menu-heti-menu-ebed-menu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Napi menü leves",
@@ -314,7 +314,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://belgagyor.hu/napi-menu-heti-menu-ebed-menu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Napi menü leves",
@@ -366,7 +366,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -397,7 +397,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -428,7 +428,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -459,7 +459,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -486,7 +486,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.carmenetterem.hu/hu/business-menu",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -534,7 +534,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -573,7 +573,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -617,7 +617,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -662,7 +662,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -706,7 +706,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -747,38 +747,210 @@
         {
           "date": "2026-06-08",
           "dayNameHu": "Hétfő",
-          "certainty": "current_snapshot",
+          "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/lilienthalbt",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
-              "text": "Zöldborsóleves vajas galuskával",
+              "text": "Zöldborsó leves vajas galuskával",
               "priceHuf": null,
               "priceText": null
             },
             {
-              "label": "Főétel",
-              "text": "Csirke Cordon Bleu",
+              "label": "A",
+              "text": "Csirke Cordon Bleu, párolt rizs, csemegeuborka",
               "priceHuf": null,
               "priceText": null
             },
             {
-              "label": "Köret",
-              "text": "Párolt rizs",
+              "label": "C menü",
+              "text": "Húsleves lúdgégével, rántott csirkemell, hasábburgonya, káposztasaláta",
               "priceHuf": null,
               "priceText": null
             },
             {
-              "label": "Savanyúság",
-              "text": "Csemegeuborka",
+              "label": "Fitness C menü",
+              "text": "Húsleves lúdgégével, csirkemell roston, friss leveles saláta",
               "priceHuf": null,
               "priceText": null
             }
           ],
           "notes": [
-            "Manual entry from Facebook story screenshot sent by Peter on 2026-06-08"
+            "Weekly menu manually transcribed from screenshot supplied by Peter on 2026-06-09; source is the John Bull Facebook page."
+          ]
+        },
+        {
+          "date": "2026-06-09",
+          "dayNameHu": "Kedd",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
+          "sourceUrl": "https://www.facebook.com/lilienthalbt",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "Tavaszi zöldségleves",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "A",
+              "text": "Brassói aprópecsenye, almapaprika",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "B",
+              "text": "Rakott káposzta",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "C menü",
+              "text": "Húsleves lúdgégével, rántott csirkemell, hasábburgonya, káposztasaláta",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "Fitness C menü",
+              "text": "Húsleves lúdgégével, csirkemell roston, friss leveles saláta",
+              "priceHuf": null,
+              "priceText": null
+            }
+          ],
+          "notes": [
+            "Weekly menu manually transcribed from screenshot supplied by Peter on 2026-06-09; source is the John Bull Facebook page."
+          ]
+        },
+        {
+          "date": "2026-06-10",
+          "dayNameHu": "Szerda",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
+          "sourceUrl": "https://www.facebook.com/lilienthalbt",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "Chilis-limeos szárnyasraguleves",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "A",
+              "text": "Roston szűzérmék, erdei gombamártás, petrezselymes burgonya",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "B",
+              "text": "Mac&Cheese",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "C menü",
+              "text": "Húsleves lúdgégével, rántott csirkemell, hasábburgonya, káposztasaláta",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "Fitness C menü",
+              "text": "Húsleves lúdgégével, csirkemell roston, friss leveles saláta",
+              "priceHuf": null,
+              "priceText": null
+            }
+          ],
+          "notes": [
+            "Weekly menu manually transcribed from screenshot supplied by Peter on 2026-06-09; source is the John Bull Facebook page."
+          ]
+        },
+        {
+          "date": "2026-06-11",
+          "dayNameHu": "Csütörtök",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
+          "sourceUrl": "https://www.facebook.com/lilienthalbt",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "Húsleves gazdagon",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "A",
+              "text": "Édes-savanyú csirkemell csíkok, jázmin rizs",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "B",
+              "text": "Zöldborsó főzelék, sült debreceni",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "C menü",
+              "text": "Húsleves lúdgégével, rántott csirkemell, hasábburgonya, káposztasaláta",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "Fitness C menü",
+              "text": "Húsleves lúdgégével, csirkemell roston, friss leveles saláta",
+              "priceHuf": null,
+              "priceText": null
+            }
+          ],
+          "notes": [
+            "Weekly menu manually transcribed from screenshot supplied by Peter on 2026-06-09; source is the John Bull Facebook page."
+          ]
+        },
+        {
+          "date": "2026-06-12",
+          "dayNameHu": "Péntek",
+          "certainty": "manual",
+          "sourceLabel": "Manual override",
+          "sourceUrl": "https://www.facebook.com/lilienthalbt",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
+          "items": [
+            {
+              "label": "Leves",
+              "text": "Jókai bableves",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "A",
+              "text": "Pecsenye kacsamáj rántva, steakburgonya, tartármártás",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "B",
+              "text": "Vargabéles, vanília sodó",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "C menü",
+              "text": "Húsleves lúdgégével, rántott csirkemell, hasábburgonya, káposztasaláta",
+              "priceHuf": null,
+              "priceText": null
+            },
+            {
+              "label": "Fitness C menü",
+              "text": "Húsleves lúdgégével, csirkemell roston, friss leveles saláta",
+              "priceHuf": null,
+              "priceText": null
+            }
+          ],
+          "notes": [
+            "Weekly menu manually transcribed from screenshot supplied by Peter on 2026-06-09; source is the John Bull Facebook page."
           ]
         }
       ]
@@ -803,7 +975,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.parketterem.hu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -834,7 +1006,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.parketterem.hu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -865,7 +1037,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.parketterem.hu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -896,7 +1068,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.parketterem.hu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -927,7 +1099,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.parketterem.hu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -968,7 +1140,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1009,7 +1181,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1050,7 +1222,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1091,7 +1263,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1132,7 +1304,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1173,7 +1345,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/share/18HZup3Qtm/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1216,7 +1388,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/share/18HZup3Qtm/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1259,7 +1431,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/share/18HZup3Qtm/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Állapot",
@@ -1278,7 +1450,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/share/18HZup3Qtm/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1321,7 +1493,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.facebook.com/share/18HZup3Qtm/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1380,7 +1552,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://klubkelemen.hu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1417,7 +1589,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://klubkelemen.hu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1454,7 +1626,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://klubkelemen.hu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1491,7 +1663,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://klubkelemen.hu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1528,7 +1700,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://klubkelemen.hu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1565,7 +1737,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://klubkelemen.hu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -1617,7 +1789,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -1652,7 +1824,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -1687,7 +1859,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -1722,7 +1894,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -1757,7 +1929,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": null,
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves (A+B+Vega)",
@@ -1792,7 +1964,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://komediasetterem.hu/index.php/heti-menu",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -1835,7 +2007,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Website menu image OCR",
           "sourceUrl": "https://komediasetterem.hu/images/heti_menu/amenu24.jpg",
-          "updatedAt": "2026-06-09T01:27:09+00:00",
+          "updatedAt": "2026-06-09T07:34:37+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -1869,7 +2041,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Website menu image OCR",
           "sourceUrl": "https://komediasetterem.hu/images/heti_menu/amenu24.jpg",
-          "updatedAt": "2026-06-09T01:27:10+00:00",
+          "updatedAt": "2026-06-09T07:34:38+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -1903,7 +2075,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Website menu image OCR",
           "sourceUrl": "https://komediasetterem.hu/images/heti_menu/amenu24.jpg",
-          "updatedAt": "2026-06-09T01:27:10+00:00",
+          "updatedAt": "2026-06-09T07:34:39+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -1937,7 +2109,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Website menu image OCR",
           "sourceUrl": "https://komediasetterem.hu/images/heti_menu/amenu24.jpg",
-          "updatedAt": "2026-06-09T01:27:11+00:00",
+          "updatedAt": "2026-06-09T07:34:39+00:00",
           "items": [
             {
               "label": "Leves (A+B)",
@@ -1984,7 +2156,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-09T01:27:03+00:00",
+          "updatedAt": "2026-06-09T07:34:34+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2025,7 +2197,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-09T01:27:03+00:00",
+          "updatedAt": "2026-06-09T07:34:34+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2066,7 +2238,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-09T01:27:03+00:00",
+          "updatedAt": "2026-06-09T07:34:34+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2107,7 +2279,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-09T01:27:03+00:00",
+          "updatedAt": "2026-06-09T07:34:34+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2148,7 +2320,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-09T01:27:03+00:00",
+          "updatedAt": "2026-06-09T07:34:34+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2189,7 +2361,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-09T01:27:03+00:00",
+          "updatedAt": "2026-06-09T07:34:34+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2224,7 +2396,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
-          "updatedAt": "2026-06-09T01:27:03+00:00",
+          "updatedAt": "2026-06-09T07:34:34+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2274,7 +2446,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://marcal-etterem.hu/heti-menu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Levesek",
@@ -2309,7 +2481,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://marcal-etterem.hu/heti-menu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Levesek",
@@ -2336,7 +2508,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://marcal-etterem.hu/heti-menu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Levesek",
@@ -2371,7 +2543,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://marcal-etterem.hu/heti-menu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Levesek",
@@ -2406,7 +2578,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly website menu",
           "sourceUrl": "https://marcal-etterem.hu/heti-menu/",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Levesek",
@@ -2458,7 +2630,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-09T01:27:04+00:00",
+          "updatedAt": "2026-06-09T07:34:34+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2493,7 +2665,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-09T01:27:04+00:00",
+          "updatedAt": "2026-06-09T07:34:34+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2528,7 +2700,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-09T01:27:04+00:00",
+          "updatedAt": "2026-06-09T07:34:34+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2563,7 +2735,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-09T01:27:04+00:00",
+          "updatedAt": "2026-06-09T07:34:34+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2598,7 +2770,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-09T01:27:04+00:00",
+          "updatedAt": "2026-06-09T07:34:34+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2633,7 +2805,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-09T01:27:04+00:00",
+          "updatedAt": "2026-06-09T07:34:34+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2668,7 +2840,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
-          "updatedAt": "2026-06-09T01:27:04+00:00",
+          "updatedAt": "2026-06-09T07:34:34+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2719,7 +2891,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2763,7 +2935,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2808,7 +2980,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2852,7 +3024,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://radobywesty.hu/etterem/#heti-menu",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -2911,7 +3083,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-09T01:27:07+00:00",
+          "updatedAt": "2026-06-09T07:34:35+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2946,7 +3118,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-09T01:27:07+00:00",
+          "updatedAt": "2026-06-09T07:34:35+00:00",
           "items": [
             {
               "label": "A menü",
@@ -2981,7 +3153,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-09T01:27:07+00:00",
+          "updatedAt": "2026-06-09T07:34:35+00:00",
           "items": [
             {
               "label": "A menü",
@@ -3016,7 +3188,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-09T01:27:07+00:00",
+          "updatedAt": "2026-06-09T07:34:35+00:00",
           "items": [
             {
               "label": "A menü",
@@ -3051,7 +3223,7 @@
           "certainty": "exact",
           "sourceLabel": "Weekly PDF menu",
           "sourceUrl": "https://szalaivendeglo.hu/index.php/hu/heti-menue",
-          "updatedAt": "2026-06-09T01:27:07+00:00",
+          "updatedAt": "2026-06-09T07:34:35+00:00",
           "items": [
             {
               "label": "A menü",
@@ -3101,7 +3273,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3135,7 +3307,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3169,7 +3341,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3203,7 +3375,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3237,7 +3409,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3272,7 +3444,7 @@
           "certainty": "manual",
           "sourceLabel": "Screenshot / manual",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3307,7 +3479,7 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Napi menü",
@@ -3338,11 +3510,11 @@
           "certainty": "current_snapshot",
           "sourceLabel": "Wolt current snapshot",
           "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
-          "updatedAt": "2026-06-09T01:27:02+00:00",
+          "updatedAt": "2026-06-09T07:34:33+00:00",
           "items": [
             {
               "label": "Napi menü",
-              "text": "Csont keves, Bakonyi csirkemell,galuska",
+              "text": "Mészáros leves, Töltött paprika",
               "priceHuf": 3500,
               "priceText": "3 500 Ft"
             },
@@ -3354,7 +3526,7 @@
             },
             {
               "label": "Napi Vega nenü",
-              "text": "Olasz zöldség leves, Zöldségnyárs grillezve,vajas karalábén",
+              "text": "Borsó krémleves, Juhturóval töltött gombafejek,rizs",
               "priceHuf": 3800,
               "priceText": "3 800 Ft"
             },
@@ -3392,7 +3564,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://vitalcafebistro.hu/hetimenu.html",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves 1",
@@ -3477,7 +3649,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://vitalcafebistro.hu/hetimenu.html",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves 1",
@@ -3562,7 +3734,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://vitalcafebistro.hu/hetimenu.html",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves 1",
@@ -3647,7 +3819,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://vitalcafebistro.hu/hetimenu.html",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves 1",
@@ -3732,7 +3904,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "http://vitalcafebistro.hu/hetimenu.html",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves 1",
@@ -3833,7 +4005,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.gyorzoldelefant.hu/hetimenu",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3858,7 +4030,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.gyorzoldelefant.hu/hetimenu",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3883,7 +4055,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.gyorzoldelefant.hu/hetimenu",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3908,7 +4080,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.gyorzoldelefant.hu/hetimenu",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3933,7 +4105,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://www.gyorzoldelefant.hu/hetimenu",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -3973,7 +4145,7 @@
           "certainty": "manual",
           "sourceLabel": "Manual override",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-09T01:27:25+00:00",
+          "updatedAt": "2026-06-09T07:34:50+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4022,7 +4194,7 @@
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-09T01:27:12+00:00",
+          "updatedAt": "2026-06-09T07:34:40+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4057,7 +4229,7 @@
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-09T01:27:12+00:00",
+          "updatedAt": "2026-06-09T07:34:40+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4092,7 +4264,7 @@
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-09T01:27:12+00:00",
+          "updatedAt": "2026-06-09T07:34:40+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4127,7 +4299,7 @@
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-09T01:27:12+00:00",
+          "updatedAt": "2026-06-09T07:34:40+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4162,7 +4334,7 @@
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-09T01:27:12+00:00",
+          "updatedAt": "2026-06-09T07:34:40+00:00",
           "items": [
             {
               "label": "Leves",
@@ -4189,7 +4361,7 @@
           "certainty": "exact",
           "sourceLabel": "Heti menü PDF",
           "sourceUrl": "https://ujzoldfa.hu/index.php?c=hmpdf",
-          "updatedAt": "2026-06-09T01:27:12+00:00",
+          "updatedAt": "2026-06-09T07:34:40+00:00",
           "items": [
             {
               "label": "Leves",

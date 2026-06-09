@@ -175,10 +175,10 @@
       "area": "Ipari Park / Keleti városrész",
       "sourceType": "manual_review_only",
       "automationStatus": "unsupported",
-      "sourceUrl": "https://www.mitegyek.hu/ettermek/kando-konyha-382-gyor",
+      "sourceUrl": "https://www.parketterem.hu/",
       "mapUrl": "https://maps.google.com/?q=9000+Gy%C5%91r,+Kand%C3%B3+K%C3%A1lm%C3%A1n+u.+14",
       "notes": [
-        "Official source appears protected by bot verification; onboarded from visible multi-day fallback page pending first-party source path."
+        "Canonical source set to Park Étterem page per Peter. Site is currently verification-blocked for automation, so menu ingestion still relies on manual/fallback review."
       ]
     },
     {

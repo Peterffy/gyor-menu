@@ -118,6 +118,17 @@ def parse_price_huf(text: str | None) -> int | None:
     return int(digits)
 
 
+def extract_price_huf(text: str | None) -> int | None:
+    if not text:
+        return None
+    match = re.search(r"(\d{1,2}[ .]?\d{3}|\d{3,5})\s*(?:,-)?\s*Ft", text, re.IGNORECASE)
+    return parse_price_huf(match.group(0)) if match else None
+
+
+def format_price_text(price_huf: int | None) -> str | None:
+    return f"{price_huf:,} Ft".replace(",", " ") if price_huf else None
+
+
 def looks_like_food_descriptor(text: str | None) -> bool:
     """Check if a string is more likely a food descriptor than a price."""
     if not text:
@@ -233,6 +244,10 @@ def collect_kristaly_week(meta: dict[str, Any], ctx: CollectContext) -> list[dic
     if not section:
         return []
 
+    section_text = re.sub(r"\s+", " ", section.get_text(" ", strip=True))
+    main_price_match = re.search(r"Menü áraink helyben\s*(\d{1,2}[ .]?\d{3})\s*Ft", section_text, re.IGNORECASE)
+    main_price_huf = parse_price_huf(main_price_match.group(1)) if main_price_match else None
+
     date_map = map_dates_for_current_week(ctx)
     menus = []
     # Only take the first table (current week) — the site sometimes shows two weeks
@@ -256,11 +271,13 @@ def collect_kristaly_week(meta: dict[str, Any], ctx: CollectContext) -> list[dic
             quoted_letter = label.startswith('"') and label.endswith('"') and len(label) == 3
             if not content and (len(label) <= 2 or quoted_letter):
                 continue
+            normalized_label = label.strip('"')
+            price_huf = main_price_huf if normalized_label in {"A", "B", "C"} else None
             items.append({
                 "label": label or None,
                 "text": content or None,
-                "priceHuf": None,
-                "priceText": None,
+                "priceHuf": price_huf,
+                "priceText": format_price_text(price_huf),
             })
 
         if items:
@@ -598,13 +615,21 @@ def collect_carmen_week(meta: dict[str, Any], ctx: CollectContext) -> list[dict[
             chunks = []
             while j < len(day_lines) and day_lines[j] not in {"A:", "B:", "C:", "X:"}:
                 cur = day_lines[j]
-                if cur.startswith("(") or "Ft" in cur or cur == "Napi ajándék desszert":
+                if cur.startswith("(") or cur == "Napi ajándék desszert":
                     j += 1
                     continue
                 chunks.append(cur)
                 j += 1
             if chunks:
-                items.append({"label": pretty, "text": " ".join(chunks)})
+                raw = " ".join(chunks)
+                price_huf = extract_price_huf(raw)
+                cleaned = re.sub(r"\s*[–-]?\s*(\d{1,2}[ .]?\d{3}|\d{3,5})\s*(?:,-)?\s*Ft\s*$", "", raw, flags=re.IGNORECASE).strip()
+                items.append({
+                    "label": pretty,
+                    "text": cleaned or raw,
+                    "priceHuf": price_huf,
+                    "priceText": format_price_text(price_huf),
+                })
 
         if items:
             menus.append({
@@ -637,6 +662,11 @@ def parse_marcal_week_from_text(text: str, url: str) -> list[dict[str, Any]]:
             continue
         lines = [re.sub(r"\s+", " ", x).strip() for x in block.splitlines()]
         lines = [x for x in lines if x]
+        flat_block = " ".join(lines)
+        daily_price_match = re.search(r"(?:Napi\s+)?Menüajánlatunk\s*El\s*vitelre\s*(\d{1,2}[ .]?\d{3}|\d{3,5})\s*,-?\s*Ft,?\s*helyben(?:\s+fogyasztva)?:?\s*(\d{1,2}[ .]?\d{3}|\d{3,5})(?:\s*,-?\s*Ft)?", flat_block, re.IGNORECASE)
+        super_price_match = re.search(r"Szuper menü:?\s*El\s*vitelre\s*(\d{1,2}[ .]?\d{3}|\d{3,5})\s*,-?\s*Ft,?\s*helyben(?:\s+fogyasztva)?:?\s*(\d{1,2}[ .]?\d{3}|\d{3,5})(?:\s*,-?\s*Ft)?", flat_block, re.IGNORECASE)
+        daily_price_huf = parse_price_huf(daily_price_match.group(2)) if daily_price_match else None
+        super_price_huf = parse_price_huf(super_price_match.group(2)) if super_price_match else None
 
         items = []
         soups = []
@@ -674,7 +704,12 @@ def parse_marcal_week_from_text(text: str, url: str) -> list[dict[str, Any]]:
                     continue
                 mains.append(cur)
             for n, meal in enumerate(mains[:6], 1):
-                items.append({"label": f"Napi menü {n}", "text": meal})
+                items.append({
+                    "label": f"Napi menü {n}",
+                    "text": meal,
+                    "priceHuf": daily_price_huf,
+                    "priceText": format_price_text(daily_price_huf),
+                })
 
         if "Szuper menü" in lines:
             start = lines.index("Szuper menü") + 1
@@ -686,7 +721,12 @@ def parse_marcal_week_from_text(text: str, url: str) -> list[dict[str, Any]]:
                     continue
                 supers.append(cur)
             for n, meal in enumerate(supers[:3], 1):
-                items.append({"label": f"Szuper menü {n}", "text": meal})
+                items.append({
+                    "label": f"Szuper menü {n}",
+                    "text": meal,
+                    "priceHuf": super_price_huf,
+                    "priceText": format_price_text(super_price_huf),
+                })
 
         if items:
             menus.append({

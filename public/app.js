@@ -250,11 +250,15 @@ function renderMenuItem(item) {
   return `<div class="menu-item">${header}${text}</div>`;
 }
 
-function renderMenuBlock(menu) {
+function renderMenuBlock(menu, detailHref) {
   const visibleItems = menu.items.slice(0, 5);
   const pricedCount = visibleItems.filter(item => item.priceHuf || item.priceText).length;
+  const hiddenCount = Math.max(0, menu.items.length - visibleItems.length);
   const priceNote = visibleItems.length > 0 && pricedCount < visibleItems.length
     ? `<div class="menu-price-note">Az árak csak ott jelennek meg, ahol a forrás külön feltünteti.</div>`
+    : '';
+  const moreLink = hiddenCount > 0
+    ? `<div class="menu-more-link"><a href="${detailHref}">+${hiddenCount} további tétel a részleteknél →</a></div>`
     : '';
   return `
     <section class="menu-block">
@@ -265,29 +269,22 @@ function renderMenuBlock(menu) {
         ${visibleItems.map(renderMenuItem).join('')}
       </div>
       ${priceNote}
+      ${moreLink}
     </section>
   `;
 }
 
-function trustClass(menus) {
-  if (!menus.length) return 'trust-none';
-  if (menus.some(m => m.certainty === 'manual')) return 'trust-manual';
-  if (menus.some(m => m.certainty === 'exact')) return 'trust-exact';
-  return 'trust-snapshot';
-}
-
-function trustLabel(menus) {
-  if (!menus.length) return '';
-  if (menus.some(m => m.certainty === 'exact')) return 'Ellenőrzött';
-  if (menus.some(m => m.certainty === 'manual')) return 'Kézi';
-  if (menus.some(m => m.certainty === 'current_snapshot')) return 'Élő forrás';
-  return '';
+function trustMeta(menus) {
+  if (!menus.length) return { cls: 'trust-none', label: '', symbol: '' };
+  if (menus.some(m => m.certainty === 'exact')) return { cls: 'trust-exact', label: 'Ellenőrzött', symbol: '✓' };
+  if (menus.some(m => m.certainty === 'manual')) return { cls: 'trust-manual', label: 'Kézi', symbol: '⚡' };
+  if (menus.some(m => m.certainty === 'current_snapshot')) return { cls: 'trust-snapshot', label: 'Élő forrás', symbol: '◷' };
+  return { cls: 'trust-none', label: '', symbol: '' };
 }
 
 function renderRestaurantCard({ restaurant, menus, hasMenu }) {
   const hint = restaurantHint(menus);
-  const trust = trustClass(menus);
-  const tlabel = trustLabel(menus);
+  const trust = trustMeta(menus);
   const safeName = escapeHtml(restaurant.name);
   const safeSlug = escapeHtml(restaurant.slug);
   const safeSource = safeUrl(restaurant.sourceUrl);
@@ -303,14 +300,14 @@ function renderRestaurantCard({ restaurant, menus, hasMenu }) {
           ${safeArea ? `<span class="area-chip">${safeArea}</span>` : ''}
           ${!hasMenu ? `<div class="sub">Nincs napi menü</div>` : ''}
         </div>
-        ${hasMenu && tlabel ? `<div class="trust-corner"><span class="trust-check ${trust}">${tlabel === 'Ellenőrzött' ? '✓' : tlabel === 'Kézi' ? '⚡' : '◷'}</span></div>` : ''}
+        ${hasMenu && trust.label ? `<div class="trust-corner"><span class="trust-check ${trust.cls}" title="${trust.label}">${trust.symbol}</span></div>` : ''}
       </div>
       <div class="card-links compact-links">
         ${safeSource ? `<a href="${safeSource}" target="_blank" rel="noreferrer">Eredeti forrás</a>` : ''}
         <a href="${safeDetail}">Részletek</a>
         <a href="${safeReport}" target="_blank" rel="noreferrer">Hiba jelzése</a>
       </div>
-      ${hasMenu ? menus.map(renderMenuBlock).join('') : ''}
+      ${hasMenu ? menus.map(menu => renderMenuBlock(menu, safeDetail)).join('') : ''}
       ${hasMenu && safeHint ? `<div class="notes">${safeHint}</div>` : ''}
     </article>
   `;

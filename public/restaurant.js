@@ -20,10 +20,6 @@ function params() {
   return new URLSearchParams(window.location.search);
 }
 
-function saveFavorites() {
-  localStorage.setItem(FAVORITES_KEY, JSON.stringify([...state.favorites]));
-}
-
 function escapeHtml(str) {
   if (!str && str !== 0) return '';
   return String(str)
@@ -178,13 +174,12 @@ function render() {
 
   const wantedDate = selectedDate();
   const menus = (restaurant.menus || []).filter(m => m.date === wantedDate);
-  const best = menus[0];
-
   const topUpdated = menus.map(m => m.updatedAt).filter(Boolean).sort().reverse()[0] || '';
+
   setDetailSeo(restaurant);
-  el.name.textContent = escapeHtml(restaurant.name);
-  if (el.subtitle) el.subtitle.textContent = escapeHtml(restaurant.address || 'Győr');
-  if (el.area) el.area.textContent = escapeHtml(restaurant.area || 'Győr');
+  el.name.textContent = restaurant.name || '';
+  if (el.subtitle) el.subtitle.textContent = restaurant.address || 'Győr';
+  if (el.area) el.area.textContent = restaurant.area || 'Győr';
   if (el.updated) el.updated.textContent = topUpdated ? formatDateTime(topUpdated) : 'Nincs adat';
 
   const linkParts = [];
@@ -204,9 +199,14 @@ function render() {
     return;
   }
 
-  const trustClass = (menu) => menu.certainty === 'manual' ? 'trust-manual' : menu.certainty === 'exact' ? 'trust-exact' : 'trust-snapshot';
-  const trustSymbol = (menu) => menu.certainty === 'exact' ? '✓' : menu.certainty === 'manual' ? '⚡' : '◷';
+  const trustMetaForMenu = (menu) => {
+    if (menu.certainty === 'exact') return { cls: 'trust-exact', symbol: '✓', label: 'Ellenőrzött' };
+    if (menu.certainty === 'manual') return { cls: 'trust-manual', symbol: '⚡', label: 'Kézi' };
+    return { cls: 'trust-snapshot', symbol: '◷', label: 'Élő forrás' };
+  };
+
   el.menus.innerHTML = menus.map(menu => {
+    const trust = trustMetaForMenu(menu);
     const pricedCount = menu.items.filter(item => item.priceHuf || item.priceText).length;
     const priceNote = menu.items.length > 0 && pricedCount < menu.items.length
       ? `<div class="menu-price-note">Az árak csak ott jelennek meg, ahol a forrás külön feltünteti.</div>`
@@ -217,7 +217,7 @@ function render() {
         <div>
           <h2>${escapeHtml(menu.dayNameHu)}</h2>
         </div>
-        <div class="trust-corner"><span class="trust-check ${trustClass(menu)}">${trustSymbol(menu)}</span></div>
+        <div class="trust-corner"><span class="trust-check ${trust.cls}" title="${trust.label}">${trust.symbol}</span></div>
       </div>
       <div class="menu-list detail-menu-list">
         ${menu.items.map(renderMenuItem).join('')}

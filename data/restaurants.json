@@ -13,7 +13,9 @@
       "mapUrl": "https://maps.google.com/?q=9025+Gy%C5%91r,+H%C3%ADd+u.+7",
       "notes": [
         "Screenshot-first source path; Wolt current fallback may be used for same-day coverage when no fresh screenshot is available."
-      ]
+      ],
+      "lat": 47.687522,
+      "lng": 17.6257302
     },
     {
       "slug": "kristaly-etterem",
@@ -24,7 +26,9 @@
       "automationStatus": "exact",
       "sourceUrl": "https://www.kristalyetterem.hu/#heti-menu",
       "mapUrl": "https://maps.google.com/?q=9023+Gy%C5%91r,+Bart%C3%B3k+B%C3%A9la+%C3%BAt+9",
-      "notes": []
+      "notes": [],
+      "lat": 47.6814333,
+      "lng": 17.6391201
     },
     {
       "slug": "nador-vendeglo",
@@ -35,7 +39,9 @@
       "automationStatus": "exact",
       "sourceUrl": "https://www.nadorvendeglo.hu/index.php/heti-menue",
       "mapUrl": "https://maps.google.com/?q=9023+Gy%C5%91r,+Corvin+utca+36-38",
-      "notes": []
+      "notes": [],
+      "lat": 47.6799988,
+      "lng": 17.6428927
     },
     {
       "slug": "john-bull-pub",
@@ -49,7 +55,9 @@
       "notes": [
         "Likely Facebook-only daily menu source.",
         "Needs either direct post URLs, OCR on menu images, or manual override."
-      ]
+      ],
+      "lat": 47.6866898,
+      "lng": 17.6319404
     },
     {
       "slug": "szalai-vendeglo",
@@ -62,7 +70,9 @@
       "mapUrl": "https://maps.google.com/?q=9022+Gy%C5%91r,+Kisfaludy+u.+34",
       "notes": [
         "Weekly PDF menu listed on the restaurant website."
-      ]
+      ],
+      "lat": 47.6872416,
+      "lng": 17.6349344
     },
     {
       "slug": "rado-by-westy",
@@ -75,7 +85,9 @@
       "mapUrl": "https://maps.google.com/?q=9025+Gy%C5%91r,+Rad%C3%B3+s%C3%A9t%C3%A1ny+1",
       "notes": [
         "Website weekly menu currently appears as an image-based snapshot; use review rows if needed."
-      ]
+      ],
+      "lat": 47.687465,
+      "lng": 17.6290189
     },
     {
       "slug": "komedias-etterem",
@@ -88,7 +100,9 @@
       "mapUrl": null,
       "notes": [
         "Heti menü képként a weboldalon: /images/heti_menu/amenu*.jpg, men-kiegszts.jpg"
-      ]
+      ],
+      "lat": 47.6856473,
+      "lng": 17.6354368
     },
     {
       "slug": "uj-zoldfa",
@@ -101,7 +115,9 @@
       "mapUrl": "https://maps.app.goo.gl/N84LHvjwyyjgFhbi7",
       "notes": [
         "Heti menü PDF generátor: index.php?c=hmpdf"
-      ]
+      ],
+      "lat": 47.6814554,
+      "lng": 17.6363711
     },
     {
       "slug": "klasszis-bisztro",
@@ -114,7 +130,9 @@
       "mapUrl": "https://maps.google.com/?q=Gy%C5%91r,+E%C5%91rsy+P%C3%A9ter+u.+17,+9024",
       "notes": [
         "Napi/heti menü Facebookon (screenshot / manual review)"
-      ]
+      ],
+      "lat": 47.6748148,
+      "lng": 17.6347142
     },
     {
       "slug": "marcal-etterem",
@@ -127,7 +145,9 @@
       "mapUrl": null,
       "notes": [
         "Structured weekly menu text on website; closed Monday and Sunday."
-      ]
+      ],
+      "lat": 47.6657208,
+      "lng": 17.6340663
     },
     {
       "slug": "carmen-etterem",
@@ -140,7 +160,9 @@
       "mapUrl": null,
       "notes": [
         "Structured business menu page on website."
-      ]
+      ],
+      "lat": 47.6762416,
+      "lng": 17.6305941
     },
     {
       "slug": "apatur-sorhaz",
@@ -153,7 +175,9 @@
       "mapUrl": "https://maps.google.com/?q=9000+Gy%C5%91r,+Sz%C3%A9chenyi+t%C3%A9r+7",
       "notes": [
         "Official weekly HTML menu page; onboarded via manual review rows pending dedicated collector."
-      ]
+      ],
+      "lat": 47.6883639,
+      "lng": 17.6347146
     },
     {
       "slug": "belga-etterem-es-sorozo",
@@ -166,7 +190,9 @@
       "mapUrl": "https://maps.google.com/?q=9000+Gy%C5%91r,+%C3%81rp%C3%A1d+u.+34",
       "notes": [
         "Official weekly HTML menu page; main + vegetarian daily menus; onboarded via manual review rows pending collector."
-      ]
+      ],
+      "lat": 47.6842876,
+      "lng": 17.6354693
     },
     {
       "slug": "kando-konyha",
@@ -179,7 +205,9 @@
       "mapUrl": "https://maps.google.com/?q=9000+Gy%C5%91r,+Kand%C3%B3+K%C3%A1lm%C3%A1n+u.+14",
       "notes": [
         "Canonical source set to Park Étterem page per Peter. Site is currently verification-blocked for automation, so menu ingestion still relies on manual/fallback review."
-      ]
+      ],
+      "lat": 47.6848837,
+      "lng": 17.6641119
     },
     {
       "slug": "klub-kelemen",
@@ -192,7 +220,9 @@
       "mapUrl": "https://maps.google.com/?q=9023+Gy%C5%91r,+M%C3%A9sz%C3%A1ros+L.+utca+13%2FB",
       "notes": [
         "Official weekly HTML menu page; onboarded via manual review rows pending dedicated collector."
-      ]
+      ],
+      "lat": 47.683088,
+      "lng": 17.6541848
     },
     {
       "slug": "vital-cafe-bistro",
@@ -205,7 +235,9 @@
       "mapUrl": "https://maps.google.com/?q=9000+Gy%C5%91r,+Kisfaludy+u.+39",
       "notes": [
         "Official weekly HTML menu page; wellness/vegetarian daily format; onboarded via manual review rows pending collector."
-      ]
+      ],
+      "lat": 47.6876972,
+      "lng": 17.6356633
     },
     {
       "slug": "zold-elefant-kft",
@@ -218,7 +250,9 @@
       "mapUrl": "https://maps.google.com/?q=9024+Gy%C5%91r,+Lajta+utca+15",
       "notes": [
         "Official weekly HTML menu page; onboarded via manual review rows pending dedicated collector."
-      ]
+      ],
+      "lat": 47.6669649,
+      "lng": 17.6404257
     }
   ]
 }

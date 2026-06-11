@@ -165,6 +165,8 @@ def build_base_restaurant(meta: dict[str, Any]) -> dict[str, Any]:
         "automationStatus": meta.get("automationStatus"),
         "sourceUrl": meta.get("sourceUrl"),
         "mapUrl": meta.get("mapUrl"),
+        "lat": meta.get("lat"),
+        "lng": meta.get("lng"),
         "notes": meta.get("notes", []),
         "menus": [],
     }

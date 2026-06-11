@@ -2,7 +2,7 @@
 """Sync restaurant registry from a Google Sheet into restaurants.json.
 
 Expected columns in tab `Restaurants`:
-active, slug, name, address, area, source_type, automation_status, source_url, map_url, notes
+active, slug, name, address, area, source_type, automation_status, source_url, map_url, notes, lat, lng
 """
 
 from __future__ import annotations
@@ -34,6 +34,15 @@ def split_notes(value: str) -> list[str]:
     return [n.strip() for n in value.split('|') if n.strip()]
 
 
+def parse_float(value: str) -> float | None:
+    if not value:
+        return None
+    try:
+        return float(value.replace(',', '.'))
+    except ValueError:
+        return None
+
+
 def sync(sheet_id: str, out_path: Path, sheet_name: str = 'Restaurants', city: str = 'Győr') -> dict[str, Any]:
     values = run_gog_get(sheet_id, f'{sheet_name}!A:Z')
     if not values:
@@ -62,6 +71,8 @@ def sync(sheet_id: str, out_path: Path, sheet_name: str = 'Restaurants', city: s
             'sourceUrl': row.get('source_url', '') or None,
             'mapUrl': row.get('map_url', '') or None,
             'notes': split_notes(row.get('notes', '')),
+            'lat': parse_float(row.get('lat', '')),
+            'lng': parse_float(row.get('lng', '')),
         })
 
     result = {'city': city, 'sourceSheetId': sheet_id, 'restaurants': restaurants}

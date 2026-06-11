@@ -1,10 +1,13 @@
 const REPORT_FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSf6AunOQ15BUC4FcisN_DqhRKsKrr3oMdyyCxClZATe3Hasyg/viewform?usp=pp_url';
 const WEEKDAYS_HU = ['Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat', 'Vasárnap'];
+const DEFAULT_MAP_CENTER = { lat: 47.6874, lng: 17.6351 };
 
 const state = {
   slug: '',
   selectedDayIndex: 0,
   feed: null,
+  map: null,
+  markerLayer: null,
 };
 
 const el = {
@@ -14,8 +17,11 @@ const el = {
   updated: document.getElementById('detail-updated'),
   links: document.getElementById('detail-links'),
   menus: document.getElementById('detail-menus'),
+  mapSection: document.getElementById('detail-map-section'),
+  mapCanvas: document.getElementById('detail-map-canvas'),
   weekdayTabs: Array.from(document.querySelectorAll('.weekday-tab')),
 };
+
 function params() {
   return new URLSearchParams(window.location.search);
 }
@@ -159,6 +165,83 @@ function renderMenuItem(item) {
   return `<div class="menu-item">${header}${text}</div>`;
 }
 
+function parseCoordinate(value) {
+  if (typeof value === 'number' && Number.isFinite(value)) return value;
+  if (typeof value === 'string' && value.trim()) {
+    const parsed = Number(value.replace(',', '.'));
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+  return null;
+}
+
+function getCoords(restaurant) {
+  const lat = parseCoordinate(restaurant.lat);
+  const lng = parseCoordinate(restaurant.lng);
+  return Number.isFinite(lat) && Number.isFinite(lng) ? { lat, lng } : null;
+}
+
+function ensureMap() {
+  if (state.map || !el.mapCanvas || typeof L === 'undefined') return;
+  state.map = L.map(el.mapCanvas, { zoomControl: true, attributionControl: true }).setView([DEFAULT_MAP_CENTER.lat, DEFAULT_MAP_CENTER.lng], 13);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> közreműködők',
+  }).addTo(state.map);
+  state.markerLayer = L.layerGroup().addTo(state.map);
+}
+
+function mapPopupHtml(restaurant, isCurrent) {
+  const source = safeUrl(restaurant.sourceUrl);
+  const detail = `./restaurant.html?slug=${encodeURIComponent(restaurant.slug)}&day=${state.selectedDayIndex}`;
+  return `
+    <div class="map-popup">
+      <strong>${escapeHtml(restaurant.name)}</strong>
+      <div>${escapeHtml(restaurant.area || 'Győr')}</div>
+      ${isCurrent ? `<div class="map-popup-state">Ez az aktuális étterem</div>` : ''}
+      <div class="map-popup-links">
+        ${!isCurrent ? `<a href="${detail}">Részletek</a>` : ''}
+        ${source ? `<a href="${source}" target="_blank" rel="noreferrer">Forrás</a>` : ''}
+      </div>
+    </div>
+  `;
+}
+
+function renderRestaurantMap(currentRestaurant) {
+  if (!el.mapSection || !el.mapCanvas) return;
+  ensureMap();
+  if (!state.map || !state.markerLayer) return;
+
+  state.markerLayer.clearLayers();
+  const bounds = [];
+
+  for (const restaurant of state.feed.restaurants || []) {
+    const coords = getCoords(restaurant);
+    if (!coords) continue;
+    const isCurrent = restaurant.slug === currentRestaurant.slug;
+    const marker = L.circleMarker([coords.lat, coords.lng], {
+      radius: isCurrent ? 10 : 7,
+      color: isCurrent ? '#0c7c74' : '#5c6b7a',
+      weight: isCurrent ? 3 : 2,
+      fillColor: isCurrent ? '#0c7c74' : '#a4afb9',
+      fillOpacity: isCurrent ? 0.9 : 0.65,
+    }).bindPopup(mapPopupHtml(restaurant, isCurrent));
+    marker.addTo(state.markerLayer);
+    bounds.push([coords.lat, coords.lng]);
+    if (isCurrent) marker.openPopup();
+  }
+
+  setTimeout(() => {
+    state.map.invalidateSize();
+    const currentCoords = getCoords(currentRestaurant);
+    if (currentCoords) {
+      state.map.setView([currentCoords.lat, currentCoords.lng], 14);
+    }
+    if (bounds.length > 1) {
+      state.map.fitBounds(bounds, { padding: [28, 28], maxZoom: 14 });
+    }
+  }, 0);
+}
+
 function render() {
   if (!state.feed) return;
   updateUrl();
@@ -194,6 +277,8 @@ function render() {
   linkParts.push(`<a href="${reportUrl(restaurant)}" target="_blank" rel="noreferrer">Hiba jelzése</a>`);
   el.links.innerHTML = linkParts.join('');
 
+  renderRestaurantMap(restaurant);
+
   if (!menus.length) {
     el.menus.innerHTML = `<div class="empty">Ehhez a naphoz jelenleg nincs betöltött menü. Ilyenkor érdemes megnyitni az eredeti forrást.</div>`;
     return;
@@ -225,7 +310,8 @@ function render() {
       ${priceNote}
       ${menu.notes?.length ? `<div class="notes">${menu.notes.map(n => `• ${escapeHtml(n)}`).join('<br>')}</div>` : ''}
     </article>
-  `}).join('');
+  `;
+  }).join('');
 }
 
 async function loadFeed() {

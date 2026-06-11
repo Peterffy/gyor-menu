@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://tile.openstreetmap.org; style-src 'self' 'unsafe-inline'; script-src 'self'">
   <title>Győri étterem napi menüje | Mi a menü?</title>
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link id="canonical-link" rel="canonical" href="https://gyor-menu.vercel.app/restaurant.html">
@@ -18,7 +18,8 @@
   <meta id="meta-description" name="description" content="Győri étterem részletes napi és heti menüoldala, forráslinkkel és gyors áttekintéssel.">
   <meta id="meta-twitter-title" name="twitter:title" content="Győri étterem napi menüje | Mi a menü?">
   <meta id="meta-twitter-description" name="twitter:description" content="Győri étterem részletes napi és heti menüoldala, forráslinkkel és gyors áttekintéssel.">
-  <link rel="stylesheet" href="./styles.css?v=20260610fixnow1">
+  <link rel="stylesheet" href="./vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="./styles.css?v=20260611detailmap1">
 </head>
 <body>
   <div class="app-shell detail-shell">
@@ -54,6 +55,16 @@
 
     <main>
       <section class="cards" id="detail-menus"></section>
+      <section class="map-panel detail-map-panel" id="detail-map-section">
+        <div class="panel-head detail-map-head">
+          <div>
+            <h2>A környéken</h2>
+            <p>Az aktuális étterem kiemelve, a többi győri hely összehasonlításként látszik.</p>
+          </div>
+        </div>
+        <div class="map-canvas" id="detail-map-canvas" aria-label="Az étterem helye a térképen"></div>
+        <p class="map-note">A zöld marker az aktuális étterem, a többi marker a többi győri helyet mutatja.</p>
+      </section>
       <section class="bottom-legend">
         <div class="legend-item-inline"><span class="trust-check trust-exact">✓</span><span>Ellenőrzött menü — pontos, heti forrásból</span></div>
         <div class="legend-item-inline"><span class="trust-check trust-snapshot">◷</span><span>Élő forrásból — indulás előtt nézz rá az eredetire</span></div>
@@ -64,6 +75,7 @@
       </section>
     </main>
   </div>
-  <script src="./restaurant.js?v=20260610fixnow1" defer></script>
+  <script src="./vendor/leaflet/leaflet.js" defer></script>
+  <script src="./restaurant.js?v=20260611detailmap1" defer></script>
 </body>
 </html>

@@ -242,6 +242,11 @@ function renderRestaurantMap(currentRestaurant) {
   }, 0);
 }
 
+function visibleMenuNotes(menu) {
+  const notes = Array.isArray(menu?.notes) ? menu.notes : [];
+  return notes.filter(note => /zárva|áramszünet|technikai ok|ünnepi|mai menü|ma nincs/i.test(String(note)));
+}
+
 function render() {
   if (!state.feed) return;
   updateUrl();
@@ -296,6 +301,7 @@ function render() {
     const priceNote = menu.items.length > 0 && pricedCount < menu.items.length
       ? `<div class="menu-price-note">Az árak csak ott jelennek meg, ahol a forrás külön feltünteti.</div>`
       : '';
+    const notes = visibleMenuNotes(menu);
     return `
     <article class="card">
       <div class="card-head simple-card-head">
@@ -308,7 +314,7 @@ function render() {
         ${menu.items.map(renderMenuItem).join('')}
       </div>
       ${priceNote}
-      ${menu.notes?.length ? `<div class="notes">${menu.notes.map(n => `• ${escapeHtml(n)}`).join('<br>')}</div>` : ''}
+      ${notes.length ? `<div class="notes">${notes.map(n => `• ${escapeHtml(n)}`).join('<br>')}</div>` : ''}
     </article>
   `;
   }).join('');

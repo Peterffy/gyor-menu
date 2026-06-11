@@ -18,7 +18,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Napi menü Győr – mai ebédmenük | Mi a menü?">
   <meta name="twitter:description" content="Győri napi ebédmenük és heti menük egy helyen.">
-  <link rel="stylesheet" href="./styles.css?v=20260611detailmap1">
+  <link rel="stylesheet" href="./styles.css?v=20260611copy1">
 </head>
 <body>
   <div class="app-shell">
@@ -55,7 +55,7 @@
       <div class="panel-head">
         <div>
           <h2>Kedvenc helyeim</h2>
-          <p>Jelöld be az éttermeket, amiket gyakran nézel. Ezek előrébb kerülnek.</p>
+          <p>Jelöld be a gyakran nézett helyeket. Ezek előrébb kerülnek.</p>
         </div>
         <button id="favorites-reset" class="secondary-btn" type="button">Törlés</button>
       </div>
@@ -65,10 +65,8 @@
     <main>
       <section class="cards" id="cards"></section>
       <section class="cards" id="unsupported"></section>
-      <section class="bottom-legend">
-        <div class="legend-item-inline"><span class="trust-check trust-exact">✓</span><span>Ellenőrzött menü — pontos, heti forrásból</span></div>
-        <div class="legend-item-inline"><span class="trust-check trust-snapshot">◷</span><span>Élő forrásból — indulás előtt nézz rá az eredetire</span></div>
-        <div class="legend-item-inline"><span class="trust-check trust-manual">⚡</span><span>Kézi ellenőrzéssel — screenshotból vagy manuálisan felvéve</span></div>
+      <section class="bottom-legend compact-legend">
+        <div class="legend-inline-short">✓ Ellenőrzött · ◷ Élő forrás · ⚡ Kézi ellenőrzés</div>
       </section>
       <section class="feedback-cta-card">
         <div>
@@ -82,6 +80,6 @@
       </section>
     </main>
   </div>
-  <script src="./app.js?v=20260611detailmap1" defer></script>
+  <script src="./app.js?v=20260611copy1" defer></script>
 </body>
 </html>

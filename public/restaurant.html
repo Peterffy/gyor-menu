@@ -19,7 +19,7 @@
   <meta id="meta-twitter-title" name="twitter:title" content="Győri étterem napi menüje | Mi a menü?">
   <meta id="meta-twitter-description" name="twitter:description" content="Győri étterem részletes napi és heti menüoldala, forráslinkkel és gyors áttekintéssel.">
   <link rel="stylesheet" href="./vendor/leaflet/leaflet.css">
-  <link rel="stylesheet" href="./styles.css?v=20260611detailmap1">
+  <link rel="stylesheet" href="./styles.css?v=20260611copy1">
 </head>
 <body>
   <div class="app-shell detail-shell">
@@ -59,16 +59,12 @@
         <div class="panel-head detail-map-head">
           <div>
             <h2>A környéken</h2>
-            <p>Az aktuális étterem kiemelve, a többi győri hely összehasonlításként látszik.</p>
           </div>
         </div>
         <div class="map-canvas" id="detail-map-canvas" aria-label="Az étterem helye a térképen"></div>
-        <p class="map-note">A zöld marker az aktuális étterem, a többi marker a többi győri helyet mutatja.</p>
       </section>
-      <section class="bottom-legend">
-        <div class="legend-item-inline"><span class="trust-check trust-exact">✓</span><span>Ellenőrzött menü — pontos, heti forrásból</span></div>
-        <div class="legend-item-inline"><span class="trust-check trust-snapshot">◷</span><span>Élő forrásból — indulás előtt nézz rá az eredetire</span></div>
-        <div class="legend-item-inline"><span class="trust-check trust-manual">⚡</span><span>Kézi ellenőrzéssel — screenshotból vagy manuálisan felvéve</span></div>
+      <section class="bottom-legend compact-legend detail-compact-legend">
+        <div class="legend-inline-short">✓ Ellenőrzött · ◷ Élő forrás · ⚡ Kézi ellenőrzés</div>
       </section>
       <section class="site-footer">
         <a href="./adatkezeles.html">Adatkezelési tájékoztató</a>
@@ -76,6 +72,6 @@
     </main>
   </div>
   <script src="./vendor/leaflet/leaflet.js" defer></script>
-  <script src="./restaurant.js?v=20260611detailmap1" defer></script>
+  <script src="./restaurant.js?v=20260611copy1" defer></script>
 </body>
 </html>

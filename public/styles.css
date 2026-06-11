@@ -128,7 +128,10 @@ button, input, select { font: inherit; }
 .menu-more-link a { color: var(--brand-strong); font-weight: 600; }
 .notes { margin-top: 12px; color: var(--muted); font-size: 13px; line-height: 1.45; }
 .bottom-legend { margin-top: 16px; display: grid; gap: 10px; color: var(--muted); font-size: 13px; }
+.compact-legend { display: block; }
 .legend-item-inline { display: flex; align-items: center; gap: 10px; }
+.legend-inline-short { color: var(--muted); font-size: 13px; }
+.detail-compact-legend { margin-top: 12px; }
 .site-footer { margin-top: 18px; padding: 8px 2px 0; color: var(--muted); font-size: 13px; text-align: center; }
 .site-footer a { color: var(--muted); }
 .site-footer a:hover { color: var(--brand); }

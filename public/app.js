@@ -214,10 +214,7 @@ function renderFavoritePicker() {
 
 function restaurantHint(menus) {
   if (menus.some(m => m.certainty === 'current_snapshot')) {
-    return 'Az eredeti forrás megnyitása indulás előtt ajánlott.';
-  }
-  if (menus.some(m => m.certainty === 'manual')) {
-    return 'Ez a menü kézi ellenőrzéssel került be.';
+    return 'Indulás előtt nézz rá az eredeti forrásra.';
   }
   return '';
 }

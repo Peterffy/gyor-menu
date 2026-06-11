@@ -13,10 +13,20 @@ def load_json(path: str | Path) -> Any:
     return json.loads(Path(path).read_text())
 
 
-def source_reason(source_type: str | None) -> str:
+def is_wolt_hybrid(meta: dict[str, Any]) -> bool:
+    if meta.get('sourceType') != 'wolt_current':
+        return False
+    notes = ' '.join(meta.get('notes', [])).lower()
+    return 'screenshot-first' in notes or 'wolt current fallback' in notes
+
+
+def source_reason(meta: dict[str, Any]) -> str:
+    source_type = meta.get('sourceType')
     if source_type in {"facebook_unstructured", "manual_review_only"}:
         return "screenshotra várunk"
     if source_type == "wolt_current":
+        if is_wolt_hybrid(meta):
+            return "nincs használható mai Wolt menü; screenshot hasznos lenne a tisztább heti forráshoz"
         return "a live forrásban most nincs használható mai menü"
     if source_type == "website_menu_image_snapshot":
         return "image/OCR source — review vagy kézi korrekció kellhet"
@@ -101,7 +111,7 @@ def main() -> None:
         meta = by_slug.get(slug, {})
         menus = [m for m in rest.get('menus', []) if m.get('date') == today]
         if not menus:
-            reason = source_reason(meta.get('sourceType'))
+            reason = source_reason(meta)
             if pending_by_slug.get(slug):
                 reason = 'screenshotra várunk'
             unavailable.append({
@@ -126,6 +136,7 @@ def main() -> None:
                 'name': rest['name'],
                 'slug': slug,
                 'certainty': menu.get('certainty'),
+                'mode': 'Wolt same-day fallback' if meta.get('sourceType') == 'wolt_current' and menu.get('certainty') == 'current_snapshot' else '',
                 'sourceUrl': menu.get('sourceUrl') or rest.get('sourceUrl') or meta.get('sourceUrl') or '',
             })
 
@@ -134,7 +145,10 @@ def main() -> None:
     lines.append("")
     lines.append(f"• Rendben / vállalható: {len(ok)} étterem")
     if ok:
-        lines.extend([f"  - {x['name']} ({x['certainty']})" for x in ok])
+        lines.extend([
+            f"  - {x['name']} ({x['certainty']}{'; ' + x['mode'] if x.get('mode') else ''})"
+            for x in ok
+        ])
     lines.append("")
     lines.append(f"• Gyanús / review ajánlott: {len(suspicious)} étterem")
     if suspicious:

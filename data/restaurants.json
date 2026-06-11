@@ -12,7 +12,7 @@
       "sourceUrl": "https://wolt.com/hu/hun/gyor/restaurant/sziget-bisztro",
       "mapUrl": "https://maps.google.com/?q=9025+Gy%C5%91r,+H%C3%ADd+u.+7",
       "notes": [
-        "Wolt shows a current menu snapshot but usually not an explicit date."
+        "Screenshot-first source path; Wolt current fallback may be used for same-day coverage when no fresh screenshot is available."
       ]
     },
     {
@@ -106,12 +106,12 @@
     {
       "slug": "klasszis-bisztro",
       "name": "Klasszis Bisztró",
-      "address": "Győr",
+      "address": "Győr, Eőrsy Péter u. 17, 9024",
       "area": "Belváros",
       "sourceType": "manual_review_only",
       "automationStatus": "pending_automation",
       "sourceUrl": "https://www.facebook.com/share/18HZup3Qtm/",
-      "mapUrl": null,
+      "mapUrl": "https://maps.google.com/?q=Gy%C5%91r,+E%C5%91rsy+P%C3%A9ter+u.+17,+9024",
       "notes": [
         "Napi/heti menü Facebookon (screenshot / manual review)"
       ]

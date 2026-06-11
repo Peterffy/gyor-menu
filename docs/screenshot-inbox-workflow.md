@@ -62,4 +62,10 @@ If there are multiple screenshots for one day:
 
 ## Recommendation
 Use this for restaurants that do not yet have a reliable structured weekly source.
-For Sziget, a weekly Facebook screenshot import is likely more reliable than trying to extrapolate from a live Wolt snapshot.
+For Sziget and similar Wolt-hybrid restaurants, use **screenshot-first + Wolt-current-fallback**:
+- if a fresh screenshot exists, prefer screenshot/manual structured rows
+- if no fresh screenshot exists, Wolt may be used conservatively for the current day only
+- do not extrapolate a current Wolt snapshot into a fake full-week menu
+
+See also:
+- `docs/wolt-hybrid-source-rule.md`

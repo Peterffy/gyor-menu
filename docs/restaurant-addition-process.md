@@ -76,6 +76,14 @@ Use only if:
 - the data is still understandable and useful
 - the certainty is marked honestly (for example snapshot/current)
 
+If the restaurant is a likely long-term Wolt fallback candidate, prefer the hybrid operating rule:
+- screenshot/manual path when available
+- Wolt current for same-day fallback only
+- no fake extrapolation into a full week
+
+See also:
+- `docs/wolt-hybrid-source-rule.md`
+
 ### 5. Human screenshot/manual path
 Use when:
 - no reliable machine-readable source exists

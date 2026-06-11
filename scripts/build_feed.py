@@ -171,6 +171,33 @@ def build_base_restaurant(meta: dict[str, Any]) -> dict[str, Any]:
 
 
 # ---------- Wolt / Sziget ----------
+def normalize_wolt_menu_label(label: str | None) -> str | None:
+    if not label:
+        return label
+    cleaned = re.sub(r"\s+", " ", str(label)).strip()
+    cleaned = re.sub(r"memü", "menü", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"nenü", "menü", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\s*,\s*", ", ", cleaned)
+    return cleaned
+
+
+def normalize_wolt_menu_text(text: str | None) -> str | None:
+    if not text:
+        return None
+    cleaned = text.replace("\n", ", ")
+    cleaned = re.sub(r"\s*,\s*", ", ", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip(" ,")
+    return cleaned or None
+
+
+def is_meaningful_wolt_label_only_item(label: str | None) -> bool:
+    if not label:
+        return False
+    low = label.lower()
+    keywords = ("menü", "menu", "extra", "vega", "leves", "főétel")
+    return any(keyword in low for keyword in keywords)
+
+
 def collect_wolt_current(meta: dict[str, Any], ctx: CollectContext) -> list[dict[str, Any]]:
     slug = meta["slug"]
     url = WOLT_TEMPLATE.format(city="gyor", slug=slug)
@@ -207,10 +234,13 @@ def collect_wolt_current(meta: dict[str, Any], ctx: CollectContext) -> list[dict
         item = item_map.get(iid)
         if not item:
             continue
-        desc = (item.get("description") or "").replace("\n", ", ").strip()
+        label = normalize_wolt_menu_label(item.get("name"))
+        desc = normalize_wolt_menu_text(item.get("description"))
         price_huf = int(item.get("price", 0) / 100) if item.get("price") else None
+        if not desc and not is_meaningful_wolt_label_only_item(label):
+            continue
         entries.append({
-            "label": item.get("name"),
+            "label": label,
             "text": desc or None,
             "priceHuf": price_huf,
             "priceText": f"{price_huf:,} Ft".replace(",", " ") if price_huf else None,

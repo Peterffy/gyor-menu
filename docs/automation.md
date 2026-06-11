@@ -1,6 +1,6 @@
 # Győr Menü — Cronok és automatikák
 
-_Last updated: 2026-06-07_
+_Last updated: 2026-06-11_
 
 ## Source of truth
 - **Operational source of truth:** actual cron configuration + local runtime config
@@ -59,6 +59,18 @@ All Győr Menü jobs use timezone:
 - **Purpose:** second Tuesday retry pass
 - **Includes:** feed quality review after rebuild
 - **Does it publish live automatically?** No
+
+### E. Daily random restaurant audit — 09:30
+- **Name:** `Győr Menü daily random audit — 09:30`
+- **Job ID:** `eea0d04c-e083-4f39-a666-ec6c6682c287`
+- **Schedule:** `30 9 * * *`
+- **Status:** active
+- **Purpose:** run the random daily QA spotlight process and send Peter a short audit summary
+- **What it does:**
+  1. runs `python3 scripts/daily_random_restaurant_audit.py`
+  2. uses the audit output as the summary base
+  3. highlights whether detected issues look isolated or broader across the feed
+- **Does it publish live automatically?** No — QA report only
 
 ---
 

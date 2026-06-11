@@ -120,7 +120,7 @@ function setMetaById(id, content) {
 }
 
 function setDetailSeo(restaurant) {
-  const canonicalUrl = `https://gyor-menu.vercel.app/restaurant.html?slug=${encodeURIComponent(restaurant.slug)}`;
+  const canonicalUrl = `https://ebedmenuk.hu/restaurant.html?slug=${encodeURIComponent(restaurant.slug)}`;
   const title = `${restaurant.name} napi menü Győr | Mi a menü?`;
   const description = `${restaurant.name} napi és heti menüje Győrben${restaurant.address ? ` – ${restaurant.address}` : ''}. Eredeti forrás, térkép és részletes menük a Mi a menü? oldalon.`;
   document.title = title;

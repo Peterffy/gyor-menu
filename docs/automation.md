@@ -1,6 +1,6 @@
 # Győr Menü — Cronok és automatikák
 
-_Last updated: 2026-06-11_
+_Last updated: 2026-06-12_
 
 ## Source of truth
 - **Operational source of truth:** actual cron configuration + local runtime config
@@ -71,6 +71,32 @@ All Győr Menü jobs use timezone:
   2. uses the audit output as the summary base
   3. highlights whether detected issues look isolated or broader across the feed
 - **Does it publish live automatically?** No — QA report only
+
+### F. Sunday next-week publish — 17:00
+- **Name:** `Győr Menü Sunday next-week publish — 17:00`
+- **Schedule:** `0 17 * * 0`
+- **Status:** active
+- **Purpose:** switch the public site to next-week dating early on Sunday evening when enough Monday/weekly menus are already available
+- **What it does:**
+  1. computes the next Monday date
+  2. runs the full build pipeline with `--today-override <next-monday>`
+  3. reviews the output briefly
+  4. publishes if the result is sane and relevant
+  5. sends Peter a short Hungarian summary
+- **Does it publish live automatically?** Yes — if the build result is sane and relevant
+
+### G. Sunday next-week publish retry — 21:00
+- **Name:** `Győr Menü Sunday next-week publish retry — 21:00`
+- **Schedule:** `0 21 * * 0`
+- **Status:** active
+- **Purpose:** catch restaurants that publish later on Sunday and improve Monday completeness before the workweek starts
+- **What it does:**
+  1. computes the next Monday date
+  2. runs the full build pipeline with `--today-override <next-monday>`
+  3. reviews the output briefly
+  4. publishes if new sane/relevant changes appeared since the earlier pass
+  5. sends Peter a short Hungarian summary about what changed vs the 17:00 pass
+- **Does it publish live automatically?** Yes — if new sane/relevant changes appeared
 
 ---
 

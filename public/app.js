@@ -84,8 +84,12 @@ function getBudapestTodayIso() {
   return `${byType.year}-${byType.month}-${byType.day}`;
 }
 
+function getReferenceTodayIso() {
+  return state.feed?.today || getBudapestTodayIso();
+}
+
 function getCurrentWeekdayIndex() {
-  const [y, m, d] = getBudapestTodayIso().split('-').map(Number);
+  const [y, m, d] = getReferenceTodayIso().split('-').map(Number);
   const today = new Date(y, m - 1, d);
   const js = today.getDay();
   const mondayBased = js === 0 ? 6 : js - 1;
@@ -93,7 +97,7 @@ function getCurrentWeekdayIndex() {
 }
 
 function getWeekDates() {
-  const [y, m, d] = getBudapestTodayIso().split('-').map(Number);
+  const [y, m, d] = getReferenceTodayIso().split('-').map(Number);
   const today = new Date(y, m - 1, d);
   const mondayOffset = today.getDay() === 0 ? -6 : 1 - today.getDay();
   const monday = new Date(y, m - 1, d + mondayOffset);
@@ -181,12 +185,13 @@ function locationModeLabel() {
 function renderTabs() {
   const current = getCurrentWeekdayIndex();
   const weekDates = getWeekDates();
+  const actualTodayIso = getBudapestTodayIso();
   el.weekdayTabs.forEach((btn, idx) => {
     btn.classList.toggle('active', idx === state.selectedDayIndex);
     btn.classList.toggle('past', idx < current);
-    btn.classList.toggle('today', idx === current);
+    btn.classList.toggle('today', weekDates[idx] === actualTodayIso);
     const dateStr = weekDates[idx] ? weekDates[idx].slice(5) : '';
-    const prefix = idx === current ? 'Ma · ' : '';
+    const prefix = weekDates[idx] === actualTodayIso ? 'Ma · ' : '';
     btn.innerHTML = `${prefix}${WEEKDAYS_HU[idx]} <small>${dateStr}</small>`;
   });
 }

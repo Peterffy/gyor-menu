@@ -1150,6 +1150,11 @@ def main() -> None:
 
     out_path.write_text(json.dumps(feed, ensure_ascii=False, indent=2))
     print(f"Wrote {out_path}")
+
+    from generate_share_pages import generate_share_pages
+    generate_share_pages(feed)
+    print("Generated share-stable restaurant pages")
+
     if errors:
         print("Non-critical validation warnings above — feed written but review recommended")
 

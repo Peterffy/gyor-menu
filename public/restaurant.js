@@ -5,6 +5,7 @@ const DEFAULT_MAP_CENTER = { lat: 47.6874, lng: 17.6351 };
 const state = {
   slug: '',
   selectedDayIndex: 0,
+  hasExplicitDay: false,
   feed: null,
   map: null,
   markerLayer: null,
@@ -90,18 +91,75 @@ function selectedDate() {
   return getWeekDates()[state.selectedDayIndex];
 }
 
+function buildDetailPath(slug, dayIndex = null) {
+  const safeSlug = encodeURIComponent(slug || '');
+  if (!safeSlug) return './restaurant.html';
+  if (Number.isInteger(dayIndex) && dayIndex >= 0 && dayIndex <= 6) {
+    return `/restaurant/${safeSlug}/day/${dayIndex}/`;
+  }
+  return `/restaurant/${safeSlug}/`;
+}
+
+function readPrettyRouteState() {
+  const segments = window.location.pathname
+    .split('/')
+    .filter(Boolean)
+    .filter(segment => segment !== 'index.html');
+
+  if (segments[0] !== 'restaurant' || !segments[1]) return null;
+
+  const route = {
+    slug: decodeURIComponent(segments[1]),
+    hasExplicitDay: false,
+    dayIndex: null,
+  };
+
+  if (segments[2] === 'day') {
+    const idx = Number(segments[3]);
+    if (Number.isInteger(idx) && idx >= 0 && idx <= 6) {
+      route.dayIndex = idx;
+      route.hasExplicitDay = true;
+    }
+  }
+
+  return route;
+}
+
 function readState() {
+  const route = readPrettyRouteState();
   const p = params();
+
+  if (route?.slug) {
+    state.slug = route.slug;
+    if (route.hasExplicitDay) {
+      state.selectedDayIndex = route.dayIndex;
+      state.hasExplicitDay = true;
+    } else {
+      state.hasExplicitDay = false;
+    }
+    return;
+  }
+
   state.slug = p.get('slug') || '';
   const idx = Number(p.get('day'));
-  if (Number.isInteger(idx) && idx >= 0 && idx <= 6) state.selectedDayIndex = idx;
+  if (Number.isInteger(idx) && idx >= 0 && idx <= 6) {
+    state.selectedDayIndex = idx;
+    state.hasExplicitDay = true;
+  } else {
+    state.hasExplicitDay = false;
+  }
+}
+
+function currentDetailPath() {
+  if (!state.slug) return './restaurant.html';
+  if (!state.hasExplicitDay && state.selectedDayIndex === getCurrentWeekdayIndex()) {
+    return buildDetailPath(state.slug);
+  }
+  return buildDetailPath(state.slug, state.selectedDayIndex);
 }
 
 function updateUrl() {
-  const p = new URLSearchParams();
-  p.set('slug', state.slug);
-  p.set('day', String(state.selectedDayIndex));
-  history.replaceState({}, '', `${window.location.pathname}?${p.toString()}`);
+  history.replaceState({}, '', currentDetailPath());
 }
 
 function reportUrl(restaurant) {
@@ -124,9 +182,18 @@ function setMetaById(id, content) {
 }
 
 function setDetailSeo(restaurant) {
-  const canonicalUrl = `https://ebedmenuk.hu/restaurant.html?slug=${encodeURIComponent(restaurant.slug)}`;
-  const title = `${restaurant.name} napi menü Győr | Mi a menü?`;
-  const description = `${restaurant.name} napi és heti menüje Győrben${restaurant.address ? ` – ${restaurant.address}` : ''}. Eredeti forrás, térkép és részletes menük a Mi a menü? oldalon.`;
+  const hasDay = state.hasExplicitDay && Number.isInteger(state.selectedDayIndex);
+  const canonicalPath = hasDay
+    ? buildDetailPath(restaurant.slug, state.selectedDayIndex)
+    : buildDetailPath(restaurant.slug);
+  const canonicalUrl = `https://ebedmenuk.hu${canonicalPath}`;
+  const dayLabel = hasDay ? WEEKDAYS_HU[state.selectedDayIndex] : '';
+  const title = hasDay
+    ? `${restaurant.name} – ${dayLabel} menü Győr | Mi a menü?`
+    : `${restaurant.name} napi menü Győr | Mi a menü?`;
+  const description = hasDay
+    ? `${restaurant.name} menüje Győrben erre a napra: ${dayLabel}${restaurant.address ? ` – ${restaurant.address}` : ''}. Eredeti forrás, térkép és részletes menük a Mi a menü? oldalon.`
+    : `${restaurant.name} napi és heti menüje Győrben${restaurant.address ? ` – ${restaurant.address}` : ''}. Eredeti forrás, térkép és részletes menük a Mi a menü? oldalon.`;
   document.title = title;
   setMetaById('meta-description', description);
   setMetaById('meta-twitter-title', title);
@@ -197,7 +264,7 @@ function ensureMap() {
 
 function mapPopupHtml(restaurant, isCurrent) {
   const source = safeUrl(restaurant.sourceUrl);
-  const detail = `./restaurant.html?slug=${encodeURIComponent(restaurant.slug)}&day=${state.selectedDayIndex}`;
+  const detail = buildDetailPath(restaurant.slug, state.selectedDayIndex);
   return `
     <div class="map-popup">
       <strong>${escapeHtml(restaurant.name)}</strong>
@@ -326,7 +393,7 @@ function render() {
 }
 
 async function loadFeed() {
-  const res = await fetch('./data/feed.json', { cache: 'no-store' });
+  const res = await fetch('/data/feed.json', { cache: 'no-store' });
   state.feed = await res.json();
   state.selectedDayIndex = getCurrentWeekdayIndex();
   readState();
@@ -335,6 +402,7 @@ async function loadFeed() {
 
 el.weekdayTabs.forEach(btn => btn.addEventListener('click', () => {
   state.selectedDayIndex = Number(btn.dataset.dayIndex);
+  state.hasExplicitDay = true;
   render();
 }));
 

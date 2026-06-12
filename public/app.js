@@ -116,6 +116,15 @@ function selectedDate() {
   return getWeekDates()[state.selectedDayIndex];
 }
 
+function buildDetailPath(slug, dayIndex = null) {
+  const safeSlug = encodeURIComponent(slug || '');
+  if (!safeSlug) return './restaurant.html';
+  if (Number.isInteger(dayIndex) && dayIndex >= 0 && dayIndex <= 6) {
+    return `/restaurant/${safeSlug}/day/${dayIndex}/`;
+  }
+  return `/restaurant/${safeSlug}/`;
+}
+
 function readUrlState() {
   // Main list should always default to the current day.
 }
@@ -225,7 +234,7 @@ function restaurantHint(menus) {
 }
 
 function detailUrl(restaurant) {
-  return `./restaurant.html?slug=${encodeURIComponent(restaurant.slug)}&day=${state.selectedDayIndex}`;
+  return buildDetailPath(restaurant.slug, state.selectedDayIndex);
 }
 
 function reportUrl(restaurant) {

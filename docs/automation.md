@@ -64,6 +64,7 @@ All Győr Menü jobs use timezone:
 - **Name:** `Győr Menü daily random audit — 09:30`
 - **Job ID:** `eea0d04c-e083-4f39-a666-ec6c6682c287`
 - **Schedule:** `30 9 * * *`
+- **Model:** `Flash`
 - **Status:** active
 - **Purpose:** run the random daily QA spotlight process and send Peter a short audit summary
 - **What it does:**
@@ -102,14 +103,30 @@ All Győr Menü jobs use timezone:
 
 ## 2. Feedback cron
 
+### Feedback watch — every 2 hours between 08:00 and 20:00
+- **Type:** OpenClaw Gateway cron
+- **Name:** `Győr Menü feedback watch — every 2h (08-20)`
+- **Schedule:** `0 8,10,14,16,18,20 * * *`
+- **Time zone:** `Europe/Budapest`
+- **Model:** `Flash`
+- **Status:** active
+- **Purpose:** check the feedback tracker during the day and message Peter only when genuinely new feedback arrived
+- **Behavior:**
+  - reads the linked Google Form response sheet through `scripts/feedback_monitor.py watch`
+  - keeps local seen-state in workspace memory so old rows are not re-announced
+  - sends **no message** when there is nothing new
+  - does **not** publish anything live
+
 ### Daily feedback digest — 12:00
 - **Type:** OpenClaw Gateway cron
+- **Name:** `Győr Menü feedback digest — daily 12:00`
 - **Schedule:** `0 12 * * *`
 - **Time zone:** `Europe/Budapest`
+- **Model:** `Flash`
 - **Status:** active
-- **Purpose:** check whether new Google Form feedback arrived in the last 24 hours and send Peter a short summary + suggested actions
+- **Purpose:** send a noon summary of feedback from the last 24 hours plus suggested next steps
 - **Behavior:**
-  - reads the linked Google Form response sheet
+  - reads the linked Google Form response sheet through `scripts/feedback_monitor.py daily`
   - checks the last 24 hours of entries
   - summarizes the feedback types and affected restaurants
   - proposes likely next steps
@@ -151,12 +168,52 @@ All Győr Menü jobs use timezone:
    - Vercel deploys live
 
 ### Important rule
-- **Never treat cron rebuild as automatic approval to publish**
-- Crons may rebuild and report, but **live publication still requires explicit Peter approval**
+- **Default rule:** never treat a cron rebuild as automatic approval to publish.
+- **Exception:** the two Sunday next-week publication jobs (`17:00` and `21:00`) are intentionally allowed to publish live when their result is sane/relevant, because that is their explicit purpose.
+- Outside that Sunday next-week exception, cron runs may rebuild and report, but **live publication still requires explicit Peter approval**.
 
 ---
 
-## 5. Current automation coverage summary
+## 5. Sunday evening 20-second verification checklist
+
+Use this right after the Sunday `17:00` publish, and optionally again after the `21:00` retry.
+
+1. Open `https://ebedmenuk.hu/`
+2. Confirm the selected/default day is **Hétfő**
+3. Confirm the Monday tab shows **`Hétfő` + date**, and **does not** show `Ma · Hétfő` on Sunday
+4. Confirm the visible weekday dates are the **coming Monday–Friday**, not the ending week
+5. Open one restaurant detail page and confirm the same Monday-first behavior is present there too
+6. If checking on real Monday, confirm the Monday tab now **does** show `Ma · Hétfő`
+
+Quick fail signals:
+- Sunday evening still shows the old week
+- Sunday evening defaults to Friday or another stale day
+- Sunday evening shows `Ma · Hétfő`
+- homepage and restaurant detail page disagree about the selected/default day
+
+## 6. Model routing notes
+
+- Menu-checker / publication-sensitive jobs stay on the default oauth `gpt-5.4` path:
+  - Sunday `17:00`
+  - Sunday `21:00`
+  - Monday `09:00`
+  - Monday `11:00`
+  - Tuesday `09:00`
+  - Tuesday `11:00`
+- Lower-risk recurring summary jobs are intentionally routed to `Flash` to reduce oauth quota burn:
+  - daily random audit `09:30`
+  - feedback watch `08:00, 10:00, 14:00, 16:00, 18:00, 20:00`
+  - daily feedback digest `12:00`
+
+## 7. Feedback monitor implementation note
+
+- Script: `scripts/feedback_monitor.py`
+- State file: `/root/.openclaw/workspace/memory/state/gyor-menu-feedback-monitor.json`
+- Modes:
+  - `watch` = only announce genuinely new rows
+  - `daily` = noon digest for the last 24 hours
+
+## 8. Current automation coverage summary
 
 ### Automated / structured
 - several website / PDF / HTML sources are automated
@@ -168,7 +225,7 @@ All Győr Menü jobs use timezone:
 
 ---
 
-## 6. Recommended maintenance practice
+## 9. Recommended maintenance practice
 
 When cron/automation changes are made:
 1. update actual cron config

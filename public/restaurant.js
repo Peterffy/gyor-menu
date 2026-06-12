@@ -95,7 +95,7 @@ function buildDetailPath(slug, dayIndex = null) {
   const safeSlug = encodeURIComponent(slug || '');
   if (!safeSlug) return './restaurant.html';
   if (Number.isInteger(dayIndex) && dayIndex >= 0 && dayIndex <= 6) {
-    return `/restaurant/${safeSlug}/day/${dayIndex}/`;
+    return `/restaurant/${safeSlug}/day/${dayIndex + 1}/`;
   }
   return `/restaurant/${safeSlug}/`;
 }
@@ -115,9 +115,9 @@ function readPrettyRouteState() {
   };
 
   if (segments[2] === 'day') {
-    const idx = Number(segments[3]);
-    if (Number.isInteger(idx) && idx >= 0 && idx <= 6) {
-      route.dayIndex = idx;
+    const dayNumber = Number(segments[3]);
+    if (Number.isInteger(dayNumber) && dayNumber >= 1 && dayNumber <= 7) {
+      route.dayIndex = dayNumber - 1;
       route.hasExplicitDay = true;
     }
   }

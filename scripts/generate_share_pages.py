@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 from pathlib import Path
 from typing import Any
 
@@ -14,14 +15,14 @@ FEED_PATH = PUBLIC_DIR / "data" / "feed.json"
 
 WEEKDAYS_HU = ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"]
 STYLE_VERSION = "20260612logo8"
-SCRIPT_VERSION = "20260612share1"
+SCRIPT_VERSION = "20260612share2"
 OG_IMAGE = "https://ebedmenuk.hu/assets/brand/logo.png?v=20260611logov2"
 
 
 def build_detail_path(slug: str, day_index: int | None = None) -> str:
     if day_index is None:
         return f"/restaurant/{slug}/"
-    return f"/restaurant/{slug}/day/{day_index}/"
+    return f"/restaurant/{slug}/day/{day_index + 1}/"
 
 
 def description_for(restaurant: dict[str, Any], day_index: int | None = None) -> str:
@@ -104,11 +105,14 @@ def generate_share_pages(feed: dict[str, Any]) -> None:
             continue
 
         base_dir = PUBLIC_DIR / "restaurant" / slug
+        day_root = base_dir / "day"
+        if day_root.exists():
+            shutil.rmtree(day_root)
         base_dir.mkdir(parents=True, exist_ok=True)
         (base_dir / "index.html").write_text(render_page(template, restaurant, None))
 
         for day_index in range(7):
-            day_dir = base_dir / "day" / str(day_index)
+            day_dir = day_root / str(day_index + 1)
             day_dir.mkdir(parents=True, exist_ok=True)
             (day_dir / "index.html").write_text(render_page(template, restaurant, day_index))
 

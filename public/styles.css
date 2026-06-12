@@ -115,8 +115,13 @@ button, input, select { font: inherit; }
 .trust-exact { background: #e4f7ef; color: var(--good); }
 .trust-snapshot { background: #fff3db; color: var(--warn); }
 .trust-manual { background: #e6f0fc; color: var(--info); }
-.card-links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px; font-size: 14px; }
+.card-links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px; font-size: 14px; align-items: center; }
 .compact-links { margin-top: 8px; }
+.card-action-btn { appearance: none; background: none; border: 0; padding: 0; margin: 0; color: var(--brand); font: inherit; font-weight: 400; cursor: pointer; }
+.card-action-btn:hover { text-decoration: underline; }
+.card-action-btn:disabled { opacity: 0.6; cursor: default; text-decoration: none; }
+.share-action-btn { white-space: nowrap; }
+.share-text-btn { font-size: 14px; line-height: inherit; }
 .menu-block { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
 .menu-title-wrap { display: flex; justify-content: space-between; gap: 10px; align-items: center; margin-bottom: 10px; }
 .menu-title { margin: 0; font-size: 14px; color: var(--muted); font-weight: 700; }
@@ -145,6 +150,8 @@ button, input, select { font: inherit; }
 .feedback-cta-card p { margin: 0; color: var(--muted); font-size: 14px; }
 .inline-btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; white-space: nowrap; }
 .empty { background: var(--surface); border: 1px dashed var(--line); border-radius: 18px; padding: 16px; color: var(--muted); }
+.app-toast { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%) translateY(10px); background: rgba(15, 31, 43, 0.94); color: white; padding: 10px 14px; border-radius: 999px; box-shadow: 0 6px 18px rgba(15, 31, 43, 0.18); font-size: 13px; font-weight: 600; opacity: 0; pointer-events: none; transition: opacity .18s ease, transform .18s ease; z-index: 1000; max-width: calc(100vw - 28px); text-align: center; }
+.app-toast.visible { opacity: 1; transform: translateX(-50%) translateY(0); }
 @media (min-width: 760px) {
   .hero { grid-template-columns: 1.2fr auto; align-items: end; }
   .weekday-tabs { grid-template-columns: repeat(7, 1fr); }

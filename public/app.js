@@ -237,6 +237,18 @@ function detailUrl(restaurant) {
   return buildDetailPath(restaurant.slug, state.selectedDayIndex);
 }
 
+function absoluteDetailUrl(restaurant) {
+  return `https://ebedmenuk.hu${detailUrl(restaurant)}`;
+}
+
+function shareTitle(restaurant) {
+  return `${restaurant.name} – ${WEEKDAYS_HU[state.selectedDayIndex]} menü | Mi a menü?`;
+}
+
+function shareText(restaurant) {
+  return `${restaurant.name} – ${WEEKDAYS_HU[state.selectedDayIndex]} menü Győr`;
+}
+
 function reportUrl(restaurant) {
   const params = new URLSearchParams();
   params.set('entry.5bd74c55', restaurant.name || '');
@@ -376,7 +388,6 @@ function renderRestaurantCard(record) {
   const trust = trustMeta(menus);
   const safeName = escapeHtml(restaurant.name);
   const safeSlug = escapeHtml(restaurant.slug);
-  const safeSource = safeUrl(restaurant.sourceUrl);
   const safeDetail = detailUrl(restaurant);
   const safeReport = reportUrl(restaurant);
   const safeHint = escapeHtml(hint);
@@ -395,8 +406,8 @@ function renderRestaurantCard(record) {
         ${hasMenu && trust.label ? `<div class="trust-corner"><span class="trust-check ${trust.cls}" title="${trust.label}">${trust.symbol}</span></div>` : ''}
       </div>
       <div class="card-links compact-links">
-        ${safeSource ? `<a href="${safeSource}" target="_blank" rel="noreferrer">Eredeti forrás</a>` : ''}
         <a href="${safeDetail}">Részletek</a>
+        <button class="card-action-btn share-action-btn share-text-btn" type="button" data-share-slug="${safeSlug}" aria-label="${safeName} megosztása" title="Megosztás">Megosztás</button>
         <a href="${safeReport}" target="_blank" rel="noreferrer">Hiba jelzése</a>
       </div>
       ${hasMenu ? menus.map(menu => renderMenuBlock(menu, safeDetail)).join('') : ''}
@@ -465,6 +476,64 @@ function markerPopupHtml(record) {
       </div>
     </div>
   `;
+}
+
+function showToast(message) {
+  let toast = document.querySelector('.app-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.className = 'app-toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.classList.add('visible');
+  clearTimeout(showToast._timer);
+  showToast._timer = setTimeout(() => {
+    toast.classList.remove('visible');
+  }, 2200);
+}
+
+async function copyText(text) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return true;
+  }
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.setAttribute('readonly', '');
+  textarea.style.position = 'absolute';
+  textarea.style.left = '-9999px';
+  document.body.appendChild(textarea);
+  textarea.select();
+  let ok = false;
+  try {
+    ok = document.execCommand('copy');
+  } finally {
+    textarea.remove();
+  }
+  return ok;
+}
+
+async function shareRestaurantBySlug(slug) {
+  const record = (state.lastRecords || []).find(item => item.restaurant.slug === slug);
+  if (!record) return;
+
+  const { restaurant } = record;
+  const url = absoluteDetailUrl(restaurant);
+  const title = shareTitle(restaurant);
+  const text = shareText(restaurant);
+
+  if (navigator.share) {
+    try {
+      await navigator.share({ title, text, url });
+      return;
+    } catch (err) {
+      if (err?.name === 'AbortError') return;
+    }
+  }
+
+  const copied = await copyText(url);
+  showToast(copied ? 'Megosztható link kimásolva' : 'Megosztás: ' + url);
 }
 
 function renderMap(records) {
@@ -658,6 +727,20 @@ if (el.favoritesReset) {
     saveFavorites();
     renderFavoritePicker();
     render();
+  });
+}
+
+if (el.cards) {
+  el.cards.addEventListener('click', async (event) => {
+    const btn = event.target.closest('button[data-share-slug]');
+    if (!btn) return;
+    event.preventDefault();
+    btn.disabled = true;
+    try {
+      await shareRestaurantBySlug(btn.dataset.shareSlug || '');
+    } finally {
+      btn.disabled = false;
+    }
   });
 }
 

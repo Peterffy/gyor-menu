@@ -1017,10 +1017,10 @@ def apply_overrides(restaurants: list[dict[str, Any]], overrides: list[dict[str,
         target["menus"] = sorted(menus, key=lambda m: m["date"])
 
 
-def build_feed() -> dict[str, Any]:
+def build_feed(today_override: date | None = None) -> dict[str, Any]:
     registry = load_json(RESTAURANTS_PATH)
     overrides = maybe_load_overrides()
-    today = date.today()
+    today = today_override or date.today()
     ctx = CollectContext(today=today, tomorrow=today + timedelta(days=1), monday=current_monday(today))
 
     restaurants_out = []
@@ -1130,13 +1130,15 @@ def validate_feed(feed: dict[str, Any]) -> list[str]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", default=str(PUBLIC_DIR / "data" / "feed.json"))
+    parser.add_argument("--today-override", help="Logical today date to publish as YYYY-MM-DD")
     parser.add_argument("--validate-only", action="store_true",
                         help="Only validate existing feed, don't rebuild")
     args = parser.parse_args()
 
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    feed = build_feed()
+    today_override = date.fromisoformat(args.today_override) if args.today_override else None
+    feed = build_feed(today_override=today_override)
 
     errors = validate_feed(feed)
     for err in errors:

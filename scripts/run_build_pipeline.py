@@ -21,6 +21,7 @@ def main() -> None:
     parser.add_argument('--workspace-sheet-id', help='Google Sheet ID with Restaurants + Review tabs')
     parser.add_argument('--sheet-id', help='Legacy/manual override sheet ID (review rows only)')
     parser.add_argument('--out', default=str(BASE / 'public' / 'data' / 'feed.json'))
+    parser.add_argument('--today-override', help='Logical today date for build_feed.py as YYYY-MM-DD')
     args = parser.parse_args()
 
     if args.workspace_sheet_id:
@@ -43,10 +44,14 @@ def main() -> None:
             '--out', str(BASE / 'data' / 'manual_overrides.json')
         ], check=True)
 
-    subprocess.run([
+    build_cmd = [
         'python3', str(BASE / 'scripts' / 'build_feed.py'),
         '--out', args.out
-    ], check=True)
+    ]
+    if args.today_override:
+        build_cmd.extend(['--today-override', args.today_override])
+
+    subprocess.run(build_cmd, check=True)
 
 
 if __name__ == '__main__':

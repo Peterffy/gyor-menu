@@ -268,6 +268,21 @@
       ],
       "lat": 47.6587111,
       "lng": 17.6551657
+    },
+    {
+      "slug": "megyeri-vendeglo",
+      "name": "Megyeri Vendéglő",
+      "address": "9028 Győr, Mohi utca 1.",
+      "area": "Kismegyer",
+      "sourceType": "facebook_unstructured",
+      "automationStatus": "unsupported",
+      "sourceUrl": "https://www.facebook.com/share/1au2n2tHKJ/",
+      "mapUrl": "https://maps.google.com/?q=9028+Gy%C5%91r,+Mohi+utca+1",
+      "notes": [
+        "Current weekly menu appears to be shared on Facebook as images. The previously found megyeri-ebedlo.hu weekly-menu page is not the canonical Győr menu source and also contains inconsistent Pécs contact text; metro.rest was only used to validate the Győr venue metadata."
+      ],
+      "lat": 47.6477636,
+      "lng": 17.6670018
     }
   ]
 }

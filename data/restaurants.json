@@ -283,6 +283,21 @@
       ],
       "lat": 47.6477636,
       "lng": 17.6670018
+    },
+    {
+      "slug": "sieger-sport-gastro-bar",
+      "name": "SIEGER Sport & Gastro Bár",
+      "address": "9026 Győr, Egyetem tér 1.",
+      "area": "Révfalu / Egyetem tér",
+      "sourceType": "facebook_unstructured",
+      "automationStatus": "unsupported",
+      "sourceUrl": "https://www.facebook.com/share/1JX4NW6Zhh/",
+      "mapUrl": "https://maps.google.com/?q=9026+Gy%C5%91r,+Egyetem+t%C3%A9r+1",
+      "notes": [
+        "Official website found at http://sieger.hu/ but no canonical weekly lunch source was identified there. Current menu appears to be shared on Facebook as image posts. Shared sample image shows 2026-06-08 to 2026-06-12 lunch menu with soup/main/chef recommendation/dessert pricing. Keep inactive until a fresh/current menu sample is onboarded."
+      ],
+      "lat": 47.6946079,
+      "lng": 17.6296463
     }
   ]
 }

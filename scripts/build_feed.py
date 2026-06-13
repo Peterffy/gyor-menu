@@ -118,6 +118,73 @@ def parse_price_huf(text: str | None) -> int | None:
     return int(digits)
 
 
+def clean_carmen_item_text(raw: str) -> str:
+    cut_markers = [
+        "A menük gyümölcslevessel",
+        "Áraink bruttó árak",
+        "Az ételek allergén tartalmát",
+    ]
+    cut_positions = [raw.find(marker) for marker in cut_markers if marker in raw]
+    if cut_positions:
+        raw = raw[:min(cut_positions)]
+    raw = re.sub(r"\s*[–-]?\s*(\d{1,2}[ .]?\d{3}|\d{3,5})\s*(?:,-)?\s*Ft\s*$", "", raw, flags=re.IGNORECASE)
+    return raw.strip(" ,;-/")
+
+
+def clean_carmen_menus(menus: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    cleaned = []
+    for menu in menus:
+        menu_copy = json.loads(json.dumps(menu, ensure_ascii=False))
+        for item in menu_copy.get("items", []):
+            text = item.get("text")
+            if text:
+                item["text"] = clean_carmen_item_text(text)
+        cleaned.append(menu_copy)
+    return cleaned
+
+
+def fallback_menus_from_recent_feeds(slug: str, wanted_dates: set[str]) -> list[dict[str, Any]]:
+    """Recover menus for the current week from recent feed snapshots.
+
+    Used when a source publishes next week's menu too early and we still need the
+    currently visible week to remain populated until the scheduled week switch.
+    """
+    snapshots: list[str] = []
+    live_feed = PUBLIC_DIR / "data" / "feed.json"
+    if live_feed.exists():
+        try:
+            snapshots.append(live_feed.read_text())
+        except Exception:
+            pass
+
+    for ref in ["HEAD~1", "HEAD~2", "HEAD~3", "HEAD~4", "HEAD~5"]:
+        try:
+            raw = subprocess.check_output(
+                ["git", "show", f"{ref}:public/data/feed.json"],
+                cwd=str(BASE),
+                text=True,
+                timeout=15,
+            )
+            snapshots.append(raw)
+        except Exception:
+            continue
+
+    for raw in snapshots:
+        try:
+            feed = json.loads(raw)
+        except Exception:
+            continue
+        for restaurant in feed.get("restaurants", []):
+            if restaurant.get("slug") != slug:
+                continue
+            menus = [m for m in restaurant.get("menus", []) if m.get("date") in wanted_dates]
+            if wanted_dates.issubset({m.get("date") for m in menus}):
+                if slug == "carmen-etterem":
+                    return clean_carmen_menus(menus)
+                return menus
+    return []
+
+
 def extract_price_huf(text: str | None) -> int | None:
     if not text:
         return None
@@ -627,8 +694,17 @@ def collect_carmen_week(meta: dict[str, Any], ctx: CollectContext) -> list[dict[
     month_name = m.group(2)
     start_day = int(m.group(3))
     monday = parse_hu_month_date(year, month_name, start_day)
-    date_map = {WEEKDAYS_HU[i]: iso(monday + timedelta(days=i)) for i in range(5)}
+    source_date_map = {WEEKDAYS_HU[i]: iso(monday + timedelta(days=i)) for i in range(5)}
 
+    # If Carmen already switched to next week before the site should switch weeks,
+    # keep the currently visible week's menus from a recent feed snapshot.
+    if monday > ctx.monday:
+        wanted_dates = {iso(ctx.monday + timedelta(days=i)) for i in range(5)}
+        fallback = fallback_menus_from_recent_feeds(meta.get("slug", ""), wanted_dates)
+        if fallback:
+            return fallback
+
+    date_map = source_date_map
     menus = []
     i = 0
     while i < len(lines):
@@ -675,16 +751,8 @@ def collect_carmen_week(meta: dict[str, Any], ctx: CollectContext) -> list[dict[
                 j += 1
             if chunks:
                 raw = " ".join(chunks)
-                cut_markers = [
-                    "A menük gyümölcslevessel",
-                    "Áraink bruttó árak",
-                    "Az ételek allergén tartalmát",
-                ]
-                cut_positions = [raw.find(marker) for marker in cut_markers if marker in raw]
-                if cut_positions:
-                    raw = raw[:min(cut_positions)]
                 price_huf = extract_price_huf(raw)
-                cleaned = re.sub(r"\s*[–-]?\s*(\d{1,2}[ .]?\d{3}|\d{3,5})\s*(?:,-)?\s*Ft\s*$", "", raw, flags=re.IGNORECASE).strip(" ,;-/")
+                cleaned = clean_carmen_item_text(raw)
                 items.append({
                     "label": pretty,
                     "text": cleaned or raw,

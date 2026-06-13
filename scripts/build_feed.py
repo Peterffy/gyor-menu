@@ -533,11 +533,20 @@ def collect_uj_zoldfa_week(meta: dict[str, Any], ctx: CollectContext) -> list[di
     if not day_rows:
         return []
 
-    # Compute vertical bands for each day
+    # Compute vertical bands for each day.
+    # The PDF is slightly misaligned: some meal text can begin a few pixels above
+    # the day label, while the next day starts just below the previous band.
+    # So use a small negative/positive tolerance around day-label tops instead of
+    # a midpoint cut, which was too aggressive for weekend rows.
     day_bands: list[tuple[str, int, int]] = []
     for i, (day_en, top) in enumerate(day_rows):
-        end = day_rows[i + 1][1] if i + 1 < len(day_rows) else 9999
-        day_bands.append((day_en, top, end))
+        start = max(0, top - 4)
+        if i + 1 < len(day_rows):
+            next_top = day_rows[i + 1][1]
+            end = max(start + 1, next_top - 4)
+        else:
+            end = 619  # observed footer/jegy legend starts below the Sunday content block
+        day_bands.append((day_en, start, end))
 
     date_map = {WEEKDAYS_EN[i]: iso(ctx.monday + timedelta(days=i)) for i in range(7)}
     menus = []
@@ -561,12 +570,22 @@ def collect_uj_zoldfa_week(meta: dict[str, Any], ctx: CollectContext) -> list[di
             frags = col_texts.get(label)
             if not frags:
                 continue
-            # Join fragments, strip trailing allergen codes and prices
+            # Join fragments, strip footer/disclaimer bleed and trailing prices.
             raw = " ".join(frags)
+            footer_markers = [
+                "Ebédjegy",
+                "A MENÜ ÁRAK",
+                "Jelmagyarázat:",
+                "G - Glutén",
+                "1 / 1",
+            ]
+            cut_positions = [raw.find(marker) for marker in footer_markers if marker in raw]
+            if cut_positions:
+                raw = raw[:min(cut_positions)]
             # Strip trailing price (e.g. "4990.-")
             raw = re.sub(r"\s*\d{3,5}\.-\s*$", "", raw).strip()
             # Normalise whitespace
-            raw = re.sub(r"\s+", " ", raw).strip()
+            raw = re.sub(r"\s+", " ", raw).strip(" ,;-/")
             if raw:
                 items.append({"label": label, "text": raw})
 
@@ -650,12 +669,22 @@ def collect_carmen_week(meta: dict[str, Any], ctx: CollectContext) -> list[dict[
                 if cur.startswith("(") or cur == "Napi ajándék desszert":
                     j += 1
                     continue
+                if cur.startswith("A menük gyümölcslevessel") or cur.startswith("Áraink bruttó árak") or cur.startswith("Az ételek allergén tartalmát"):
+                    break
                 chunks.append(cur)
                 j += 1
             if chunks:
                 raw = " ".join(chunks)
+                cut_markers = [
+                    "A menük gyümölcslevessel",
+                    "Áraink bruttó árak",
+                    "Az ételek allergén tartalmát",
+                ]
+                cut_positions = [raw.find(marker) for marker in cut_markers if marker in raw]
+                if cut_positions:
+                    raw = raw[:min(cut_positions)]
                 price_huf = extract_price_huf(raw)
-                cleaned = re.sub(r"\s*[–-]?\s*(\d{1,2}[ .]?\d{3}|\d{3,5})\s*(?:,-)?\s*Ft\s*$", "", raw, flags=re.IGNORECASE).strip()
+                cleaned = re.sub(r"\s*[–-]?\s*(\d{1,2}[ .]?\d{3}|\d{3,5})\s*(?:,-)?\s*Ft\s*$", "", raw, flags=re.IGNORECASE).strip(" ,;-/")
                 items.append({
                     "label": pretty,
                     "text": cleaned or raw,

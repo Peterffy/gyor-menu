@@ -253,6 +253,21 @@
       ],
       "lat": 47.6669649,
       "lng": 17.6404257
+    },
+    {
+      "slug": "kakas-vendeglo",
+      "name": "Kakas Vendéglő",
+      "address": "9028 Győr, Szent Imre út 105.",
+      "area": "Raktárváros",
+      "sourceType": "website_menu_image_snapshot",
+      "automationStatus": "snapshot",
+      "sourceUrl": "https://www.kakasvendeglo.hu/heti-menuk/",
+      "mapUrl": "https://maps.google.com/?q=9028+Gy%C5%91r,+Szent+Imre+%C3%BAt+105",
+      "notes": [
+        "Official weekly menu appears as images on the restaurant website (including a separate Friday fish-day image). Good preview candidate via manual/OCR review rows before any dedicated collector."
+      ],
+      "lat": 47.6587111,
+      "lng": 17.6551657
     }
   ]
 }

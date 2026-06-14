@@ -298,6 +298,21 @@
       ],
       "lat": 47.6946079,
       "lng": 17.6296463
+    },
+    {
+      "slug": "ordogkonyha-varoshaza",
+      "name": "Ördögkonyha – Városháza Konyha",
+      "address": "9021 Győr, Városház tér 1.",
+      "area": "Belváros",
+      "sourceType": "website_weekly_html",
+      "automationStatus": "pending_automation",
+      "sourceUrl": "http://www.ordogkonyha.hu/menu",
+      "mapUrl": "https://maps.google.com/?q=9021+Gy%C5%91r,+V%C3%A1rosh%C3%A1z+t%C3%A9r+1",
+      "notes": [
+        "Official HTML weekly menu page found. The site exposes structured A/B weekday menus, and likely supports automation later. Preview should use next-week rows from http://www.ordogkonyha.hu/menu/2026-06-21 for the upcoming Sunday-to-Monday switch."
+      ],
+      "lat": 47.6831988,
+      "lng": 17.6349659
     }
   ]
 }

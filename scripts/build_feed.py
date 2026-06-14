@@ -118,6 +118,12 @@ def parse_price_huf(text: str | None) -> int | None:
     return int(digits)
 
 
+def format_price_huf(price_huf: int | None) -> str | None:
+    if price_huf is None:
+        return None
+    return f"{price_huf:,} Ft".replace(",", " ")
+
+
 def clean_carmen_item_text(raw: str) -> str:
     cut_markers = [
         "A menük gyümölcslevessel",
@@ -546,6 +552,33 @@ def parse_fourcol_pdf_week(pdf_bytes: bytes, meta: dict[str, Any], ctx: CollectC
 
 # ---------- Új Zöldfa (PDF grid: Leves + Menü A-E, 7 days) ----------
 
+def strip_zoldfa_allergen_tail(raw: str) -> str:
+    patterns = [
+        re.compile(r"\s*/(?:G|L|T|P|K|Z|H|F|D|M|Sz|Sze|Szója)(?:,(?:G|L|T|P|K|Z|H|F|D|M|Sz|Sze|Szója))*/*\s*$", re.IGNORECASE),
+        re.compile(r"\s+(?:G|L|T|P|K|Z|H|F|D|M|Sz|Sze|Szója)(?:,(?:G|L|T|P|K|Z|H|F|D|M|Sz|Sze|Szója))*/*\s*$", re.IGNORECASE),
+    ]
+    prev = None
+    text = raw.strip()
+    while text != prev:
+        prev = text
+        for pattern in patterns:
+            text = pattern.sub("", text).strip()
+    return text.strip(" ,;-/")
+
+
+def zoldfa_label_price(label: str, day_en: str, raw: str) -> int | None:
+    if label == "Leves":
+        return None
+    if day_en in {"saturday", "sunday"}:
+        m = re.search(r"(\d{3,5})\.-\s*$", raw)
+        return int(m.group(1)) if m else None
+    if label in {"A menü", "B menü", "C menü", "D menü"}:
+        return 3150
+    if label == "E menü":
+        return 3240
+    return None
+
+
 def collect_uj_zoldfa_week(meta: dict[str, Any], ctx: CollectContext) -> list[dict[str, Any]]:
     resp = requests.get(ZOLDFA_PDF_URL, headers=HEADERS, timeout=30)
     resp.raise_for_status()
@@ -637,7 +670,6 @@ def collect_uj_zoldfa_week(meta: dict[str, Any], ctx: CollectContext) -> list[di
             frags = col_texts.get(label)
             if not frags:
                 continue
-            # Join fragments, strip footer/disclaimer bleed and trailing prices.
             raw = " ".join(frags)
             footer_markers = [
                 "Ebédjegy",
@@ -649,12 +681,17 @@ def collect_uj_zoldfa_week(meta: dict[str, Any], ctx: CollectContext) -> list[di
             cut_positions = [raw.find(marker) for marker in footer_markers if marker in raw]
             if cut_positions:
                 raw = raw[:min(cut_positions)]
-            # Strip trailing price (e.g. "4990.-")
+            price_huf = zoldfa_label_price(label, day_en, raw)
             raw = re.sub(r"\s*\d{3,5}\.-\s*$", "", raw).strip()
-            # Normalise whitespace
+            raw = strip_zoldfa_allergen_tail(raw)
             raw = re.sub(r"\s+", " ", raw).strip(" ,;-/")
             if raw:
-                items.append({"label": label, "text": raw})
+                items.append({
+                    "label": label,
+                    "text": raw,
+                    "priceHuf": price_huf,
+                    "priceText": format_price_huf(price_huf),
+                })
 
         if not items:
             continue

@@ -137,17 +137,19 @@ def restaurant_issue_codes(restaurant: dict[str, Any], date_str: str) -> list[di
             "message": f"strukturált forrás, de a certainty nem exact ({menu.get('certainty')})",
         })
 
-    priced_items = sum(1 for item in menu.get("items", []) if item.get("priceHuf") or item.get("priceText"))
-    if source_type in STRUCTURED_SOURCE_TYPES and today_count > 0 and priced_items == 0:
+    price_relevant_items = [item for item in menu.get("items", []) if str(item.get("label") or "") != "Leves"]
+    priced_items = sum(1 for item in price_relevant_items if item.get("priceHuf") or item.get("priceText"))
+    price_relevant_count = len(price_relevant_items)
+    if source_type in STRUCTURED_SOURCE_TYPES and price_relevant_count > 0 and priced_items == 0:
         issues.append({
             "code": "no_prices_on_structured_menu",
-            "message": "strukturált forrású menü, de nincs egyetlen ár sem a napi menüben",
+            "message": "strukturált forrású menü, de nincs egyetlen ár sem a napi fő tételeknél",
         })
 
-    if source_type in STRUCTURED_SOURCE_TYPES and today_count > 0 and 0 < priced_items < today_count:
+    if source_type in STRUCTURED_SOURCE_TYPES and price_relevant_count > 0 and 0 < priced_items < price_relevant_count:
         issues.append({
             "code": "partial_prices_on_structured_menu",
-            "message": f"strukturált forrású menü, de csak részleges az árfedettség ({priced_items}/{today_count})",
+            "message": f"strukturált forrású menü, de csak részleges az árfedettség ({priced_items}/{price_relevant_count})",
         })
 
     return issues
